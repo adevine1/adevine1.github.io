@@ -140,7 +140,7 @@
 
       document.getElementById('rollerbutton').disabled=false;
       document.getElementById('rollerbutton').style.color='yellow';
-      document.getElementById ("dice").style = "width:50%;height:50%"
+      document.getElementById ("dice").style = "width:40%;height:40%"
       document.getElementById ('rolled').style = "width:50%;height:50%;display:none"
 
       document.getElementById ("d1").innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`
@@ -194,7 +194,7 @@
 
       document.getElementById('rollerbutton').disabled = false;
       document.getElementById('rollerbutton').style.color='yellow';
-      document.getElementById ("dice").style = "width:50%;height:50%"
+      document.getElementById ("dice").style = "width:40%;height:40%"
       document.getElementById ('rolled').style = "width:50%;height:50%;display:none"
 
       document.getElementById('fb2').style.color="white";
@@ -749,7 +749,7 @@
         var snd = new Audio("assets/dice-roll.mp3");
         snd.play ();
     }
-      document.getElementById ("dice").style = "width:50%;height:50%;display:none;"
+      document.getElementById ("dice").style = "width:40%;height:40%;display:none;"
       document.getElementById ('rolled').style = "width:50%;height:50%;"
       if (document.getElementById ("rollerbutton").innerText !== "Roll") {
         result = prompt ("Please enter your name to submit to High Score List", "[enter name here]");
