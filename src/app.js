@@ -345,147 +345,17 @@
 
     function determineScoringOptions () {
       let diceNumbers = [0, 0, 0, 0, 0, 0];
-      let diceArray = ["d1", "d2", "d3", "d4", "d5", "d6"]
+      let diceArray = ["d1", "d2", "d3", "d4", "d5"];
       const diceVariations = [v1, v2, v3, v4, v5, v6];
+      const diceVariations2 = [v1b, v2b, v3b, v4b, v5b, v6b]
 
-      // for (let x=0; x<6; x++) {
-      //   for (let y=0; y<6; y++) {
-      //     if (document.getElementbyId (diceArray[x]).innerHTML === diceVariations [y])
-      //        diceNumbers [y] += 1;
-      //   }
-      // }
-
-
-        if (document.getElementById("d1").innerHTML === v1)
-          diceNumbers [0] +=1;
-        if (document.getElementById("d1").innerHTML === v2)
-          diceNumbers [1] +=1;
-        if (document.getElementById("d1").innerHTML === v3)
-          diceNumbers [2] +=1;
-        if (document.getElementById("d1").innerHTML === v4)
-          diceNumbers [3] +=1;
-        if (document.getElementById("d1").innerHTML === v5)
-          diceNumbers [4] +=1
-        if (document.getElementById("d1").innerHTML === v6)
-          diceNumbers [5] +=1
-
-          if (document.getElementById("d1").innerHTML === v1b)
-          diceNumbers [0] +=1;
-        if (document.getElementById("d1").innerHTML === v2b)
-          diceNumbers [1] +=1;
-        if (document.getElementById("d1").innerHTML === v3b)
-          diceNumbers [2] +=1;
-        if (document.getElementById("d1").innerHTML === v4b)
-          diceNumbers [3] +=1;
-        if (document.getElementById("d1").innerHTML === v5b)
-          diceNumbers [4] +=1
-        if (document.getElementById("d1").innerHTML === v6b)
-          diceNumbers [5] +=1
-
-        if (document.getElementById("d2").innerHTML === v1)
-          diceNumbers [0] ++;
-        if (document.getElementById("d2").innerHTML === v2)
-          diceNumbers [1] ++;
-        if (document.getElementById("d2").innerHTML === v3)
-          diceNumbers [2] ++;
-        if (document.getElementById("d2").innerHTML === v4)
-          diceNumbers [3] ++;
-        if (document.getElementById("d2").innerHTML === v5)
-          diceNumbers [4] ++
-        if (document.getElementById("d2").innerHTML === v6)
-          diceNumbers [5] ++;
-
-        if (document.getElementById("d2").innerHTML === v1b)
-          diceNumbers [0] ++;
-        if (document.getElementById("d2").innerHTML === v2b)
-          diceNumbers [1] ++;
-        if (document.getElementById("d2").innerHTML === v3b)
-          diceNumbers [2] ++;
-        if (document.getElementById("d2").innerHTML === v4b)
-          diceNumbers [3] ++;
-        if (document.getElementById("d2").innerHTML === v5b)
-          diceNumbers [4] ++
-        if (document.getElementById("d2").innerHTML === v6b)
-          diceNumbers [5] ++;
-
-        if (document.getElementById("d3").innerHTML === v1)
-          diceNumbers [0] ++;
-        if (document.getElementById("d3").innerHTML === v2)
-          diceNumbers [1] ++;
-        if (document.getElementById("d3").innerHTML === v3)
-          diceNumbers [2] ++;
-        if (document.getElementById("d3").innerHTML === v4)
-          diceNumbers [3] ++;
-        if (document.getElementById("d3").innerHTML === v5)
-          diceNumbers [4] ++
-        if (document.getElementById("d3").innerHTML === v6)
-          diceNumbers [5] ++;
-
-        if (document.getElementById("d3").innerHTML === v1b)
-          diceNumbers [0] ++;
-        if (document.getElementById("d3").innerHTML === v2b)
-          diceNumbers [1] ++;
-        if (document.getElementById("d3").innerHTML === v3b)
-          diceNumbers [2] ++;
-        if (document.getElementById("d3").innerHTML === v4b)
-          diceNumbers [3] ++;
-        if (document.getElementById("d3").innerHTML === v5b)
-          diceNumbers [4] ++
-        if (document.getElementById("d3").innerHTML === v6b)
-          diceNumbers [5] ++;
-
-        if (document.getElementById("d4").innerHTML === v1)
-          diceNumbers [0] ++;
-        if (document.getElementById("d4").innerHTML === v2)
-          diceNumbers [1] ++;
-        if (document.getElementById("d4").innerHTML === v3)
-          diceNumbers [2] ++;
-        if (document.getElementById("d4").innerHTML === v4)
-          diceNumbers [3] ++;
-        if (document.getElementById("d4").innerHTML === v5)
-          diceNumbers [4] ++
-        if (document.getElementById("d4").innerHTML === v6)
-          diceNumbers [5] ++;
-
-        if (document.getElementById("d4").innerHTML === v1b)
-          diceNumbers [0] ++;
-        if (document.getElementById("d4").innerHTML === v2b)
-          diceNumbers [1] ++;
-        if (document.getElementById("d4").innerHTML === v3b)
-          diceNumbers [2] ++;
-        if (document.getElementById("d4").innerHTML === v4b)
-          diceNumbers [3] ++;
-        if (document.getElementById("d4").innerHTML === v5b)
-          diceNumbers [4] ++
-        if (document.getElementById("d4").innerHTML === v6b)
-          diceNumbers [5] ++;
-
-        if (document.getElementById("d5").innerHTML === v1)
-          diceNumbers [0] ++;
-        if (document.getElementById("d5").innerHTML === v2)
-          diceNumbers [1] ++;
-        if (document.getElementById("d5").innerHTML === v3)
-          diceNumbers [2] ++;
-        if (document.getElementById("d5").innerHTML === v4)
-          diceNumbers [3] ++;
-        if (document.getElementById("d5").innerHTML === v5)
-          diceNumbers [4] ++
-        if (document.getElementById("d5").innerHTML === v6)
-          diceNumbers [5] ++;
-
-
-        if (document.getElementById("d5").innerHTML === v1b)
-          diceNumbers [0] ++;
-        if (document.getElementById("d5").innerHTML === v2b)
-          diceNumbers [1] ++;
-        if (document.getElementById("d5").innerHTML === v3b)
-          diceNumbers [2] ++;
-        if (document.getElementById("d5").innerHTML === v4b)
-          diceNumbers [3] ++;
-        if (document.getElementById("d5").innerHTML === v5b)
-          diceNumbers [4] ++
-        if (document.getElementById("d5").innerHTML === v6b)
-          diceNumbers [5] ++;
+      for (let x=0; x<5; x++) {
+        for (let y=0; y<6; y++) {
+          if ((document.getElementById (diceArray[x]).innerHTML === diceVariations [y]) ||
+             (document.getElementById (diceArray[x]).innerHTML === diceVariations2 [y]))
+             diceNumbers [y] += 1;
+        }
+      }
 
         console.log (diceNumbers);
         return diceNumbers;
