@@ -2,7 +2,7 @@
   //global values
 
   //the following are image links for the look of the dice. vn is always an image of the value (n) of n unheld dice (such as after a fresh roll), and vnb is the held version.
-  const v1= `<img src="assets/dice-1-b.svg" width="63" height="63">`;
+  const v1= `<img src="assets/Dice-1-b.svg" width="63" height="63">`;
   const v1b= `<img src="assets/Dice-1.svg" width="63" height="63">`;
   const v2= `<img src="assets/Dice-2-b.svg" width="63" height="63">`;
   const v2b= `<img src="assets/Dice-2.svg" width="63" height="63">`;
