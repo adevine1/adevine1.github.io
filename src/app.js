@@ -636,8 +636,7 @@ function rollTheDice() {
       alert(
         result.toUpperCase() +
           " has been added to the historical record with a score of " +
-          endscore +
-          '. Select "show score history" to view all scores.'
+          endscore +"."
       );
 
       let currentScores = JSON.parse(localStorage.scores);
