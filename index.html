@@ -3,7 +3,8 @@
   <head>
     <link href="https://fonts.googleapis.com/css?family=Literata&display=swap" rel="stylesheet">
     <title>Get Five!</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="src/app.js"></script>
   </head>
   <body style = "font-family: 'Literata', serif;" onload="loadStuff()">
@@ -31,12 +32,12 @@
       <hr>
       <p>Reset game here: <button onclick = "resetgame ()">reset game</button>. Toggle sound effects here: <button id="effects" onclick = "toggleSoundEffects ()">effects off</button>. <br><br> Show score history here: <button onclick="showHighScores ()">show score history</button>.
       Clear score history here: <button onclick = "clearScoreHistory ()">clear score history</button> <br><br>
-      <button>credits</button> <br><br>
-      <button id = "hideheader">hide header</button>
+      <button>credits</button>
     </p>
       <br>
 
    </div>
+   <button id= "hideintro">hide instructions</button>
 
    <div id= "wrap" class = "playfield">
     <div class = "right" >
@@ -161,7 +162,7 @@
     <p id = "rollinstruction" style="font-size: 40px"></p>
     <div style="text-align: center;">
       <img id="dice" src= "assets/dice-not-rolled.jpg" style="width:40%;height:40%;">
-      <img id="rolled" src="assets/dice-rolled.jpg" style="width:50%;height:50%;display:none">
+      <img id="rolled" src="assets/dice-rolled.jpg" style="width:30%;height:50%;display:none">
    </div>
 
   </div>
