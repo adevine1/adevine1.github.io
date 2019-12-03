@@ -30,6 +30,10 @@ const diceArray = ["d1", "d2", "d3", "d4", "d5"];
 const heldDice = [false, false, false, false, false];
 //idea is to have currentDiceRoll always reflect current state of dice. If the length of the currentDiceRoll index equals 3, this indicates don't reroll. These values can also be swapped around for the clickbutton function.
 
+$("#hideheader").click(function() {
+  alert( "Handler for .click() called." );
+});
+
 var gameover = false;
 
 function loadStuff() {
