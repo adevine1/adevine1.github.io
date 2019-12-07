@@ -1,22 +1,25 @@
 $(document).ready(function(){
   //jquery code to handle some display options
   console.log ('document ready');
+  $(".instructions").fadeOut(100);
+
 
   $("#hideintro").click;
 
         var hidden = true;
         $("#hideintro").click (function () {
           if (hidden === false) {
-            $(".instructions").fadeOut(300);
+            $(".instructions").fadeOut(200);
+            $(".playfield").fadeIn (200);
             $("#hideintro").text("Get Five! Instructions (show)");
             hidden=true;
           } else {
-            $(".instructions").fadeIn(300);
-            $("#hideintro").text("Get Five! Instructions (hide)");
+            $(".instructions").fadeIn(200);
+            $(".playfield").fadeOut (200);
+            $("#hideintro").text("← BACK TO THE GAME");
             hidden = false;
           }
         });
-
 });
 
   //global values
@@ -98,6 +101,8 @@ $(document).ready(function(){
         document.getElementById ("effects").innerText = "Sound Effects (off)"
         localStorage.effects = false;
       } else { document.getElementById("effects").innerText = "Sound Effects (on)";
+        var snd = new Audio("assets/beep.mp3");
+        snd.play ();
         localStorage.effects = true;
       }
     }

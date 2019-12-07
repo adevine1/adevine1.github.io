@@ -96,14 +96,14 @@ table.grandtotal td {
   cursor: pointer;
 }
 
-.button:hover {
-  color: gray;
+.roll:hover:enabled {
+  background-color: #2E76CF
 }
 
 .roll {
-  background-color: black;
+  background-color: #173b67;
   border: 3px;
-  border-color: blue;
+  border-color: lightsteelblue;
   color: yellow;
   padding: 15px 32px;
   text-align: center;
@@ -147,16 +147,19 @@ table.grandtotal td {
 
 .instructions {
   display: block;
-  margin: 20px;
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-right: 20px;
   border: 3px solid gray;
   box-shadow: 0 6px 6px #ccc;
   padding: 20px;
-  background-color: lightsteelblue;
+  background-color: white;
 }
 
 .playfield {
   display: block;
-  margin: 20px;
+  margin-top: 80px;
+  margin-left: 20px;
   border: 3px solid gray;
   box-shadow: 0 6px 6px #ccc;
   padding: 20px;
@@ -185,12 +188,14 @@ li {
   cursor: pointer;
 }
 
-
-
 li:hover {
   color: yellow;
 }
 
-.active {
-  background-color: #4CAF50;
+#mainmenu {
+  position: fixed;
+  width: 99%;
+  top: 1em;
+  margin-right: 1px;
+  margin-right: 1px;
 }

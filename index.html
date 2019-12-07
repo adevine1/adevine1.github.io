@@ -9,8 +9,8 @@
   </head>
   <body style = "font-family: 'Literata', serif;" onload="loadStuff()">
 
-      <ul>
-          <li id="hideintro" onclick="jumpToInstructions ()">Get Five! Instructions (hide)</li>
+      <ul id="mainmenu">
+          <li id="hideintro" onclick="jumpToInstructions ()">Get Five! Instructions (show)</li>
           <li onclick="toggleSoundEffects ()" id="effects">Sound Effects (off)</li>
           <li onclick="showHighScores ()">Show Score History</li>
           <li onclick="clearScoreHistory ()">Reset Scores</li>
@@ -19,10 +19,9 @@
       </ul>
 
 
-   <div id= "wrap" class = "playfield">
+<div id= "wrap" class = "playfield">
 
     <div class = "right" >
-
     <br><br>
     <table id="top" class="top" style= "padding: 20px">
       <tr onclick = "submitValue (this)">
@@ -151,7 +150,7 @@
 
 </div>
 
-<div class = "instructions">
+<div class = "instructions" id="hideintro">
     <p>
       <br>
       <h3 style="text-align: center">Get Five! Instructions</h3>
