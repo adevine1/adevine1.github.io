@@ -183,8 +183,8 @@ li {
 
 
 
-li :hover {
-  background-color: #121;
+li:hover {
+  color: yellow;
 }
 
 .active {
