@@ -86,7 +86,7 @@ $(document).ready(function(){
   }
 
   function jumpToInstructions () {
-    window.location.hash = "readInstructions";
+    //window.location.hash = "readInstructions";
   }
 
     function toggleSoundEffects () {
