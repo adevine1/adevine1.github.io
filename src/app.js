@@ -46,9 +46,9 @@ $(document).ready(function(){
 
     //tracks effects value after it's in place on subsequent reloads/plays
     if (localStorage.getItem ("effects") == "true")
-      document.getElementById("effects").innerText = "effects on"
+      document.getElementById("effects").innerText = "Sound Effects (on)"
     else
-      document.getElementById("effects").innerText = "effects off";
+      document.getElementById("effects").innerText = "Sound Effects (off)";
   }
 
   function showHighScores () {
@@ -85,11 +85,15 @@ $(document).ready(function(){
       }
   }
 
+  function jumpToInstructions () {
+    window.location.hash = "readInstructions";
+  }
+
     function toggleSoundEffects () {
-      if (document.getElementById ("effects").innerText !== "effects off") {
-        document.getElementById ("effects").innerText = "effects off"
+      if (document.getElementById ("effects").innerText !== "Sound Effects (off)") {
+        document.getElementById ("effects").innerText = "Sound Effects (off)"
         localStorage.effects = false;
-      } else { document.getElementById("effects").innerText = "effects on";
+      } else { document.getElementById("effects").innerText = "Sound Effects (on)";
         localStorage.effects = true;
       }
     }
@@ -169,7 +173,7 @@ $(document).ready(function(){
         heldDice [x] = false;
       }
 
-      if (document.getElementById ("effects").innerText === "effects on") {
+      if (document.getElementById ("effects").innerText === "Sound Effects (on)") {
         var snd = new Audio("assets/pencil-sound.wav");
         snd.play ();
       }
@@ -225,7 +229,7 @@ $(document).ready(function(){
         heldDice [x] = false;
       }
 
-      if (document.getElementById ("effects").innerText === "effects on") {
+      if (document.getElementById ("effects").innerText === "Sound Effects (on)") {
         var snd = new Audio("assets/pencil-sound.wav");
         snd.play ();
       }
@@ -276,7 +280,7 @@ $(document).ready(function(){
         heldDice [x] = false;
       }
 
-      if (document.getElementById ("effects").innerText === "effects on") {
+      if (document.getElementById ("effects").innerText === "Sound Effects (on)") {
         var snd = new Audio("assets/pencil-sound.wav");
         snd.play ();
       }
@@ -464,7 +468,7 @@ $(document).ready(function(){
         if ((diceArray.indexOf (5)) !== -1) {
         bottomTable.rows [5].cells [2].innerText = '←' + 50;
 
-        if (document.getElementById ("effects").innerText === "effects on") {
+        if (document.getElementById ("effects").innerText === "Sound Effects (on)") {
         var snd = new Audio("assets/cheer.mp3");
         snd.play ();
         }
@@ -479,7 +483,7 @@ $(document).ready(function(){
       if (bottomTable.rows[5].cells[1].innerText === '50') {
         if ((diceArray.indexOf (5)) !== -1) {
           bonusTable2.rows [0].cells [2].innerText =  "+100";
-            if (document.getElementById ("effects").innerText === "effects on") {
+            if (document.getElementById ("effects").innerText === "Sound Effects (on)") {
               var snd = new Audio("assets/cheer.mp3");
               snd.play ();
             }
@@ -631,10 +635,10 @@ $(document).ready(function(){
 
   function rollTheDice() {
       //animateDice ();
-      if (document.getElementById ("effects").innerText === "effects on") {
+      if (document.getElementById ("effects").innerText === "Sound Effects (on)") {
         var snd = new Audio("assets/dice-roll.mp3");
         snd.play ();
-    }
+      }
       document.getElementById ("dice").style = "width:40%;height:40%;display:none;"
       document.getElementById ('rolled').style = "width:50%;height:50%;"
       if (document.getElementById ("rollerbutton").innerText !== "Roll") {

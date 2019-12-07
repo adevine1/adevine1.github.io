@@ -8,39 +8,24 @@
     <script src="src/app.js"></script>
   </head>
   <body style = "font-family: 'Literata', serif;" onload="loadStuff()">
-    <h1 style = "text-align: center">Get Five!</h1>
-    <div class = "instructions">
-      <p>
-        <br>
-        <b>Get Five!</b> is a solitaire version of a popular dice game (ok, it's Yahtzee)
-        using five six-sided dice: <br><br>
-        <img src="assets/Dice-1-b.svg" width="33" height="33">
-        <img src="assets/Dice-2-b.svg" width="33" height="33">
-        <img src="assets/Dice-3-b.svg" width="33" height="33">
-        <img src="assets/Dice-4-b.svg" width="33" height="33">
-        <img src="assets/Dice-5-b.svg" width="33" height="33">
-        <img src="assets/Dice-6a-b.svg" width="33" height="33">
-      </p>
-      <p></p>
-      <p>
-        The objective is to score as many points as possible in thirteen different
-        categories within turns of three rolls.
-      </p>
 
-      <p>Click "Roll" to begin. Click on dice to hold (or un-hold) them over to the next roll within a turn. Click on ← to commit a score after any roll.</p>
-      <p>Scroll down to see detailed rules and high scores.</p>
-      <hr>
-      <p>Reset game here: <button onclick = "resetgame ()">reset game</button>. Toggle sound effects here: <button id="effects" onclick = "toggleSoundEffects ()">effects off</button>. <br><br> Show score history here: <button onclick="showHighScores ()">show score history</button>.
-      Clear score history here: <button onclick = "clearScoreHistory ()">clear score history</button> <br><br>
-      <button>credits</button>
-    </p>
-      <br>
 
-   </div>
-   <button id= "hideintro">hide instructions</button>
+
+      <ul>
+          <li onclick="jumpToInstructions ()">Get Five! Instructions</li>
+          <li onclick="toggleSoundEffects ()" id="effects">Sound Effects (off)</li>
+          <li onclick="showHighScores ()">Show Score History</li>
+          <li onclick="clearScoreHistory ()">Reset Scores</li>
+          <li onclick="resetgame ()">Reset Current Game</li>
+
+          <li style="float:right">Credits</a></li>
+      </ul>
+
 
    <div id= "wrap" class = "playfield">
+
     <div class = "right" >
+
     <br><br>
     <table id="top" class="top" style= "padding: 20px">
       <tr onclick = "submitValue (this)">
@@ -169,7 +154,29 @@
 
 </div>
 
-<div class = "instructions">
+<div class = "instructions" id="readInstructions">
+    <p>
+      <br>
+      <b>Get Five!</b> is a solitaire version of a popular dice game (ok, it's Yahtzee)
+      using five six-sided dice: <br><br>
+      <img src="assets/Dice-1-b.svg" width="33" height="33">
+      <img src="assets/Dice-2-b.svg" width="33" height="33">
+      <img src="assets/Dice-3-b.svg" width="33" height="33">
+      <img src="assets/Dice-4-b.svg" width="33" height="33">
+      <img src="assets/Dice-5-b.svg" width="33" height="33">
+      <img src="assets/Dice-6a-b.svg" width="33" height="33">
+    </p>
+    <p></p>
+    <p>
+      The objective is to score as many points as possible in thirteen different
+      categories within turns of three rolls.
+
+
+    <br>
+
+    <p>Click "Roll" to begin. Click on dice to hold (or un-hold) them over to the next roll within a turn. Click on ← to commit a score after any roll.</p>
+
+
       <b>Scoring</b><br>
 
       Scoring in Get Five! occurs on successful rolls for categories in either the
