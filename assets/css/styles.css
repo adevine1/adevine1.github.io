@@ -96,6 +96,10 @@ table.grandtotal td {
   cursor: pointer;
 }
 
+.button:hover {
+  color: gray;
+}
+
 .roll {
   background-color: black;
   border: 3px;

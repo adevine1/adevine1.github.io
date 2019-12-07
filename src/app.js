@@ -2,18 +2,21 @@ $(document).ready(function(){
   //jquery code to handle some display options
   console.log ('document ready');
 
-        var hidden = false;
+  $("#hideintro").click;
+
+        var hidden = true;
         $("#hideintro").click (function () {
           if (hidden === false) {
             $(".instructions").fadeOut(300);
-            $("#hideintro").text("show instructions");
+            $("#hideintro").text("Get Five! Instructions (show)");
             hidden=true;
           } else {
             $(".instructions").fadeIn(300);
-            $("#hideintro").text("hide instructions");
+            $("#hideintro").text("Get Five! Instructions (hide)");
             hidden = false;
           }
         });
+
 });
 
   //global values
@@ -39,6 +42,7 @@ $(document).ready(function(){
 
   function loadStuff () {
     //set initial value if none exists
+    $("#hideintro").click;
     if (localStorage.getItem ("effects")=== null) {
       localStorage.effects = false;
       console.log (localStorage.effects);

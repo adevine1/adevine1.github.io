@@ -9,15 +9,12 @@
   </head>
   <body style = "font-family: 'Literata', serif;" onload="loadStuff()">
 
-
-
       <ul>
-          <li onclick="jumpToInstructions ()">Get Five! Instructions</li>
+          <li id="hideintro" onclick="jumpToInstructions ()">Get Five! Instructions (hide)</li>
           <li onclick="toggleSoundEffects ()" id="effects">Sound Effects (off)</li>
           <li onclick="showHighScores ()">Show Score History</li>
           <li onclick="clearScoreHistory ()">Reset Scores</li>
           <li onclick="resetgame ()">Reset Current Game</li>
-
           <li style="float:right">Credits</a></li>
       </ul>
 
@@ -154,9 +151,10 @@
 
 </div>
 
-<div class = "instructions" id="readInstructions">
+<div class = "instructions">
     <p>
       <br>
+      <h3 style="text-align: center">Get Five! Instructions</h3>
       <b>Get Five!</b> is a solitaire version of a popular dice game (ok, it's Yahtzee)
       using five six-sided dice: <br><br>
       <img src="assets/Dice-1-b.svg" width="33" height="33">
@@ -170,12 +168,9 @@
     <p>
       The objective is to score as many points as possible in thirteen different
       categories within turns of three rolls.
-
-
     <br>
 
     <p>Click "Roll" to begin. Click on dice to hold (or un-hold) them over to the next roll within a turn. Click on ← to commit a score after any roll.</p>
-
 
       <b>Scoring</b><br>
 
