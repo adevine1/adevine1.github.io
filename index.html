@@ -12,7 +12,7 @@
       <ul id="mainmenu">
           <li id="hideintro" onclick="jumpToInstructions ()">Get Five! Instructions (show)</li>
           <li onclick="toggleSoundEffects ()" id="effects">Sound Effects (off)</li>
-          <li onclick="showHighScores ()">Show Score History</li>
+          <li id="showhighscores" onclick="showHighScores ()">Show Score History</li>
           <li onclick="clearScoreHistory ()">Reset Scores</li>
           <li onclick="resetgame ()">Reset Current Game</li>
           <li style="float:right">Credits</a></li>
@@ -139,7 +139,7 @@
     <br>
     <button class ="fakeybutton" id="fb1">➀ ➁ ➂</button>
     <br>
-    <button class ="fakeybutton" id="fb2">Roll Dice to Start Game</button>
+    <button class ="fakeybutton" id="fb2" onclick="resetgame ()" style = "color: black" disabled>Roll Dice to Start Game</button>
     <p id = "rollinstruction" style="font-size: 40px"></p>
     <div style="text-align: center;">
       <img id="dice" src= "assets/dice-not-rolled.jpg" style="width:40%;height:40%;">
@@ -341,7 +341,20 @@
     <br>
     <button onclick="secretMessage ()">hidden message</button>
 </div>
-  </body>
+
+<div id="highscores">
+  <h2 style="text-align: center">High Scores</h2>
+
+  <table class="highscoretable" id="showeachrecord">
+
+
+  </table>
+
+  <h2 style="text-align: center" id="footsteps">Your footsteps echo through an empty Hall of Records, inspiring you to action.</h2>
+
+</div>
+
+</body>
 
 
 </html>
