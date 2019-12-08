@@ -68,24 +68,25 @@ function loadStuff() {
     document.getElementById("effects").innerText = "Sound Effects (on)";
   else document.getElementById("effects").innerText = "Sound Effects (off)";
 }
-
 function showHighScores() {
   let highScoreString = "";
 
-  if (localStorage.getItem("scores") !== null) {
+  if (ParseInt(localStorage.getItem("scorenum")) > 0) {
     let loadScores = JSON.parse(localStorage.getItem("scores"));
 
-    document.getElementById("footsteps").innerHTML= '';
-    highScoreString = `<tr><td>Name</td><td>Score</td>
-       <td>Date</td></tr>`;
+    document.getElementById("footsteps").innerText ='';
 
     for (var key in loadScores) {
       highScoreString += `<tr><td> ${loadScores[key][1]} </td><td> ${loadScores[key][0]} </td><td>${loadScores[key][2]} </td></tr>`;
-      document.getElementById("showeachrecord").innerHTML = highScoreString;
 
       console.log(highScoreString);
     }
+    document.getElementById("showeachrecord").innerHTML = highScoreString;
+
   }
+
+ else docoument.getElementById("footsteps").innerText = "Your footsteps echo through an empty Hall of Records, inspiring you to action."
+
   //     $("#High Score List").append (highScoreString);
   //   }
 
