@@ -1,19 +1,27 @@
 $(document).ready(function() {
   //jquery code to handle some display options
   console.log("document ready");
-  $(".instructions").fadeOut(100);
-  $("#highscores").fadeOut(100);
+  $(".instructions").hide(0);
+  $("#highscores").hide(0);
+  $("#resetscores").hide(0);
 
   var instructionsHidden = true;
   $("#hideintro").click(function() {
     if (instructionsHidden === false) {
-      $(".instructions").fadeOut(200);
-      $(".playfield").fadeIn(200);
+      $(".instructions").hide(0);
+      $(".playfield").show (0);
+
+      $("#effects").show(0);
+      $("#showhighscores").show (0);
+      $("#resetgame").show (0);
       $("#hideintro").text("Get Five! Instructions (show)");
       instructionsHidden = true;
     } else {
-      $(".instructions").fadeIn(200);
-      $(".playfield").fadeOut(200);
+      $(".instructions").show(0);
+      $(".playfield").hide(0);
+      $("#effects").hide (0);
+      $("#showhighscores").hide (0);
+      $("#resetgame").hide (0);
       $("#hideintro").text("← BACK TO THE GAME");
       instructionsHidden = false;
     }
@@ -22,13 +30,16 @@ $(document).ready(function() {
   var highScoresHidden = true;
   $("#showhighscores").click(function() {
     if (highScoresHidden === false) {
-      $(".playfield").fadeIn(200);
-      $("#highscores").fadeOut(200);
+      $(".playfield").show(0);
+      $("#highscores").hide(0);
+      $("#resetscores").hide(0);
+
+
       highScoresHidden = true;
     } else {
-      $("#showhighscores").fadeIn(200);
-      $(".playfield").fadeOut(200);
-      $("#highscores").fadeIn(200);
+      $(".playfield").hide(0);
+      $("#highscores").show(0);
+      $("#resetscores").show(0);
       highScoresHidden = false;
     }
   });
