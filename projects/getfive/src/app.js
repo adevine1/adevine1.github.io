@@ -43,7 +43,7 @@ $(document).ready(function() {
       highScoresHidden = true;
     } else {
 
-      $("#showhighscores").text ("Hide Score History");
+      $("#showhighscores").text ("Hide Score History (Back to the Game)");
       $(".playfield").hide(0);
       $("#highscores").show(0);
       $("#resetscores").show(0);
