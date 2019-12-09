@@ -14,14 +14,18 @@ $(document).ready(function() {
       $("#effects").show(0);
       $("#showhighscores").show (0);
       $("#resetgame").show (0);
+      $("#showhighscores").text ("Show Score History");
       $("#hideintro").text("Get Five! Instructions (show)");
+      highScoresHidden=true;
       instructionsHidden = true;
+
     } else {
       $(".instructions").show(0);
       $(".playfield").hide(0);
-      $("#effects").hide (0);
+
       $("#showhighscores").hide (0);
       $("#resetgame").hide (0);
+      $("#resetscores").hide (0);
       $("#hideintro").text("← BACK TO THE GAME");
       instructionsHidden = false;
     }
@@ -30,16 +34,20 @@ $(document).ready(function() {
   var highScoresHidden = true;
   $("#showhighscores").click(function() {
     if (highScoresHidden === false) {
+
+      $("#showhighscores").text ("Show Score History");
       $(".playfield").show(0);
       $("#highscores").hide(0);
       $("#resetscores").hide(0);
-
-
+      $("#resetgame").show(0);
       highScoresHidden = true;
     } else {
+
+      $("#showhighscores").text ("Hide Score History");
       $(".playfield").hide(0);
       $("#highscores").show(0);
       $("#resetscores").show(0);
+      $("#resetgame").hide(0);
       highScoresHidden = false;
     }
   });
@@ -82,7 +90,7 @@ function loadStuff() {
 function showHighScores() {
   let highScoreString = "";
 
-  if (ParseInt(localStorage.getItem("scorenum")) > 0) {
+  if (localStorage.getItem("scorenum") !== 0) {
     let loadScores = JSON.parse(localStorage.getItem("scores"));
 
     document.getElementById("footsteps").innerText ='';
