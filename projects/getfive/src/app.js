@@ -105,7 +105,7 @@ function showHighScores() {
 
   }
 
- else docoument.getElementById("footsteps").innerText = "Your footsteps echo through an empty Hall of Records, inspiring you to action."
+ else docoument.getElementById("footsteps").innerText = "Your footsteps echo through a sparse Hall of Records, inspiring you to action."
 
   //     $("#High Score List").append (highScoreString);
   //   }
@@ -284,16 +284,16 @@ function submitValueBottom(element) {
   ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
   document.getElementById(
     "d2"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
   document.getElementById(
     "d3"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
   document.getElementById(
     "d4"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
   document.getElementById(
     "d5"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
 
   for (var x = 0; x < heldDice.length; x++) {
     heldDice[x] = false;
@@ -343,19 +343,19 @@ function submitValueBonusChips(element) {
 
     document.getElementById(
       "d1"
-    ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+    ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
     document.getElementById(
       "d2"
-    ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+    ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
     document.getElementById(
       "d3"
-    ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+    ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
     document.getElementById(
       "d4"
-    ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+    ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
     document.getElementById(
       "d5"
-    ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+    ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
 
     for (var x = 0; x < heldDice.length; x++) {
       heldDice[x] = false;
