@@ -56,18 +56,18 @@ $(document).ready(function() {
 
 //global values
 //the following are image links for the look of the dice. vn is always an image of the value (n) of n unheld dice (such as after a fresh roll), and vnb is the held version.
-const v1 = `<img src="assets/Dice-1-b.svg" width="63" height="63">`;
-const v1b = `<img src="assets/Dice-1.svg" width="63" height="63">`;
-const v2 = `<img src="assets/Dice-2-b.svg" width="63" height="63">`;
-const v2b = `<img src="assets/Dice-2.svg" width="63" height="63">`;
-const v3 = `<img src="assets/Dice-3-b.svg" width="63" height="63">`;
-const v3b = `<img src="assets/Dice-3.svg" width="63" height="63">`;
-const v4 = `<img src="assets/Dice-4-b.svg" width="63" height="63">`;
-const v4b = `<img src="assets/Dice-4.svg" width="63" height="63">`;
-const v5 = `<img src="assets/Dice-5-b.svg" width="63" height="63">`;
-const v5b = `<img src="assets/Dice-5.svg" width="63" height="63">`;
-const v6 = `<img src="assets/Dice-6a-b.svg" width="63" height="63">`;
-const v6b = `<img src="assets/Dice-6a.svg" width="63" height="63">`;
+const v1 = `<img src="assets/Dice-1.png" width="63" height="63">`;
+const v1b = `<img src="assets/Dice-1b.png" width="63" height="63">`;
+const v2 = `<img src="assets/Dice-2.png" width="63" height="63">`;
+const v2b = `<img src="assets/Dice-2b.png" width="63" height="63">`;
+const v3 = `<img src="assets/Dice-3.png" width="63" height="63">`;
+const v3b = `<img src="assets/Dice-3b.png" width="63" height="63">`;
+const v4 = `<img src="assets/Dice-4.png" width="63" height="63">`;
+const v4b = `<img src="assets/Dice-4b.png" width="63" height="63">`;
+const v5 = `<img src="assets/Dice-5.png" width="63" height="63">`;
+const v5b = `<img src="assets/Dice-5b.png" width="63" height="63">`;
+const v6 = `<img src="assets/Dice-6.png" width="63" height="63">`;
+const v6b = `<img src="assets/Dice-6b.png" width="63" height="63">`;
 
 const currentDiceRoll = [v1, v2, v3, v4, v5];
 const heldDice = [false, false, false, false, false];
@@ -211,24 +211,24 @@ function submitValue(element) {
 
   document.getElementById("rollerbutton").disabled = false;
   document.getElementById("rollerbutton").style.color = "yellow";
-  document.getElementById("dice").style = "width:40%;height:40%";
-  document.getElementById("rolled").style = "width:50%;height:50%;display:none";
+  document.getElementById("dice").style = "width:70%;height:70%";
+  document.getElementById("rolled").style = "width:40%;height:40%;display:none";
 
   document.getElementById(
     "d1"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
   document.getElementById(
     "d2"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
   document.getElementById(
     "d3"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
   document.getElementById(
     "d4"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
   document.getElementById(
     "d5"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
 
   for (var x = 0; x < heldDice.length; x++) {
     heldDice[x] = false;
@@ -274,7 +274,7 @@ function submitValueBottom(element) {
 
   document.getElementById("rollerbutton").disabled = false;
   document.getElementById("rollerbutton").style.color = "yellow";
-  document.getElementById("dice").style = "width:40%;height:40%";
+  document.getElementById("dice").style = "width:70%;height:70%";
   document.getElementById("rolled").style = "width:50%;height:50%;display:none";
 
   document.getElementById("fb2").style.color = "white";
@@ -402,12 +402,14 @@ function updateRollOnClick() {
 
   if (rollText == "➀ ➁ ➂") {
     document.getElementById("fb1").innerText = "➊ ➁ ➂";
+    document.getElementById("rolled").src="assets/roll.jpg"
     document.getElementById("fb2").style.color = "white";
     rollText = "";
   }
 
   if (rollText === "➊ ➁ ➂") {
     document.getElementById("fb1").innerHTML = "➊ ❷ ➂";
+    document.getElementById("rolled").src="assets/roll.jpg"
     console.log(rollText);
     rollText = "";
   }
@@ -419,6 +421,8 @@ function updateRollOnClick() {
 
     document.getElementById("fb2").style.color = "black";
     document.getElementById("fb2").disabled = "false";
+    document.getElementById("rolled").src="assets/roll.jpg"
+
     document.getElementById("fb2").innerText = "Enter Score to End Turn";
   }
 }
@@ -736,7 +740,7 @@ function rollTheDice() {
     var snd = new Audio("assets/dice-roll.mp3");
     snd.play();
   }
-  document.getElementById("dice").style = "width:40%;height:40%;display:none;";
+  document.getElementById("dice").style = "width:70%;height:70%;display:none;";
   document.getElementById("rolled").style = "width:50%;height:50%;";
   if (document.getElementById("rollerbutton").innerText !== "Roll") {
     result = prompt(
