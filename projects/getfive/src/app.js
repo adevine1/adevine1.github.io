@@ -281,7 +281,7 @@ function submitValueBottom(element) {
 
   document.getElementById(
     "d1"
-  ).innerHTML = `<img src="assets/Dice-0.svg" width=63 height=63>`;
+  ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
   document.getElementById(
     "d2"
   ).innerHTML = `<img src="assets/Dice-0.png" width=63 height=63>`;
