@@ -1,5 +1,7 @@
 $(document).ready(function() {
   //jquery code to handle some display options
+
+
   console.log("document ready");
   $(".instructions").hide(0);
   $("#highscores").hide(0);
@@ -74,6 +76,7 @@ const heldDice = [false, false, false, false, false];
 //idea is to have currentDiceRoll always reflect current state of dice. If the length of the currentDiceRoll index equals 3, this indicates don't reroll. These values can also be swapped around for the clickbutton function.
 
 var gameover = false;
+
 
 function loadStuff() {
   //set initial value if none exists
