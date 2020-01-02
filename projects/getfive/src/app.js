@@ -109,14 +109,6 @@ function showHighScores() {
   }
 
  else docoument.getElementById("footsteps").innerText = "Your footsteps echo through a sparse Hall of Records, inspiring you to action."
-
-  //     $("#High Score List").append (highScoreString);
-  //   }
-
-  //   if (highScoreString === "SCORE HISTORY: \n")
-  //     highScoreString = "Your footsteps echo through an empty Hall of Records, inspiring you to action.";
-
-  //   alert (highScoreString);
 }
 
 function clearScoreHistory() {

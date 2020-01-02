@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<!-- head contains information about the DOM (document object model) -->
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Literata&display=swap" rel="stylesheet">
+  <title>Petals Around the Rose</title>
+  <style type="text/css">
+
+    .container {
+      width: 750px;
+      margin: 0 auto;
+      border: solid 1px gray;
+      text-align: center;
+      box-shadow: 0 6px 6px #ccc;
+    }
+
+    .roll:hover:enabled {
+      background-color: #2E76CF
+      }
+
+    .roll {
+      background-color: #173b67;
+      border: 3px;
+      border-color: lightsteelblue;
+      color: yellow;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      width: 200px;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    .enter {
+      width: 300px;
+      font-size: 10px;
+
+    }
+
+    .submit {
+
+    }
+
+    #rules {
+      margin: 30px;
+    }
+
+  </style>
+   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="app.js"></script>
+</head>
+
+
+<!-- body contains actual content -->
+
+<body style = "font-family: 'Literata', serif;">
+
+<div class="container">
+  <p class="title">Petals Around the Rose</p>
+  <br>
+  <div class="diceRoll">
+    <img id="d1" src="assets/Dice-1.png" width=63 height=63>
+    <img id="d2" src="assets/Dice-2.png" width=63 height=63>
+    <img id="d3" src="assets/Dice-3.png" width=63 height=63>
+    <img id="d4" src="assets/Dice-4.png" width=63 height=63>
+    <img id="d5" src="assets/Dice-5.png" width=63 height=63>
+    <img id="d6" src="assets/Dice-6.png" width=63 height=63>
+  </div>
+  <br><br>
+  <button id="rollbutton">Roll Dice</button>
+  <br><br>
+  <input id="entertext" type="text">
+  <button id="submitguess">enter guess</button>
+  <br><br><br><br>
+  <p id="resulttext">...</p>
+  <br><br><br><br>
+  <button id="rulesbutton">rules</button>
+  <br><br>
+
+  <p id="rules">
+  The rules of Petals Around the Rose are simple: guess the result of six dice that are rolled. The trick is that there is a specific way of calculating the total. To win the game, figure out how it is done. The only clue is the name of the game.
+  </p>
+
+  <p id="history">
+
+  </p>
+</div>
+
+</body>
+
+
+</html>
