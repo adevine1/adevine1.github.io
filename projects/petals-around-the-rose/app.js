@@ -30,14 +30,17 @@ $(document).ready(function() {
 
   $("#submitguess").click (function () {
     var str = $("#entertext").val();
+    if (str == "")
+      str = 0;
     if (str == t) {
       console.log ("correct");
       $("#resulttext").text ("Correct! The total is " + t + ".");
-      $("#scorehistory").append (`${diceArray [0]}, ${diceArray [1]}, ${diceArray [2]}, ${diceArray [3]}, ${diceArray [4]}, ${diceArray [5]} | guess: 6 | correct answer: 6 <br>`);
+      $("#scorehistory").append (`${diceArray [0]}, ${diceArray [1]}, ${diceArray [2]}, ${diceArray [3]}, ${diceArray [4]}, ${diceArray [5]} | guess: ${t} | correct answer: ${t} <br>`);
     }
     else {
       console.log ("incorrect");
       $("#resulttext").text ("Incorrect. The total is " + t + ".");
+      $("#scorehistory").append (`${diceArray [0]}, ${diceArray [1]}, ${diceArray [2]}, ${diceArray [3]}, ${diceArray [4]}, ${diceArray [5]} | guess: ${str} | correct answer: ${t} <br>`);
     }
 
 
