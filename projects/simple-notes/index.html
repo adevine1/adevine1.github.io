@@ -8,9 +8,6 @@
 
     function initialize () {
       let myText = document.getElementById ('input');
-      if (localStorage.getItem("adsfadfs") === null) {
-        myText.value= `Hello!`
-      }
       myText.focus();
       if ("text885793" in localStorage) {
         let loadText = localStorage.getItem("text885793");
@@ -18,7 +15,7 @@
       } else {
         localStorage.setItem("text885793",`Hello!
 
-This is a simple text editor for when loading up a text editor seems one step too many. No frills, no thrills. No formatting, no undo.
+This is a simple text editor for when loading something else seems one step too many. No frills, no thrills. No formatting, although you can undo one action with a right-click of the mouse.
 
 "Clear notes" clears any current text on the screen, although you can revert at any time to saved data (if you have any).
 
@@ -35,7 +32,7 @@ Enjoy!`)
     }
 
     function deleteAllNotes () {
-      let check = confirm("Clear Screen? (This will not overwrite saved notes, unless you save again.)");
+      let check = confirm("Clear Screen? (This will not overwrite saved data, unless you save again.)");
       if (check == true) {
       document.getElementById("input").value="";
       }
