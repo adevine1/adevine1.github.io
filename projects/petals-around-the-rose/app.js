@@ -42,11 +42,6 @@ $(document).ready(function() {
       $("#resulttext").text ("Incorrect. The total is " + t + ".");
       $("#scorehistory").append (`${diceArray [0]}, ${diceArray [1]}, ${diceArray [2]}, ${diceArray [3]}, ${diceArray [4]}, ${diceArray [5]} | guess: ${str} | correct answer: ${t} <br>`);
     }
-
-
-
-
-    // $("#history").append ("Roll: " + diceArray [0] + " " +    diceArray [1] + " "  + diceArray [2] + " "  +diceArray [3] + " "  + diceArray [4] + " " + diceArray [5] + "\n\n");
   })
 
   $("#rulesbutton").click (function () {
