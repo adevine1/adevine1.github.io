@@ -6,29 +6,16 @@
 <!-- scripts being -->
   <script type = "text/javascript">
 
+    document.getElementById("input").addEventListener ("change", saveData);
+
+
     function initialize () {
       let myText = document.getElementById ('input');
       myText.focus();
       if ("text885793" in localStorage) {
         let loadText = localStorage.getItem("text885793");
         myText.value=loadText;
-      } else {
-        localStorage.setItem("text885793",`Hello!
-
-This is a simple text editor for when loading something else seems one step too many. No frills, no thrills. No formatting, although you can undo one action with a right-click of the mouse.
-
-"Clear notes" clears any current text on the screen, although you can revert at any time to saved data (if you have any).
-
-"Save data" keeps just one text saved in local storage. The file is overwritten every time it's saved. No going back.
-
-"Load saved data" reverts to any previous saved data.
-
-Enjoy!`)
-
       }
-
-      // let loadText = localStorage.getItem("text885793");
-      // myText.value=loadText;
     }
 
     function deleteAllNotes () {
@@ -54,26 +41,44 @@ Enjoy!`)
       alert("Data Saved. Unless you save again, you can revert to it by loading saved data.");
     }
 
+    function help () {
+      alert (`Hello!
+
+This is a simple text editor for when loading something else seems one step too many. No frills, no thrills. No formatting, although you can undo one action with a right-click of the mouse.
+
+"Clear notes" clears any current text on the screen, although you can revert at any time to saved data (if you have any).
+
+"Save data" keeps just one text saved in local storage. The file is overwritten every time it's saved. No going back.
+
+"Load saved data" reverts to any previous saved data.
+
+Enjoy!`);
+    }
+
+
   </script>
 <!-- scripts ends -->
 
 <!-- styles begin -->
   <style>
-    .input:focus {
-
-      border-color: silver;
+    #mainContainer {
+      width: 600px;
+      margin: 15px;
+      border: solid 0px gray;
+      text-align: center;
+      box-shadow: 0 3px 3px #ccc;
     }
   </style>
 <!-- styles end -->
 
 </head>
 
-<body onload="initialize ()" style="background-color: lightyellow;">
+<body id="mainContainerr" onload="initialize ()" style="background-color: lightyellow;">
 
-<button onclick="deleteAllNotes();">clear screen</button><button onclick="saveData();">save data</button><button onclick="loadSavedData ()";>load saved data</button><br><hr>
+<button onclick="help ();">help</button><button onclick="deleteAllNotes();">clear screen</button><button onclick="saveData();">save data</button><button onclick="loadSavedData ();">load saved data</button><br><br>
 
-<textarea id="input" rows="30" cols="35" style="border: none; font-size: 16px; width: 400px; height: 400px; outline: none" spellcheck="false">
-</textarea>
+<textarea id="input" cols="50" rows="30" style="background-color:#FCF5D8; color:#AD8C08;border:2px solid #AD8C08;" spellcheck="false"></textarea>
+
 
 </body>
 
