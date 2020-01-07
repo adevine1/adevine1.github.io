@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Notes</title>
+
+
+
+
+<!-- scripts being -->
+  <script type = "text/javascript">
+
+    function initialize () {
+      let myText = document.getElementById ('input');
+      myText.focus();
+      myText.value="Aaron";
+    }
+
+    function deleteAllNotes () {
+      let check = confirm("Delete all notes?");
+      if (check == true) {
+      document.getElementById("input").value="";
+      }
+    }
+
+    function showData() {
+      alert(document.getElementById("input").value);
+      console.log (data.value);
+    }
+
+    function saveData() {
+      var textToSave =document.getElementById("input").value;
+      localStorage.setItem("text", textToSave); // save the item
+    }
+
+  </script>
+<!-- scripts ends -->
+
+<!-- styles begin -->
+  <style>
+    .input:focus {
+      outline:none;
+    }
+  </style>
+<!-- styles end -->
+
+</head>
+
+<body onload="initialize ()" style="background-color: lightyellow;">
+
+<button>font +</button><button>font -</button><button onclick="deleteAllNotes();">delete notes</button><button onclick="showData();">get data</button><button onclick="saveData();">save data</button><br><hr>
+
+<textarea id="input" rows="30" cols="35" style="border: none; font-size: 16px; width: 200px; height: 200px; outline: none" spellcheck="false">
+</textarea>
+
+</body>
+
+</html>
