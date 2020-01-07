@@ -8,13 +8,34 @@
 
     function initialize () {
       let myText = document.getElementById ('input');
+      if (localStorage.getItem("adsfadfs") === null) {
+        myText.value= `Hello!`
+      }
       myText.focus();
-      let loadText = localStorage.getItem("text885793");
-      myText.value=loadText;
+      if ("text885793" in localStorage) {
+        let loadText = localStorage.getItem("text885793");
+        myText.value=loadText;
+      } else {
+        localStorage.setItem("text885793",`Hello!
+
+This is a simple text editor for when loading up a text editor seems one step too many. No frills, no thrills. No formatting, no undo.
+
+"Clear notes" clears any current text on the screen, although you can revert at any time to saved data (if you have any).
+
+"Save data" keeps just one text saved in local storage. The file is overwritten every time it's saved. No going back.
+
+"Load saved data" reverts to any previous saved data.
+
+Enjoy!`)
+
+      }
+
+      // let loadText = localStorage.getItem("text885793");
+      // myText.value=loadText;
     }
 
     function deleteAllNotes () {
-      let check = confirm("Delete All Notes?");
+      let check = confirm("Clear Screen? (This will not overwrite saved notes, unless you save again.)");
       if (check == true) {
       document.getElementById("input").value="";
       }
@@ -22,7 +43,7 @@
 
     function loadSavedData () {
       let myText = document.getElementById ('input');
-      let check = confirm ("Revert to Saved Data?");
+      let check = confirm ("Revert to Saved Data? Saved data may be different than recent changes made to screen.");
       if (check == true) {
         let loadText = localStorage.getItem("text885793");
         myText.value=loadText;
@@ -33,6 +54,7 @@
     function saveData() {
       var textToSave =document.getElementById("input").value;
       localStorage.setItem("text885793", textToSave); // save the item
+      alert("Data Saved. Unless you save again, you can revert to it by loading saved data.");
     }
 
   </script>
@@ -41,7 +63,8 @@
 <!-- styles begin -->
   <style>
     .input:focus {
-      outline:none;
+
+      border-color: silver;
     }
   </style>
 <!-- styles end -->
@@ -50,7 +73,7 @@
 
 <body onload="initialize ()" style="background-color: lightyellow;">
 
-<button onclick="deleteAllNotes();">clear notes</button><button onclick="saveData();">save data</button><button onclick="loadSavedData ()";>load saved data</button><br><hr>
+<button onclick="deleteAllNotes();">clear screen</button><button onclick="saveData();">save data</button><button onclick="loadSavedData ()";>load saved data</button><br><hr>
 
 <textarea id="input" rows="30" cols="35" style="border: none; font-size: 16px; width: 400px; height: 400px; outline: none" spellcheck="false">
 </textarea>
