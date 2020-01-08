@@ -38,13 +38,13 @@ $(document).ready(function() {
       str = 0;
     if (str == t) {
       console.log ("correct");
-      $("#resulttext").text ("Correct! The total is " + t + ". Give it another try.");
+      $("#resulttext").text ("Correct! The total is " + t + ".");
       run ++;
       $("#runnumber").text ("Run: " + run)
     }
     else {
       console.log ("incorrect");
-      $("#resulttext").text ("Sorry, the total is " + t + ". Roll to try again. :)");
+      $("#resulttext").text ("Sorry, the total is " + t + ".");
       run = 0;
       $("#runnumber").text ("Run: " + run)
     }
