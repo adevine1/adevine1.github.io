@@ -6,10 +6,10 @@
 <!-- scripts being -->
   <script type = "text/javascript">
 
-    document.getElementById("input").addEventListener ("change", saveData);
 
 
     function initialize () {
+      document.getElementById("input").addEventListener ("keydown", saveData);
       let myText = document.getElementById ('input');
       myText.focus();
       if ("text885793" in localStorage) {
@@ -19,10 +19,12 @@
     }
 
     function deleteAllNotes () {
-      let check = confirm("Clear Screen? (This will not overwrite saved data, unless you save again.)");
+      let myTextArea = document.getElementById("input");
+      let check = confirm("Clear Screen? (This will over-write saved data.)");
       if (check == true) {
-      document.getElementById("input").value="";
+      myTextArea.value="";
       }
+      myTextArea.focus ();
     }
 
     function loadSavedData () {
@@ -32,27 +34,23 @@
         let loadText = localStorage.getItem("text885793");
         myText.value=loadText;
       }
-
     }
 
     function saveData() {
       var textToSave =document.getElementById("input").value;
       localStorage.setItem("text885793", textToSave); // save the item
-      alert("Data Saved. Unless you save again, you can revert to it by loading saved data.");
     }
 
     function help () {
+      let myTextArea = document.getElementById("input");
       alert (`Hello!
 
-This is a simple text editor for when loading something else seems one step too many. No frills, no thrills. No formatting, although you can undo one action with a right-click of the mouse.
+This is a simple text editor for a quit jotting of notes when loading something is one step too many. No frills, no thrills, no formatting. It automatically saves as you type (in one local file), so no going back. Although you can undo one change via a right mouse click --> undo.
 
-"Clear notes" clears any current text on the screen, although you can revert at any time to saved data (if you have any).
-
-"Save data" keeps just one text saved in local storage. The file is overwritten every time it's saved. No going back.
-
-"Load saved data" reverts to any previous saved data.
+Hint: I keep it as the left-most bookmark on your bookmark bar, and it's really easy access for a quick note.
 
 Enjoy!`);
+      myTetArea.focus();
     }
 
 
@@ -62,9 +60,9 @@ Enjoy!`);
 <!-- styles begin -->
   <style>
     #mainContainer {
-      width:1000px;
-      margin: 0 auto;
-      text-align: center;
+       width:95%;
+       margin: 0 auto;
+       text-align: center;
     }
 
     button {
@@ -72,23 +70,34 @@ Enjoy!`);
       border-radius: 4px;
       border: none;
       color: white;
-      padding: 12px 29px;
+      padding: 8px 24px;
       margin: 2px;
       text-align: center;
       display: inline-block;
       font-size: 10px;
+    }
+
+    #input {
+      width: 90%;
+      resize: vertical;
+      background-color:lightgrey;
+      color:black;
+      border:2px solid gray;
+      font-size:14px;
     }
   </style>
 <!-- styles end -->
 
 </head>
 
-<body id="mainContainer" onload="initialize ()" style="background-color: lightsteelblue;">
-<br>
-<button onclick="help ();">help</button><button onclick="deleteAllNotes();">clear screen</button><button onclick="saveData();">save data</button><button onclick="loadSavedData ();">load saved data</button><br><br>
+<body onload="initialize ()" style="background-color: lightsteelblue;">
 
-<textarea id="input" cols="100" rows="30" style="background-color:lightgrey; color:#black;border:2px solid gray; font-size:14px" spellcheck="false"></textarea>
+<div id="mainContainer">
 
+<button onclick="help ();">help</button><button onclick="deleteAllNotes();">clear</button><br>
+
+<textarea id="input" cols="150" rows="30" spellcheck="false"></textarea>
+</div>
 
 </body>
 
