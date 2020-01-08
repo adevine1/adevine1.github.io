@@ -32,13 +32,12 @@
       color: white;
       padding: 12px 29px;
       text-align: center;
-      text-decoration: none;
       display: inline-block;
       font-size: 14px;
     }
 
     #rollbutton:hover {
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      cursor: pointer;
       }
 
     #submitguess {
@@ -52,7 +51,13 @@
       display: inline-block;
       font-size: 10px;
     }
+    #submitguess:disabled{
+      background-color: gray;
+    }
 
+    #submitguess:hover {
+      cursor: pointer;
+      }
   </style>
 
    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -79,26 +84,26 @@
   <button id="rollbutton">Roll Dice</button>
   <br><br><br>
   <input id="entertext" type="text" style="font-size: 16px"><br>
-  <button id="submitguess">enter guess</button>
-  <br><br><br><br>
-  <p id="resulttext">...</p>
-  <br><br><br><br>
+  <button id="submitguess" disabled>enter guess</button>
 
-  <button id="rulesbutton">rules</button>
   <br><br>
 
 
 
+  <p id="resulttext">...</p>
+  <br>
+  <p id="runnumber">Run: 0</p>
+  <br>
+
+  <button id="rulesbutton">rules</button>
+  <br><br>
 
   <p id="rules">
   The rules of Petals Around the Rose are simple: guess the result of six dice that are rolled. The trick is that there is a specific way of calculating the total. To win the game, figure out how it is done. The only clue is the name of the game.
   </p>
 
-
-
 </div>
 
 </body>
-
 
 </html>

@@ -1,8 +1,11 @@
 $(document).ready(function() {
+
   console.log("document ready");
   $("#rules").hide(0);
+  $("#submitguess").disabled;
   let diceArray =[];
   let t = 6;
+  let run = 0;
 
   $("#rollbutton").click(function() {
     diceArray = [];
@@ -24,19 +27,26 @@ $(document).ready(function() {
     }
     console.log (diceArray);
     console.log (t);
+
+    $("#submitguess").removeAttr ("disabled");
    });
 
   $("#submitguess").click (function () {
+    $("#submitguess").attr ("disabled", true);
     var str = $("#entertext").val();
     if (str == "")
       str = 0;
     if (str == t) {
       console.log ("correct");
-      $("#resulttext").text ("Correct! The total is " + t + ".");
+      $("#resulttext").text ("Correct! The total is " + t + ". Give it another try.");
+      run ++;
+      $("#runnumber").text ("Run: " + run)
     }
     else {
       console.log ("incorrect");
-      $("#resulttext").text ("Incorrect. The total is " + t + ".");
+      $("#resulttext").text ("Sorry, the total is " + t + ". Roll to try again. :)");
+      run = 0;
+      $("#runnumber").text ("Run: " + run)
     }
   })
 
