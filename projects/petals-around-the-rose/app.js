@@ -40,13 +40,13 @@ $(document).ready(function() {
       console.log ("correct");
       $("#resulttext").text ("Correct! The total is " + t + ".");
       run ++;
-      $("#runnumber").text ("Run: " + run)
+      $("#runnumber").text ("run: " + run + " correct")
     }
     else {
       console.log ("incorrect");
       $("#resulttext").text ("Sorry, the total is " + t + ".");
       run = 0;
-      $("#runnumber").text ("Run: " + run)
+      $("#runnumber").text ("run: " + run +" correct")
     }
   })
 
