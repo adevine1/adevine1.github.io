@@ -9,7 +9,7 @@
 
 
     function initialize () {
-      document.getElementById("input").addEventListener ("keydown", saveData);
+      document.getElementById("input").addEventListener ("keyup", saveData);
       let myText = document.getElementById ('input');
       myText.focus();
       if ("text885793" in localStorage) {
@@ -50,7 +50,7 @@ This is a simple text editor for a quick jotting of notes when loading something
 Hint: I keep it as the left-most bookmark on your bookmark bar, as it's really easy access for a quick note.
 
 Enjoy!`);
-      myTetArea.focus();
+      myTextArea.focus();
     }
 
 
@@ -60,9 +60,9 @@ Enjoy!`);
 <!-- styles begin -->
   <style>
     #mainContainer {
-       width:95%;
+       width: 50%;
        margin: 0 auto;
-       text-align: center;
+       text-align: left;
     }
 
     button {
@@ -78,7 +78,7 @@ Enjoy!`);
     }
 
     #input {
-      width: 95%;
+      width: 100%;
       resize: vertical;
       background-color:lightgrey;
       color:black;
