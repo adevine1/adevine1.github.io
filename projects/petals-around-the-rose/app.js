@@ -32,21 +32,22 @@ $(document).ready(function() {
    });
 
   $("#submitguess").click (function () {
-    $("#submitguess").attr ("disabled", true);
+
     var str = $("#entertext").val();
-    if (str == "")
-      str = 0;
-    if (str == t) {
-      console.log ("correct");
-      $("#resulttext").text ("Correct! The total is " + t + ".");
-      run ++;
-      $("#runnumber").text ("run: " + run + " correct")
-    }
-    else {
-      console.log ("incorrect");
-      $("#resulttext").text ("Sorry, the total is " + t + ".");
-      run = 0;
-      $("#runnumber").text ("run: " + run +" correct")
+    if (str != ""){
+      $("#submitguess").attr ("disabled", true);
+      if (str == t) {
+        console.log ("correct");
+        $("#resulttext").text ("Correct! The total is " + t + ".");
+        run ++;
+        $("#runnumber").text ("run: " + run + " correct")
+      }
+      else {
+        console.log ("incorrect");
+        $("#resulttext").text ("Sorry, the total is " + t + ".");
+        run = 0;
+        $("#runnumber").text ("run: " + run +" correct")
+      }
     }
   })
 

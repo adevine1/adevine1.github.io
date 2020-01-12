@@ -18,14 +18,14 @@
       }
     }
 
-    function deleteAllNotes () {
-      let myTextArea = document.getElementById("input");
-      let check = confirm("Clear Screen? (This will over-write saved data.)");
-      if (check == true) {
-      myTextArea.value="";
-      }
-      myTextArea.focus ();
-    }
+    // function deleteAllNotes () {
+    //   let myTextArea = document.getElementById("input");
+    //   let check = confirm("Clear Screen? (This will over-write saved data.)");
+    //   if (check == true) {
+    //   myTextArea.value="";
+    //   }
+    //   myTextArea.focus ();
+    // }
 
     function loadSavedData () {
       let myText = document.getElementById ('input');
@@ -62,7 +62,7 @@ Enjoy!`);
     #mainContainer {
        width: 50%;
        margin: 0 auto;
-       text-align: center;
+       text-align: left;
     }
 
     button {
@@ -70,7 +70,7 @@ Enjoy!`);
       border-radius: 4px;
       border: none;
       color: white;
-      padding: 8px 24px;
+      padding: 5px 5px;
       margin: 2px;
       text-align: center;
       display: inline-block;
@@ -94,7 +94,7 @@ Enjoy!`);
 
 <div id="mainContainer">
 
-<button onclick="help ();">help</button><button onclick="deleteAllNotes();">clear</button><br>
+<button onclick="help ();">?</button>
 
 <textarea id="input" cols="150" rows="30" spellcheck="false"></textarea>
 </div>
