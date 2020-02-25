@@ -11,7 +11,7 @@ $(document).ready(function() {
     diceArray = [];
     t=0;
     $("#entertext").val("");
-    $("#resulttext").text("...")
+    $("#resulttext").text("enter guess or roll for new dice")
 
     for (let x=1; x<7; x++) {
       let randNum = (Math.floor(Math.random ()*6) + 1);
@@ -38,17 +38,17 @@ $(document).ready(function() {
       $("#submitguess").attr ("disabled", true);
       if (str == t) {
         console.log ("correct");
-        $("#resulttext").text ("Correct! The total is " + t + ".");
+        $("#resulttext").text ("Correct! The total is " + t + ". Roll again to guess a new value.");
         run ++;
         $("#runnumber").text ("run: " + run + " correct")
       }
       else {
         console.log ("incorrect");
-        $("#resulttext").text ("Sorry, the total is " + t + ".");
+        $("#resulttext").text ("Sorry, the total is " + t + ". Roll to try again.");
         run = 0;
         $("#runnumber").text ("run: " + run +" correct")
       }
-    } else alert ("Please enter a value!");
+    } else alert ("Please enter a value...");
   })
 
   $("#rulesbutton").click (function () {
