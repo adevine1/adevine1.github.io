@@ -48,7 +48,7 @@ $(document).ready(function() {
         run = 0;
         $("#runnumber").text ("run: " + run +" correct")
       }
-    }
+    } else alert ("Please enter a value!");
   })
 
   $("#rulesbutton").click (function () {
