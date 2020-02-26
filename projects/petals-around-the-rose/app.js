@@ -11,7 +11,7 @@ $(document).ready(function() {
     diceArray = [];
     t=0;
     $("#entertext").val("");
-    $("#resulttext").text("enter guess or roll for new dice")
+    $("#resulttext").text("enter guess, or roll for new dice")
 
     for (let x=1; x<7; x++) {
       let randNum = (Math.floor(Math.random ()*6) + 1);
