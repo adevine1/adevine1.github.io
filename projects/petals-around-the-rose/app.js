@@ -34,7 +34,7 @@ $(document).ready(function() {
   $("#submitguess").click (function () {
 
     var str = $("#entertext").val();
-    if (str != ""){
+    if (!isNaN(str)){
       $("#submitguess").attr ("disabled", true);
       if (str == t) {
         console.log ("correct");
@@ -48,7 +48,7 @@ $(document).ready(function() {
         run = 0;
         $("#runnumber").text ("run: " + run +" correct")
       }
-    } else alert ("Please enter a value...");
+    } else alert ("Please enter a numberical value...");
   })
 
   $("#rulesbutton").click (function () {
