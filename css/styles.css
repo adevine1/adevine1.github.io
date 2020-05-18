@@ -1,9 +1,28 @@
-#whoami {
+.whoami {
   text-align: center;
   background-color: black;
   color: white;
   padding: 5px;
 }
+.container1 {
+  width:75%;
+  margin: 0 auto;
+  padding: 15px;
+  border: solid 1px gray;
+  text-align: center;
+  box-shadow: 0 3px 3px #ccc;
+  background-color: lightsteelblue;
+}
+
+.container2 {
+  width: 75%;
+  margin: 0 auto;
+  padding: 15px;
+  border: solid 1px gray;
+  text-align: left;
+  box-shadow: 0 6px 6px #ccc;
+}
+
 
 #container {
   margin-left: 15px;

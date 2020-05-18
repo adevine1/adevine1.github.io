@@ -34,7 +34,7 @@ $(document).ready(function() {
   $("#submitguess").click (function () {
 
     var str = $("#entertext").val();
-    if (!isNaN(str)){
+    if (!isNaN(str)) {
       $("#submitguess").attr ("disabled", true);
       if (str == t) {
         console.log ("correct");
