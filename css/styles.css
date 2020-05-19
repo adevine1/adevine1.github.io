@@ -12,6 +12,7 @@
   text-align: center;
   box-shadow: 0 3px 3px #ccc;
   background-color: lightsteelblue;
+  //border-radius: 2%;
 }
 
 .container2 {
@@ -21,5 +22,6 @@
   border: solid 1px gray;
   text-align: left;
   box-shadow: 0 6px 6px #ccc;
+  border-radius: 2%
 }
 
