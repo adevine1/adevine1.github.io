@@ -24,12 +24,14 @@ function saveData() {
 
 function help () {
   let myTextArea = document.getElementById("input");
-  alert (`Hello!
+  alert (`This is a simple, few thrills text editor for a quick jotting of notes when loading something bulkier is one step too many. It automatically saves as you type (in one local file).
 
-This is a simple text editor for a quick jotting of notes when loading something bulkier is one step too many. No frills, no thrills, no formatting. It automatically saves as you type (in one local file). Right-clicking gives some basic formatting and editing options.
-
-I keep it as the left-most bookmark on your bookmark bar, as it's really easy access for a quick note.
+I keep it as the left-most bookmark on my bookmark bar as easy access for a quick note.
 
 Enjoy!`);
   myTextArea.focus();
 };
+
+function about () {
+  alert ('Simple Notes\nAaron Devine (c) 2020');
+}
