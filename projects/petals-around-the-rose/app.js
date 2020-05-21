@@ -29,6 +29,9 @@ $(document).ready(function() {
     console.log (t);
 
     $("#submitguess").removeAttr ("disabled");
+
+    var snd = new Audio("assets/dice-roll.mp3");
+    snd.play();
    });
 
   $("#submitguess").click (function () {
