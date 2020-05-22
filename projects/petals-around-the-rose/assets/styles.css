@@ -1,0 +1,53 @@
+html {
+      zoom: .9;
+    }
+    .maincontainer {
+      width: 750px;
+      margin: 0 auto;
+      border: solid 1px gray;
+      text-align: center;
+      box-shadow: 0 6px 6px #ccc;
+    }
+
+    .enter {
+      width: 300px;
+      font-size: 10px;
+    }
+
+    #rules {
+      margin: 30px;
+    }
+
+    #rollbutton {
+      background-color: black;
+      border-radius: 4px;
+      border: none;
+      color: white;
+      padding: 12px 29px;
+      text-align: center;
+      display: inline-block;
+      font-size: 14px;
+    }
+
+    #rollbutton:hover {
+      cursor: pointer;
+      }
+
+    #submitguess {
+      background-color: black;
+      border-radius: 4px;
+      border: 2px;
+      color: white;
+      padding: 8px 8px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 11px;
+    }
+    #submitguess:disabled{
+      background-color: gray;
+    }
+
+    #submitguess:hover {
+      cursor: pointer;
+      }
