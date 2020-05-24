@@ -24,7 +24,7 @@ function saveData() {
 
 function help () {
   let myTextArea = document.getElementById("input");
-  alert (`This is a simple, few thrills text editor for a quick jotting of notes when loading something bulkier is one step too many. It automatically saves as you type (in one local file).
+  alert (`This is a simple text editor for quickly jotting notes when loading something bulkier is one step too many. It automatically saves as you type (in one local file).
 
 I keep it as the left-most bookmark on my bookmark bar as easy access for a quick note.
 
