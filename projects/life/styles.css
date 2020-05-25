@@ -1,5 +1,13 @@
-div {
+table {
+  background-color: black;
+  width: 1000px;
+  border: 1px solid slategray;
+}
+
+
+td {
   width: 100px;
   height: 100px;
-  background-color: blue;
+  background-color: slategray;
+  border: 1px solid black;
 }
