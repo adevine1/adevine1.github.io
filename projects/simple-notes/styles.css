@@ -10,7 +10,6 @@ body {
 nav ul {
   background-color: #eee;
   overflow: hidden;
-  position: fixed;
   margin: 0;
   padding: 0;
 }
@@ -27,7 +26,7 @@ ul.top-nav li.right-justify {
 ul.top-nav li button {
   display: block;
   text-decoration: none;
-  min-height: 8px;
+  min-height: 16px;
   text-align: center;
   padding: 4px;
   text-transform: uppercase;
