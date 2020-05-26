@@ -30,6 +30,7 @@ html {
     }
 
     #rollbutton:hover {
+      background-color: #2E76CF;
       cursor: pointer;
       }
 
@@ -48,6 +49,7 @@ html {
       background-color: gray;
     }
 
-    #submitguess:hover {
+    #submitguess:hover:enabled {
+      background-color: #2E76CF;
       cursor: pointer;
       }

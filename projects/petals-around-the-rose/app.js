@@ -32,6 +32,7 @@ $(document).ready(function() {
 
     var snd = new Audio("assets/dice-roll.mp3");
     snd.play();
+
    });
 
   $("#submitguess").click (function () {
@@ -52,7 +53,10 @@ $(document).ready(function() {
         run = 0;
         $("#runnumber").text ("run: " + run +" correct")
       }
-    } else alert ("Please enter a numberical value...");
+    } else {
+      alert ("Please enter a numberical value...");
+      entertext.focus();
+    }
   })
 
   $("#rulesbutton").click (function () {
