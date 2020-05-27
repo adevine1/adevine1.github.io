@@ -33,5 +33,7 @@ Enjoy!`);
 };
 
 function about () {
-  alert ('Simple Notes\nAaron Devine (c) 2020');
+  let myTextArea = document.getElementById("input");
+  alert ('Simple Notes\nAaron Devine, 2020');
+  myTextArea.focus();
 }
