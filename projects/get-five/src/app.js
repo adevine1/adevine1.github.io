@@ -229,7 +229,7 @@ function submitValue(element) {
     heldDice[x] = false;
   }
 
-  if (document.getElementById("effects").innerText === "Sound Effects (on)") {
+  if  ((a !== "") && (document.getElementById("effects").innerText === "Sound Effects (on)")) {
     var snd = new Audio("assets/pencil-sound.wav");
     snd.play();
   }
@@ -294,7 +294,7 @@ function submitValueBottom(element) {
     heldDice[x] = false;
   }
 
-  if (document.getElementById("effects").innerText === "Sound Effects (on)") {
+  if ((a !== "") && (document.getElementById("effects").innerText === "Sound Effects (on)")) {
     var snd = new Audio("assets/pencil-sound.wav");
     snd.play();
   }
