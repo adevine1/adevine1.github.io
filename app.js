@@ -5,7 +5,7 @@ function initialize () {
       } else if (x==3) {
         document.getElementById("container1").style.backgroundColor='lightyellow';
       } else if (x=2) {
-        document.getElementById("container1").style.backgroundColor="lightblue";
+        document.getElementById("container1").style.backgroundColor="lightgray";
       } else
         document.getElementById("container1").style.backgroundColor="lightskyblue";
 }
