@@ -8,15 +8,6 @@ function initialize () {
   }
 }
 
-function loadSavedData () {
-  let myText = document.getElementById ('input');
-  let check = confirm ("Revert to Saved Data? Saved data may be different than recent changes made to screen.");
-  if (check == true) {
-    let loadText = localStorage.getItem("text885793");
-    myText.value=loadText;
-  }
-}
-
 function saveData() {
   var textToSave =document.getElementById("input").value;
   localStorage.setItem("text885793", textToSave); // save the item

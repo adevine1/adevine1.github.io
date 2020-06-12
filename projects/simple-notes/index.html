@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Notes</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
   <script type = "text/javascript" src="app.js"></script>
+
 </head>
-
-<body onload="initialize ()" style="background-color: white">
-
-  <nav>
-      <ul class="top-nav">
-
-        <li><button onclick="help ()">help</button></li>
-        <li class="right-justify" ><button><a class="buttonlink" target="_blank" href="https://adevine1.github.io/">adevine1.github.io</a></button></li>
-        <li class="right-justify"><button onclick = "about () ">about</button></li>
-        <!-- <li><button>+</button></li>
-        <li><button>-</button></li> -->
-      </ul>
+<body onload="initialize ()">
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-nav" href="#" onclick="help ()">help</a>
+    <a class="nav-link disabled" href="#">simple notes</a>
+    <a class="navbar-nav" href="#" onclick="about ()">about</a>
   </nav>
 
-  <div class="mainContainer">
-    <textarea id="input" cols="150" rows="240" spellcheck="false" outline="none"></textarea>
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <a class="navbar-nav" href="https://adevine1.github.io/">adevine1@github.io</a>
+  </nav>
+
+  <div class="form-group">
+    <textarea class="form-control" id="input" rows="500"></textarea>
   </div>
 
-  <footer>
-
-  </footer>
+  </div>
 
 </body>
-
 </html>
