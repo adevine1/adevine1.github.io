@@ -4,7 +4,10 @@ let bodyParser = require ("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-let port = 1972;
+let port = process.env.PORT
+if (port == null || port == ""){
+   port = 1972;
+}
 
 let mongodb=require("mongodb");
 let db
