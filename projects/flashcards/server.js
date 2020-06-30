@@ -69,6 +69,7 @@ app.get ('/', function (req, res) {
             <div id="collapse${item.word}" class="collapse" aria-labelledby="heading${item.word}" data-parent="#accordionExample">
               <div class="card-body">
                 ${item.meaning}
+                <h6>chapter: ${item.chapter}</h6>
               </div>
               <button type="button" class="btn btn-outline-success ml-3">correct</button>
               <button type="button" class="btn btn-outline-danger">incorrect</button>
