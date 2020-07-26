@@ -5,9 +5,6 @@
 // 3. All other live cells die in the next generation. Similarly, all other dead cells stay dead.
 
 
-
-
-
 function createGrid (dimensions) {
   var lifeGrid=[];
   for (var x = 0; x<dimensions; x++) {
@@ -20,9 +17,19 @@ function createGrid (dimensions) {
   return lifeGrid;
 }
 
-dimensions = 10;
+dimensions = 5;
 console.log(createGrid (dimensions));
 
+
+function toggle(element) {
+  e=element;
+  //e.style.backgroundColor = "red";
+  console.log (element);
+  if (e.style.backgroundColor === "white")
+    e.style.backgroundColor = "blue"
+  else e.style.backgroundColor = "white";
+    console.log (e.style.backgroundColor);
+}
 
 
 

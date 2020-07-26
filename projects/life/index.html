@@ -1,39 +1,91 @@
 <!DOCTYPE html>
+<html>
+  <!-- head contains information about the DOM (document object model) -->
 <head>
-  <title>Conway's Game of Life</title>
-  <!--Rules:
-  1. Any live cell with two or three neighbors survives.
-  2. Any dead cell with three live neighbors becomes a live cell.
-  3. All other live cells die in the next generation. Similarly, all other dead cells stay dead.-->
-  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <title>My App Title</title>
+  <link rel = "stylesheet" type = "text/css" href= "styles.css">
   <script type = "text/javascript" src="app.js"></script>
 </head>
-<body onload="initialize ()">
-  <table>
-    <tr>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>11</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>14</td>
-      <td>15</td>
-    </tr>
-  </table>
+
+
+<!-- body contains actual content -->
+
+<body>
+	<h1>Conway's Game of Life<h1>
 </body>
+
+<div class = "maincontainer">
+  <div class="line">
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+  </div>
+  <div class="line">
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+  </div>
+  <div class="line">
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+  </div>
+  <div class="line">
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+  </div>
+  <div class="line">
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+    <div class="blue-block" onclick ="toggle(this)"></div>
+    <div class="white-block" onclick ="toggle(this)"></div>
+  </div>
+</html>
+
+
+</html>

@@ -1,13 +1,37 @@
-table {
-  background-color: black;
-  width: 1000px;
-  border: 1px solid slategray;
+.maincontainer {
+    width: 500px;
+    display: inline-block;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 1px;
 }
 
+h1 {
+  text-align: center;
+}
 
-td {
-  width: 100px;
-  height: 100px;
-  background-color: slategray;
-  border: 1px solid black;
+.line div {
+  display: inline-grid;
+}
+
+.white-block {
+  margin: 0;
+  height:20px;
+  width: 20px;
+  border-style: solid;
+  border-color:black;
+  border-width: 1px;
+  background-color: white;
+}
+
+.blue-block {
+  margin: 0;
+  height: 20px;
+  width: 20px;
+  border-style: solid;
+  border-color:black;
+  border-width: 1px;
+  background-color: dodgerblue;
 }
