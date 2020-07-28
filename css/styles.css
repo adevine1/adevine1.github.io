@@ -11,8 +11,8 @@ body {
 }
 
 /* Always have at bottom to override prior code */
-@media screen and (max-width: 1500px) {
+/* @media screen and (max-width: 1500px) {
   .container {
     margin: auto 10px;
   }
-}
+} */
