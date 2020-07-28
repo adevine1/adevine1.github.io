@@ -14,15 +14,22 @@ function createGrids (dimensions) {
           newArray.push(0)
         } else
           if (rand === 2) {
-          newArray.push(1);
+          newArray.push(0);
         } else {
           newArray.push(0);
         }
         newArrayCopy.push(0)
       }
+    newArray [3][1]=1;
+    newArray [3][2]=1;
+    newArray [3][3]=1;
+    newArray [2][3]=1;
+    newArray [1][2]=1;
     lifeGrid.push(newArray);
     copyLifeGrid.push(newArrayCopy);
+    console.log(newArray);
   }
+
 }
 
 function startLife (lifeGrid, copyLifeGrid, dimensions, generations) {
@@ -47,7 +54,6 @@ function startLife (lifeGrid, copyLifeGrid, dimensions, generations) {
       }
     }
   }
-  console.log (copyLifeGrid);
   append (copyLifeGrid);
   lifeGrid = copyLifeGrid;
  }
@@ -60,10 +66,11 @@ function append (currentGeneration) {
       rowString += (currentGeneration [x][y]);
     }
   console.log(rowString);
+  // var append = document.getElementById('playingfield');
+  // append.innerHTML = "test";
   rowString = '';
   }
 }
-
 
 
 dimensions = 10;
@@ -72,8 +79,9 @@ generations = 1;
 lifeGrid = [];
 copyLifeGrid = [];
 
-
-
+function initialize () {
+  e=document.getElementById('playingfield');
+}
 startLife (lifeGrid, copyLifeGrid, dimensions, generations);
 
 

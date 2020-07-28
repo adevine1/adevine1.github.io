@@ -4,18 +4,20 @@
 <head>
   <title>My App Title</title>
   <link rel = "stylesheet" type = "text/css" href= "styles.css">
-  <script type = "text/javascript" src="app.js"></script>
+  <script src="app.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
 </head>
-`
+
 <!-- body contains actual content -->
 
-<body>
+<body onload ="initialize()">
 	<h1>Conway's Game of Life<h1>
     <button onclick ="startLife()">start life</button>
-</body>
 
-<div id = "playingfield">
+
+<div id = "playingfield"></div>
+
+</body>
 
 </html>
 
