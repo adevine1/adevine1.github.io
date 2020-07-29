@@ -27,7 +27,7 @@ button {
 
 .paint-container {
     margin: auto;
-    width: 220px;
+    width: 250px;
     height: 22px;
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +36,7 @@ button {
 
 .container {
   margin: auto;
-  width: 440px;
+  width: 500px;
   height: 22px;
   display: flex;
   flex-wrap: wrap;
