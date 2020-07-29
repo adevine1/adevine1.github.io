@@ -27,9 +27,11 @@ $(document).ready(function() {
 
         let coordinatesString = this.id;
 
-        let dash = coordinatesString.indexOf("-");
-        let xcoord = coordinatesString.slice (0, dash)
-        let ycoord = coordinatesString.slice (dash+1, coordinatesString.length);
+        let comma = coordinatesString.indexOf(",");
+        let xcoord = coordinatesString.slice (0, comma);
+
+        let space = coordinatesString.indexOf(" ");
+        let ycoord = coordinatesString.slice (space, coordinatesString.length);
 
         console.log(`This square is at row ${xcoord}, column ${ycoord}`);
     })
@@ -55,11 +57,7 @@ $(document).ready(function() {
     $("#start").click(function () {
         for (var x = 1; x <21; x++) {
             for (var y = 1; y<21; y++){
-                console.log(`${x}-${y}`);
-                var getColor = document.getElementById(`${x}-${y}`);
-                if (getColor.style.backgroundColor==="dodgerblue")
-                    $(`#${x}-${y}`).css("backgroundColor", "white")
-                else $(`#${x}-${y}`).css("backgroundColor", "dodgerblue");
+                $("#blocky[style*='dodger']").style.backgroundColor( "white" );
 
             }
         }
