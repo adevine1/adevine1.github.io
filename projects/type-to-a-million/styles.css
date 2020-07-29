@@ -1,0 +1,30 @@
+body {
+    font-family: "Roboto Mono";
+    display: block
+}
+
+h1 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+
+#main {
+  margin: auto;
+  width: 1002px;
+  height: 1002px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#myCanvas {
+    align-self: center;
+}
+
+
+
+

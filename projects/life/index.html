@@ -1,25 +1,474 @@
-<!DOCTYPE html>
-<html>
-  <!-- head contains information about the DOM (document object model) -->
+<!doctype html>
+<html lang="en">
 <head>
-  <title>My App Title</title>
-  <link rel = "stylesheet" type = "text/css" href= "styles.css">
-  <script src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="app.js"></script>
 </head>
 
-<!-- body contains actual content -->
+  <body>
+    <div id="main">
+      <h1>Conway's Game of Life</h1>
+    </div>
 
-<body onload ="initialize()">
-	<h1>Conway's Game of Life<h1>
-    <button onclick ="startLife()">start life</button>
 
 
-<div id = "playingfield"></div>
+    <br>
+    <div class="paint-container">
+      <button id="start">start</button>
+      <button id="clear">reset</button>
+    </div>
+    <br>
+    <hr>
+    <br><br>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
+    <div class="container">
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+      <div class="blocky" id="1, 1" style="background-color:white;"></div>
+      <div class="blocky" id="1, 2" style="background-color:white;"></div>
+      <div class="blocky" id="1, 3" style="background-color:white;"></div>
+      <div class="blocky" id="1, 4" style="background-color:white;"></div>
+      <div class="blocky" id="1, 5" style="background-color:white;"></div>
+      <div class="blocky" id="1, 6" style="background-color:white;"></div>
+      <div class="blocky" id="1, 7" style="background-color:white;"></div>
+      <div class="blocky" id="1, 8" style="background-color:white;"></div>
+      <div class="blocky" id="1, 9" style="background-color:white;"></div>
+      <div class="blocky" id="1, 10" style="background-color:white;"></div>
+    </div>
 
-</body>
 
-</html>
+    <!-- <h1>preview</h1>
+    <div class="container">
+      <canvas id="myCanvas" width="10" height="10" style="border:1px solid #d3d3d3;"></canvas>
+    </div>   -->
 
+  </body>
 
 </html>

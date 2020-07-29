@@ -22,13 +22,12 @@ $(document).ready(function() {
     $(".blocky").click (function () {
         console.log (this);
         this.style.backgroundColor=currentColor;
-      
     })
 
     $(".blocky").mouseenter( function () {
 
         console.log (this);
-                
+
         if(mousestate===1) {
             this.style.backgroundColor=currentColor;
         }

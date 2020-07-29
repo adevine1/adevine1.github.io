@@ -1,42 +1,82 @@
 body {
-  font-family: "Roboto Mono";
-}
-
-.maincontainer {
-    width: 1000px;
-    display: inline-block;
-    border-color: black;
-    border-width: 2px;
-    border-radius: 5px;
-    padding: 1px;
+    font-family: "Roboto Mono";
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
+    font-size: 32px;
 }
 
-/*
-
-.line div {
-  display: inline-grid;
+h2 {
+    font-size: 12px;
 }
 
-.white-block {
-  margin: 0;
-  height:10px;
-  width: 10px;
-  border-style: solid;
-  border-color:black;
-  border-width: 1px;
-  background-color: white;
+#mycanvas {
+    margin: auto;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.blue-block {
-  margin: 0;
-  height:10px;
-  width: 10px;
-  border-style: solid;
-  border-color:black;
-  border-width: 1px;
-  background-color: dodgerblue;
-} */
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 15px 10px 15px;
+}
+
+
+.paint-container {
+    margin: auto;
+    width: 220px;
+    height: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.container {
+  margin: auto;
+  width: 440px;
+  height: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.blocky {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 15;
+}
+
+.blocky:hover {
+    cursor: pointer;
+}
+
+#clear:hover {
+    cursor: pointer;
+}
+
+.colorselect {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.colorselect:hover {
+    cursor: pointer;
+}
+
+#start:hover {
+    cursor: pointer;
+}
+
+.paintbrush {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    margin-top: 12px;
+    margin-left: 2px;
+}
