@@ -20,15 +20,24 @@ $(document).ready(function() {
     });
 
     $(".blocky").click (function () {
-        console.log (this);
-        this.style.backgroundColor=currentColor;
 
+        if (this.style.backgroundColor !== currentColor)
+            this.style.backgroundColor=currentColor
+        else this.style.backgroundColor = "white";
+
+        let coordinatesString = this.id;
+
+        let comma = coordinatesString.indexOf(",");
+        let xcoord = coordinatesString.slice (0, comma);
+
+        let space = coordinatesString.indexOf(" ");
+        let ycoord = coordinatesString.slice (space, coordinatesString.length);
+
+        console.log(`This square is at row ${xcoord}, column ${ycoord}`);
     })
 
     $(".blocky").mouseenter( function () {
-
         console.log (this);
-
         if(mousestate===1) {
             this.style.backgroundColor=currentColor;
         }

@@ -5,6 +5,13 @@ let maincount = -1;
 let rowcount = 0;
 let row=1;
 
+//this function prevents the spacekey from scrolling down when typing is happening.
+window.addEventListener('keydown', function (e){
+  if(e.keyCode == 32 && e.target == document.body) {
+    e.preventDefault();
+  }
+})
+
 $(document).keyup (function () {
   maincount++;
   //let row = Math.round(count/1000)+1
