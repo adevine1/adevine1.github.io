@@ -1,8 +1,12 @@
 $(document).ready(function() {
     console.log("document ready");
 
+
     let mousestate = 0;
     let currentColor="dodgerblue";
+    let dimensions = 20;
+    var lifeGrid = [];
+    createGrid();
 
    $(document).mousedown (function () {
         mousestate=1;
@@ -14,10 +18,6 @@ $(document).ready(function() {
         console.log (mousestate);
     })
 
-    $("#start").click(function () {
-        // count ++;
-        // console.log (`button clicked ${count} times.`)
-    });
 
     $(".blocky").click (function () {
 
@@ -32,37 +32,59 @@ $(document).ready(function() {
         let ycoord = coordinatesString.slice (dash+1, coordinatesString.length);
 
         console.log(`This square is at row ${xcoord}, column ${ycoord}`);
+        lifeGrid [xcoord-1][ycoord-1]= "*"
+        console.log(lifeGrid);
     })
 
     $(".blocky").mouseenter( function () {
-        console.log (this);
+        //console.log (this);
         if(mousestate===1) {
             this.style.backgroundColor=currentColor;
-        }
-    })
 
-    $(".colorselect").click(function () {
-        console.log (this);
-        currentColor=this.style.backgroundColor;
-        console.log (currentColor);
-        $(".paintbrush").css ("backgroundColor", currentColor);
+            let coordinatesString = this.id;
+            let dash = coordinatesString.indexOf("-");
+            let xcoord = coordinatesString.slice (0, dash)
+            let ycoord = coordinatesString.slice (dash+1, coordinatesString.length);
+
+            console.log(`This square is at row ${xcoord}, column ${ycoord}`);
+            lifeGrid [xcoord-1][ycoord-1]= "*"
+            console.log(lifeGrid);
+        }
+
+
     })
 
     $("#clear").click(function () {
         $(".blocky").css("backgroundColor", "white");
+        for (var x = 0; x < 20; x++) {
+            for (var y=0; y<20; y++) {
+                lifeGrid [x][y]=0;
+            }
+        }
+        console.log (lifeGrid);
     })
 
     $("#start").click(function () {
         for (var x = 1; x <21; x++) {
             for (var y = 1; y<21; y++){
-                console.log(`${x}-${y}`);
+                //console.log(`${x}-${y}`);
                 var getColor = document.getElementById(`${x}-${y}`);
                 if (getColor.style.backgroundColor==="dodgerblue")
                     $(`#${x}-${y}`).css("backgroundColor", "white")
-                else $(`#${x}-${y}`).css("backgroundColor", "dodgerblue");
-
+                else $(`#${x}-${y}`).css("backgroundColor", "dodgerblue")
             }
         }
     })
 
+    function createGrid() {
+        for (var x = 0; x<20; x++) {
+          var newArray=new Array();
+            for (var y=0; y<20; y++) {
+              if ((x!==0) || (x!==dimensions-1) || (y!==0) || (y!==dimensions-1))
+                newArray.push(0);
+            }
+            lifeGrid.push(newArray);
+        }
+        console.log(lifeGrid);
+    }
 });
