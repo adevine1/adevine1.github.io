@@ -22,6 +22,16 @@ $(document).ready(function() {
     $(".blocky").click (function () {
         console.log (this);
         this.style.backgroundColor=currentColor;
+        let coordinatesString = this.id;
+
+        let dash = coordinatesString.indexOf("-");
+        let xcoord = coordinatesString.slice (0, dash)
+        let ycoord = coordinatesString.slice (dash+1, coordinatesString.length);
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = currentColor;
+        ctx.fillRect(ycoord-1, xcoord-1, 1, 1);
     })
 
     $(".blocky").mouseenter( function () {
@@ -30,6 +40,16 @@ $(document).ready(function() {
 
         if(mousestate===1) {
             this.style.backgroundColor=currentColor;
+            let coordinatesString = this.id;
+
+            let dash = coordinatesString.indexOf("-");
+            let xcoord = coordinatesString.slice (0, dash)
+            let ycoord = coordinatesString.slice (dash+1, coordinatesString.length);
+
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = currentColor;
+            ctx.fillRect(ycoord-1, xcoord-1, 1, 1);
         }
     })
 

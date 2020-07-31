@@ -2,7 +2,7 @@ $(document).ready(function() {
     console.log("document ready");
 
     let mousestate = 0;
-    let currentColor="dodgerblue";
+    let currentColor="black";
 
    $(document).mousedown (function () {
         mousestate=1;
@@ -15,31 +15,41 @@ $(document).ready(function() {
     })
 
     $("#start").click(function () {
-        // count ++;
-        // console.log (`button clicked ${count} times.`)
+        count ++;
+        console.log (`button clicked ${count} times.`)
     });
 
     $(".blocky").click (function () {
-
-        if (this.style.backgroundColor !== currentColor)
-            this.style.backgroundColor=currentColor
-        else this.style.backgroundColor = "white";
-
+        console.log (this);
+        this.style.backgroundColor=currentColor;
         let coordinatesString = this.id;
 
-        let comma = coordinatesString.indexOf(",");
-        let xcoord = coordinatesString.slice (0, comma);
+        let dash = coordinatesString.indexOf("-");
+        let xcoord = coordinatesString.slice (0, dash)
+        let ycoord = coordinatesString.slice (dash+1, coordinatesString.length);
 
-        let space = coordinatesString.indexOf(" ");
-        let ycoord = coordinatesString.slice (space, coordinatesString.length);
-
-        console.log(`This square is at row ${xcoord}, column ${ycoord}`);
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = currentColor;
+        ctx.fillRect(ycoord-1, xcoord-1, 1, 1);
     })
 
     $(".blocky").mouseenter( function () {
+
         console.log (this);
+
         if(mousestate===1) {
             this.style.backgroundColor=currentColor;
+            let coordinatesString = this.id;
+
+            let dash = coordinatesString.indexOf("-");
+            let xcoord = coordinatesString.slice (0, dash)
+            let ycoord = coordinatesString.slice (dash+1, coordinatesString.length);
+
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = currentColor;
+            ctx.fillRect(ycoord-1, xcoord-1, 1, 1);
         }
     })
 
@@ -52,15 +62,6 @@ $(document).ready(function() {
 
     $("#clear").click(function () {
         $(".blocky").css("backgroundColor", "white");
-    })
-
-    $("#start").click(function () {
-        for (var x = 1; x <21; x++) {
-            for (var y = 1; y<21; y++){
-                $("#blocky[style*='dodger']").style.backgroundColor( "white" );
-
-            }
-        }
     })
 
 });

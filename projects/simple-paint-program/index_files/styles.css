@@ -4,7 +4,8 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
+    margin-left: -5px;
 }
 
 h2 {
@@ -12,6 +13,7 @@ h2 {
 }
 
 #mycanvas {
+    display: stretch;
     margin: auto;
     align-content: center;
     display: flex;
@@ -21,14 +23,13 @@ h2 {
 button {
     display: block;
     margin-left: auto;
-    margin-right: auto;
-    padding: 10px 15px 10px 15px;
+    margin-right: 32px;
 }
 
 
 .paint-container {
     margin: auto;
-    width: 220px;
+    width: 250px;
     height: 22px;
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +38,7 @@ button {
 
 .container {
   margin: auto;
-  width: 440px;
+  width: 500px;
   height: 22px;
   display: flex;
   flex-wrap: wrap;
@@ -55,10 +56,6 @@ button {
     cursor: pointer;
 }
 
-#clear:hover {
-    cursor: pointer;
-}
-
 .colorselect {
     width: 20px;
     height: 20px;
@@ -66,10 +63,6 @@ button {
 }
 
 .colorselect:hover {
-    cursor: pointer;
-}
-
-#start:hover {
     cursor: pointer;
 }
 
