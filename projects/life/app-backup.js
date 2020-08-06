@@ -7,12 +7,29 @@
 function createGrids (dimensions) {
   for (var x = 0; x<dimensions; x++) {
     let newArray=new Array();
+    let newArrayCopy = new Array ();
       for (var y=0; y<dimensions; y++) {
+        var rand=Math.floor((Math.random() * 3) + 1);
         if ((x===0) || (x===dimensions-1) || (y===0) || (y===dimensions-1)) {
           newArray.push(0)
+        } else
+          if (rand === 2) {
+          newArray.push(0);
+        } else {
+          newArray.push(0);
+        }
+        newArrayCopy.push(0)
       }
- console.log(newArray);
+    newArray [3][1]=1;
+    newArray [3][2]=1;
+    newArray [3][3]=1;
+    newArray [2][3]=1;
+    newArray [1][2]=1;
+    lifeGrid.push(newArray);
+    copyLifeGrid.push(newArrayCopy);
+    console.log(newArray);
   }
+
 }
 
 function startLife (lifeGrid, copyLifeGrid, dimensions, generations) {

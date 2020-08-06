@@ -75,8 +75,6 @@ $(document).ready(function() {
                console.log(num);
                 if (num >= 3) {
                     lifeGrid2[x][y] = 1;
-                  //copyLifeGrid [x][y] = 1;
-                  //$(`#${x}-${y}`).css("backgroundColor", "dodgerblue")
                 }
               }
 
@@ -92,10 +90,14 @@ $(document).ready(function() {
           console.log(lifeGrid2);
           for (var z=0;z<dimensions; z++) {
               for (var q=0; q<dimensions; q++) {
-                if (lifeGrid2[z][q] === 1)
-                  $(`#${x}-${y}`).css("backgroundColor", "dodgerblue")
-                else
-                  $(`#${x}-${y}`).css("backgroundColor", "white")
+                if (lifeGrid2[z][q] === 1) {
+                  $(`#${z}-${q}`).css("backgroundColor", "dodgerblue")
+                  lifeGrid[z][q]=1;
+                  lifeGrid2[z][q]=0;
+                }
+                else {
+                  $(`#${z}-${q}`).css("backgroundColor", "white")
+                }
               }
           }
     })
