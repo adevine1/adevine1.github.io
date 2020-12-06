@@ -1,0 +1,50 @@
+body {
+  background-image: url('background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+img {
+  width: 64px;
+  height: 64px;
+  border-radius: 2px;
+}
+
+.container {
+    background: black;
+    /* display: inline-block; */
+    border: 1px solid transparent;
+    margin: auto;
+    width: 425px;
+    color: black;
+    border-radius: 3px;
+  }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 70px);
+    grid-template-rows: repeat(6, 70px);
+    grid-gap: 1px; 
+  }
+
+.cell {
+     /* center the cell content */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Indie Flower', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: lightblue;
+  }
+
+.turns .matches {
+  font-size: 16px;
+  color: white;
+  font-weight:
+}
