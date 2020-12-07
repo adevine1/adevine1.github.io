@@ -21,6 +21,8 @@ $(document).ready(function () {
     newbookmarkgrouphidden = false;
   })
 
+  //need to frame function this way, as adding elements via jQuery does not add element to the dom
+  //otherwise, jQuery does not recognize button clicks for added elements
   $(document).on('click', '.removegroup', (function () {
     let self = this.id;
     console.log('removegroup button clicked');
@@ -52,6 +54,5 @@ $(document).ready(function () {
     </div>
   </div>`)
   })
-
 
 });
