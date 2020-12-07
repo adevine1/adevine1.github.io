@@ -23,34 +23,34 @@
     <br>
 
     <form id="newbookmarkgroup" class="form-inline" style="display:none">
-      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Name">
-      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Description">
+      <input type="text" class="form-control mb-2 mr-sm-2" id="bookmarkgroupname" placeholder="Name">
+      <input type="text" class="form-control mb-2 mr-sm-2" id="bookmarkgroupdescription" placeholder="Description">
       <button type="button" class="btn btn-primary mb-2" id="creategroup">Create Group</button>
       <button type="button" class="btn btn-outline-warning mb-2" id="closebutton">Close</button>
 
     </form><br>
 
-    <div class="card-columns">
+    <div class="card-columns" id="cardcontainer">
 
-      <div class="card" id="top1"> <!--//will be `top${indexnumber}`, where indexnumber is incredmenting number-->
+      <div class="card" id="top12345"> <!--//will be `top${indexnumber}`, where indexnumber is incredmenting number-->
         <div class="card-body">
           <h5 class="card-title">Programming</h5>
           <p class="card-text"><a href="http://www.udemy.com">Udemy</a></p>
           <p class="card-text"><a href="http://www.google.com">Google</a></p>
           <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
           <a href="#" class="btn btn-primary">Add Bookmark</a>
-          <a href="#" class="btn btn-primary removegroup" id="1">Remove Group</a> <!--will be id=`${indexnumber}` -->
+          <a href="#" class="btn btn-primary removegroup" id="12345">Remove Group</a> <!--will be id=`${indexnumber}` -->
         </div>
       </div>
 
-      <div class="card" id="top2">
+      <div class="card" id="top22345">
         <div class="card-body">
           <h5 class="card-title">Daily</h5>
           <p class="card-text"><a href="https://news.google.com/topstories">Google News</a></p>
           <p class="card-text"><a href="http://www.google.com">Google</a></p>
           <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
           <a href="#" class="btn btn-primary">Add Bookmark</a>
-          <a href="#" class="btn btn-primary removegroup" id="2">Remove Group</a>
+          <a href="#" class="btn btn-primary removegroup" id="22345">Remove Group</a>
         </div>
       </div>
 
