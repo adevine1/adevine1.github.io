@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="app.js"></script>
 </head>
 
@@ -17,16 +18,17 @@
   <div class="container">
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Bookmarks</a>
-      <a href="#" class="btn btn-primary">Add Bookmark</a>
-
+      <a href="#" class="btn btn-primary" id="addbookmark">Add Bookmark Group</a>
     </nav>
+
     <br>
-    <form id="new" class="form-inline">
-      <label class="sr-only" for="inlineFormInputName2">Name</label>
-      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">New Group</label>
+
+    <form id="newbookmarkgroup" class="form-inline" style="display:none">
       <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Category">
       <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Description">
-      <button type="submit" class="btn btn-primary mb-2">Create Group</button>
+      <button type="button" class="btn btn-primary mb-2">Create Group</button>
+      <button type="button" class="btn btn-outline-warning mb-2" id="closebutton">Close</button>
+
     </form><br>
 
     <div class="card-columns">
@@ -34,15 +36,16 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Programming</h5>
-          <p class="card-text">Link 1.</p>
-          <p class="card-text">Link 2.</p>
-          <p class="card-text">Link 3.</p>
+          <p class="card-text"><a href="http://www.udemy.com">Udemy</a></p>
+          <p class="card-text"><a href="http://www.google.com">Google</a></p>
+          <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
           <a href="#" class="btn btn-primary">Add Bookmark</a>
+          <a href="#" class="btn btn-primary">Remove Group</a>
+
         </div>
       </div>
 
     </div>
-
 </div>
 </div>
 </body>
