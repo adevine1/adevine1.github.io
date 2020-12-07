@@ -14,7 +14,6 @@
 
 <body>
 
-
   <div class="container">
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Bookmarks</a>
@@ -33,15 +32,25 @@
 
     <div class="card-columns">
 
-      <div class="card">
+      <div class="card" id="top1"> <!--//will be `top${indexnumber}`, where indexnumber is incredmenting number-->
         <div class="card-body">
           <h5 class="card-title">Programming</h5>
           <p class="card-text"><a href="http://www.udemy.com">Udemy</a></p>
           <p class="card-text"><a href="http://www.google.com">Google</a></p>
           <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
           <a href="#" class="btn btn-primary">Add Bookmark</a>
-          <a href="#" class="btn btn-primary">Remove Group</a>
+          <a href="#" class="btn btn-primary removegroup" id="1">Remove Group</a> <!--will be id=`${indexnumber}` -->
+        </div>
+      </div>
 
+      <div class="card" id="top2">
+        <div class="card-body">
+          <h5 class="card-title">Daily</h5>
+          <p class="card-text"><a href="https://news.google.com/topstories">Google News</a></p>
+          <p class="card-text"><a href="http://www.google.com">Google</a></p>
+          <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
+          <a href="#" class="btn btn-primary">Add Bookmark</a>
+          <a href="#" class="btn btn-primary removegroup" id="2">Remove Group</a>
         </div>
       </div>
 

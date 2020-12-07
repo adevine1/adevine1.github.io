@@ -21,6 +21,12 @@ $(document).ready(function () {
     newbookmarkgrouphidden = false;
   })
 
+  $(".removegroup").click(function () {
+    let self=this.id;
+    console.log ('removegroup button clicked');
+    console.log(self);
+    $(`#top${self}`).remove();
+  })
 
 
 });
