@@ -64,7 +64,8 @@ $(document).ready(function () {
     console.log('baseid = ' + baseid + '.');
     console.log('link = ' + $(`#nameoflink-${baseid}`).val());
     console.log('actual link = ' + $(`#actuallink-${baseid}`).val());
-    $(`#links-${baseid}`).prepend(`<p class="card-text"><a href="${}">Free Code Camp</a></p>
+    $(`#links-${baseid}`).prepend(`<p class="card-text"><a href="https://news.google.com/topstories">Google News</a></p>
+
     `);
   }))
 
