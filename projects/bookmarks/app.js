@@ -78,10 +78,10 @@ $(document).ready(function () {
   //this is the function that creates a default New Bookmark Group
   //it gets a random number for its id, and takes the groupname and description from the New Bookmark box
   $("#creategroup").click(function () {
-    let rand = getRandomNumber();
+    let randid = getRandomNumber();
     var groupname = $('#bookmarkgroupname').val();
     var groupdescription = $('#bookmarkgroupdescription').val();
-    $("#cardcontainer").prepend (`<div class="card col-lg-6 col-md-6 col-sm-12" id="${rand}">
+    $("#cardcontainer").prepend (`<div class="card col-lg-12 col-md-12 col-sm-12" id="${randid}">
       <div class="card-body">
         <h5 class="card-title">${groupname}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${groupdescription} </h6>
@@ -89,7 +89,7 @@ $(document).ready(function () {
         <p class="card-text"><a href="http://www.google.com">Google</a></p>
         <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
         <a href="#" class="btn btn-primary addbookmark">Add Bookmark</a>
-        <a href="#" class="btn btn-primary removegroup" id="${rand}">Remove Group</a>
+        <a href="#" class="btn btn-primary removegroup" id="${randid}">Remove Group</a>
       </div>
     </div>`);
     $('#bookmarkgroupname').val('');

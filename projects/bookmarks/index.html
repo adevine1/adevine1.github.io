@@ -16,23 +16,23 @@
 
   <div class="container" id="maincontainer">
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Bookmarks</a>
+      <a class="navbar-brand" href="#">Simple Bookmarks</a>
       <a href="#" class="btn btn-primary" id="addbookmark">Add Bookmark Group</a>
     </nav>
-
     <br>
 
     <form id="newbookmarkgroup" class="form-inline" style="display:none">
+
       <input type="text" class="form-control mb-2 mr-sm-2" id="bookmarkgroupname" placeholder="Name (required)">
       <input type="text" class="form-control mb-2 mr-sm-2" id="bookmarkgroupdescription" placeholder="Description (optional)">
       <button type="button" class="btn btn-primary mb-2" id="creategroup">Create Group</button>
-      <button type="button" class="btn btn-outline-warning mb-2" id="closebutton">Close</button>
+      <button type="button" class="btn btn-outline-warning mb-2" id ="closebutton">Close</button>
 
     </form><br>
 
     <div class="row" id="cardcontainer">
 
-      <div class="card col-lg-6 col-md-6 col-sm-12" id="12345"> <!--//will be `top${indexnumber}`, where indexnumber is incredmenting number-->
+      <div class="card col-lg-12 col-md-12 col-sm-12" id="12345"> <!--//will be `top${indexnumber}`, where indexnumber is incredmenting number-->
         <div class="card-body">
             <h5 class="card-title">Programming</h5>
             <h6 class="card-subtitle mb-2 text-muted">This is an example of a bookmark group.</h6>
@@ -41,7 +41,7 @@
               <p class="card-text"><a href="http://www.google.com">Google</a></p>
               <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
             </div>
-            <br>
+            <!-- <br> -->
             <a href="#" class="btn btn-primary addbookmark" id="addbookmark-12345">Add Bookmark</a>
             <a href="#" class="btn btn-primary removegroup" id="removebookmark-12345">Remove Group</a> <!--will be id=`${indexnumber}` -->
           <!-- the following will open up when new bookmark added -->
@@ -56,7 +56,7 @@
         </div>
       </div>
 
-      <div class="card col-lg-6 col-md-6 col-sm-12" id="22345">
+      <div class="card col-lg-12 col-md-12 col-sm-12" id="22345">
         <div class="card-body">
           <h5 class="card-title">Daily</h5>
           <h6 class="card-subtitle mb-2 text-muted">This is an example of a bookmark group.</h6>
@@ -68,7 +68,7 @@
         </div>
       </div>
     </div>
-    <br><br>
+    <br>
 </div>
 </div>
 </body>

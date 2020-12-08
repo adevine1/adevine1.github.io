@@ -3,6 +3,17 @@
   margin-left: 6px;
 }
 
+.card-text {
+  margin-bottom: 1px;
+}
+
+.addbookmark {
+  margin-top: 12px;
+}
+
+.removegroup {
+  margin-top: 12px;
+}
 /* .card {
   margin-left: 6px;
   margin-right: 6px;
