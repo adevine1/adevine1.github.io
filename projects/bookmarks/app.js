@@ -27,20 +27,50 @@ $(document).ready(function () {
   //need to frame function this way, as adding elements via jQuery does not add element to the dom.
   //otherwise, jQuery does not recognize button clicks for added elements
   $(document).on('click', '.removegroup', (function () {
-    let self = this.id;
     console.log('removegroup button clicked');
+    let self = this.id;
     console.log(self);
+    let dashlocation = self.indexOf('-');
+    console.log ('the dash is at location ' + dashlocation + '.');
+    let baseid=self.substring(dashlocation+1, self.length);
+    console.log('baseid = ' + baseid + '.');
+    // let parentid = self.
     let check = confirm(
       "Are you sure that you want to delete this bookmark group?"
     );
     if (check == true) {
-      $(`#top${self}`).remove();
+      $(`#${baseid}`).remove();
     }
+  }))
+
+  $(document).on('click', '.addbookmark', (function () {
+    console.log('addbookmark button clicked');
+    let self = this.id;
+    console.log(self);
+    let dashlocation = self.indexOf('-');
+    console.log ('the dash is at location ' + dashlocation + '.');
+    let baseid=self.substring(dashlocation+1, self.length);
+    console.log('baseid = ' + baseid + '.');
+    $(`#dropdown-${baseid}`).toggle();
+  }))
+
+  $(document).on('click', '.addlink', (function () {
+    console.log('addlink button clicked');
+    let self = this.id;
+    console.log(self);
+    let dashlocation = self.indexOf('-');
+    console.log ('the dash is at location ' + dashlocation + '.');
+    let baseid=self.substring(dashlocation+1, self.length);
+    console.log('baseid = ' + baseid + '.');
+    console.log('link = ' + $(`#nameoflink-${baseid}`).val());
+    console.log('actual link = ' + $(`#actuallink-${baseid}`).val());
+    $(`#links-${baseid}`).prepend(`<p class="card-text"><a href="${}">Free Code Camp</a></p>
+    `);
   }))
 
   //this is the ID random number generator. Big enough that repeats not likely.
   function getRandomNumber(x) {
-    let rand = Math.floor(Math.random() * 100000000) + 1000;
+    let rand = Math.floor(Math.random() * 100000000) + 100000;
     return rand;
   }
 
@@ -49,16 +79,20 @@ $(document).ready(function () {
   $("#creategroup").click(function () {
     let rand = getRandomNumber();
     var groupname = $('#bookmarkgroupname').val();
-    $("#cardcontainer").prepend (`<div class="card" id="top${rand}">
-    <div class="card-body">
-      <h5 class="card-title">${groupname}</h5>
-      <p class="card-text"><a href="https://news.google.com/topstories">Google News</a></p>
-      <p class="card-text"><a href="http://www.google.com">Google</a></p>
-      <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
-      <a href="#" class="btn btn-primary">Add Bookmark</a>
-      <a href="#" class="btn btn-primary removegroup" id="${rand}">Remove Group</a>
-    </div>
-  </div>`)
+    var groupdescription = $('#bookmarkgroupdescription').val();
+    $("#cardcontainer").prepend (`<div class="card col-lg-6 col-md-6 col-sm-12" id="${rand}">
+      <div class="card-body">
+        <h5 class="card-title">${groupname}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">${groupdescription} </h6>
+        <p class="card-text"><a href="https://news.google.com/topstories">Google News</a></p>
+        <p class="card-text"><a href="http://www.google.com">Google</a></p>
+        <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
+        <a href="#" class="btn btn-primary addbookmark">Add Bookmark</a>
+        <a href="#" class="btn btn-primary removegroup" id="${rand}">Remove Group</a>
+      </div>
+    </div>`);
+    $('#bookmarkgroupname').val('');
+    $('#bookmarkgroupdescription').val('');
   })
 
 });

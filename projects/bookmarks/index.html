@@ -23,34 +23,47 @@
     <br>
 
     <form id="newbookmarkgroup" class="form-inline" style="display:none">
-      <input type="text" class="form-control mb-2 mr-sm-2" id="bookmarkgroupname" placeholder="Name">
-      <input type="text" class="form-control mb-2 mr-sm-2" id="bookmarkgroupdescription" placeholder="Description">
+      <input type="text" class="form-control mb-2 mr-sm-2" id="bookmarkgroupname" placeholder="Name (required)">
+      <input type="text" class="form-control mb-2 mr-sm-2" id="bookmarkgroupdescription" placeholder="Description (optional)">
       <button type="button" class="btn btn-primary mb-2" id="creategroup">Create Group</button>
       <button type="button" class="btn btn-outline-warning mb-2" id="closebutton">Close</button>
 
     </form><br>
 
-    <div class="card-columns" id="cardcontainer">
+    <div class="row" id="cardcontainer">
 
-      <div class="card" id="top12345"> <!--//will be `top${indexnumber}`, where indexnumber is incredmenting number-->
+      <div class="card col-lg-6 col-md-6 col-sm-12" id="12345"> <!--//will be `top${indexnumber}`, where indexnumber is incredmenting number-->
         <div class="card-body">
-          <h5 class="card-title">Programming</h5>
-          <p class="card-text"><a href="http://www.udemy.com">Udemy</a></p>
-          <p class="card-text"><a href="http://www.google.com">Google</a></p>
-          <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
-          <a href="#" class="btn btn-primary">Add Bookmark</a>
-          <a href="#" class="btn btn-primary removegroup" id="12345">Remove Group</a> <!--will be id=`${indexnumber}` -->
+            <h5 class="card-title">Programming</h5>
+            <h6 class="card-subtitle mb-2 text-muted">This is an example of a bookmark group.</h6>
+            <div id="links-12345">
+              <p class="card-text"><a href="http://www.udemy.com">Udemy</a></p>
+              <p class="card-text"><a href="http://www.google.com">Google</a></p>
+              <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
+            </div>
+            <a href="#" class="btn btn-primary addbookmark" id="addbookmark-12345">Add Bookmark</a>
+            <a href="#" class="btn btn-primary removegroup" id="removebookmark-12345">Remove Group</a> <!--will be id=`${indexnumber}` -->
+
+          <!-- the following will open up when new bookmark added -->
+          <div id="dropdown-12345" style="display: none">
+            <br>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="nameoflink-12345" placeholder="Name of Link">
+            <input type="text" class="form-control mb-2 mr-sm-2" id="actuallink-12345" placeholder="Actual Link">
+            <a href="#" class="btn btn-primary addlink" id="addlink-12345">Add Link</a>
+            <a href="#" class="btn btn-primary closeaddlink" id="closeaddlink-12345">Close Link Add</a>
+          </div>
         </div>
       </div>
 
-      <div class="card" id="top22345">
+      <div class="card col-lg-6 col-md-6 col-sm-12" id="22345">
         <div class="card-body">
           <h5 class="card-title">Daily</h5>
+          <h6 class="card-subtitle mb-2 text-muted">This is an example of a bookmark group.</h6>
           <p class="card-text"><a href="https://news.google.com/topstories">Google News</a></p>
           <p class="card-text"><a href="http://www.google.com">Google</a></p>
           <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
-          <a href="#" class="btn btn-primary">Add Bookmark</a>
-          <a href="#" class="btn btn-primary removegroup" id="22345">Remove Group</a>
+          <a href="#" class="btn btn-primary addbookmark" id="addbookmark-22345">Add Bookmark</a>
+          <a href="#" class="btn btn-primary removegroup" id="removebookmark-22345">Remove Group</a>
         </div>
       </div>
 
