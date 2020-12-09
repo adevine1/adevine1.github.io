@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  alert("ready!");
+  // alert("ready!");
   console.log('document ready');
 
   //starts the document with the assumption that the New Boomark creation box is closed
