@@ -14,7 +14,8 @@
 .removegroup {
   margin-top: 12px;
 }
-/* .card {
-  margin-left: 6px;
-  margin-right: 6px;
-} */
+
+.cardcontainer {
+  margin-left: -6px;
+  margin-right: -6px;
+}
