@@ -24,6 +24,17 @@ $(document).ready(function () {
     newbookmarkgrouphidden = false;
   })
 
+  $(document).on('click', '.closeaddlink', (function () {
+    console.log('removegroup button clicked');
+    let self = this.id;
+    console.log(self);
+    let dashlocation = self.indexOf('-');
+    console.log ('the dash is at location ' + dashlocation + '.');
+    let baseid=self.substring(dashlocation+1, self.length);
+    console.log('baseid = ' + baseid + '.');
+    $(`#dropdown-${baseid}`).toggle();
+  }))
+
   //need to frame function this way, as adding elements via jQuery does not add element to the dom.
   //otherwise, jQuery does not recognize button clicks for added elements
   $(document).on('click', '.removegroup', (function () {
