@@ -7,6 +7,7 @@ $(document).ready(function () {
   var newbookmarkgrouphidden = false;
   var onlink = true;
   var globalid;
+  var globalkeypressvalue;
 
   //toggles the New Bookmark creation box
   $("#addbookmark").click(function () {
@@ -85,7 +86,9 @@ $(document).ready(function () {
     `);
   }))
 
- $(document).on('keypress', function () {
+ $(document).on('keypress', function (e) {
+   globalkeypressvalue = e.keyvalue;
+   console.log (globalkeypressvalue);
    if (onlink) {
      $(`#${globalid}`).remove();
    }
