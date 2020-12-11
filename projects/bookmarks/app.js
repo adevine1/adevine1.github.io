@@ -5,6 +5,8 @@ $(document).ready(function () {
 
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = false;
+  var onlink = true;
+  var globalid;
 
   //toggles the New Bookmark creation box
   $("#addbookmark").click(function () {
@@ -77,9 +79,36 @@ $(document).ready(function () {
     console.log('actual link = ' + $(`#actuallink-${baseid}`).val());
     let linkname = $(`#nameoflink-${baseid}`).val();
     let actuallink = $(`#actuallink-${baseid}`).val();
-    $(`#links-${baseid}`).prepend(`<p class="card-text"><a href=${actuallink}>${linkname}</a></p>
+
+    let randid = getRandomNumber()
+    $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${actuallink}>${linkname}</a></p>
     `);
   }))
+
+ $(document).on('keypress', function () {
+   if (onlink) {
+     $(`#${globalid}`).remove();
+   }
+ })
+
+ $(document).on('mouseover', '.card-text', function () {
+   console.log('cut request initiated');
+   let self = this.id;
+   globalid = self;
+   console.log (self);
+   onlink = true;
+   console.log (onlink);
+  //  $(`#${self}`).remove ();
+ });
+
+ $(document).on('mouseout', '.card-text', function () {
+  console.log('cut request cancelled');
+  let self = this.id;
+  console.log (self);
+  onlink = false;
+  console.log (onlink);
+ //  $(`#${self}`).remove ();
+});
 
   //this is the ID random number generator. Big enough that repeats not likely.
   function getRandomNumber(x) {
