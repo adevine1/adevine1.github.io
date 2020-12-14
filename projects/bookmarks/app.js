@@ -14,6 +14,7 @@ $(document).ready(function () {
       console.log("hit addbookmark")
       newbookmarkgrouphidden = false;
       $('#addbookmark').addClass('disabled');
+      $('#bookmarkgroupname').focus();
     } else {
       $("#newbookmarkgroup").hide();
       newbookmarkgrouphidden = true;
@@ -25,6 +26,7 @@ $(document).ready(function () {
     $("#newbookmarkgroup").hide();
     newbookmarkgrouphidden = false;
     $('#addbookmark').removeClass('disabled');
+    newbookmarkgrouphidden = true;
   })
 
   $(document).on('click', '.closeaddlink', (function () {
