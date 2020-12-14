@@ -5,9 +5,7 @@ $(document).ready(function () {
 
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = false;
-  var onlink = true;
-  var globalid;
-  var globalkeypressvalue;
+
 
   //toggles the New Bookmark creation box
   $("#addbookmark").click(function () {
@@ -86,32 +84,12 @@ $(document).ready(function () {
     `);
   }))
 
- $(document).on('keypress', function (e) {
-   globalkeypressvalue = e.keyvalue;
-   console.log (globalkeypressvalue);
-   if (onlink) {
-     $(`#${globalid}`).remove();
-   }
- })
+//  $(document).on('keypress', function () {
+//    if (onlink) {
+//      $(`#${globalid}`).remove();
+//    }
+//  })
 
- $(document).on('mouseover', '.card-text', function () {
-   console.log('cut request initiated');
-   let self = this.id;
-   globalid = self;
-   console.log (self);
-   onlink = true;
-   console.log (onlink);
-  //  $(`#${self}`).remove ();
- });
-
- $(document).on('mouseout', '.card-text', function () {
-  console.log('cut request cancelled');
-  let self = this.id;
-  console.log (self);
-  onlink = false;
-  console.log (onlink);
- //  $(`#${self}`).remove ();
-});
 
   //this is the ID random number generator. Big enough that repeats not likely.
   function getRandomNumber(x) {
