@@ -5,6 +5,7 @@ $(document).ready(function () {
 
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = false;
+  var onlink = true;
 
 
   //toggles the New Bookmark creation box
@@ -84,11 +85,11 @@ $(document).ready(function () {
     `);
   }))
 
-//  $(document).on('keypress', function () {
-//    if (onlink) {
-//      $(`#${globalid}`).remove();
-//    }
-//  })
+ $(document).on('keypress', function () {
+   if (onlink) {
+     $(`#${globalid}`).remove();
+   }
+ })
 
 
   //this is the ID random number generator. Big enough that repeats not likely.
