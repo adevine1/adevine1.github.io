@@ -8,12 +8,12 @@ $(document).ready(function () {
 
 
   //toggles the New Bookmark creation box
-  $("#addbookmark").click(function () {
+  $("#addbookmarkgroup").click(function () {
     if (newbookmarkgrouphidden === true) {
       $("#newbookmarkgroup").show();
       console.log("hit addbookmark")
       newbookmarkgrouphidden = false;
-      $('#addbookmark').addClass('disabled');
+      $('#addbookmarkgroup').addClass('disabled');
       $('#bookmarkgroupname').focus();
     } else {
       $("#newbookmarkgroup").hide();
@@ -25,7 +25,7 @@ $(document).ready(function () {
   $("#closebutton").click(function () {
     $("#newbookmarkgroup").hide();
     newbookmarkgrouphidden = false;
-    $('#addbookmark').removeClass('disabled');
+    $('#addbookmarkgroup').removeClass('disabled');
     newbookmarkgrouphidden = true;
   })
 
@@ -38,6 +38,9 @@ $(document).ready(function () {
     let baseid=self.substring(dashlocation+1, self.length);
     console.log('baseid = ' + baseid + '.');
     $(`#dropdown-${baseid}`).toggle();
+    $('#addbookmarkgroup').removeClass('disabled');
+    $('.addbookmark').removeClass('disabled');
+    $('.removegroup').removeClass('disabled');
   }))
 
   //need to frame function this way, as adding elements via jQuery does not add element to the dom.
@@ -68,6 +71,10 @@ $(document).ready(function () {
     let baseid=self.substring(dashlocation+1, self.length);
     console.log('baseid = ' + baseid + '.');
     $(`#dropdown-${baseid}`).toggle();
+    $('#addbookmarkgroup').addClass('disabled');
+    $('.addbookmark').addClass('disabled');
+    $('.removegroup').addClass('disabled');
+    $(`#nameoflink-${baseid}`).focus();
   }))
 
   $(document).on('click', '.addlink', (function () {
@@ -84,7 +91,7 @@ $(document).ready(function () {
     let actuallink = $(`#actuallink-${baseid}`).val();
 
     let randid = getRandomNumber()
-    $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${actuallink}>${linkname}</a></p>
+    $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+actuallink}>${linkname}</a></p>
     `);
   }))
 
