@@ -4,19 +4,19 @@ $(document).ready(function () {
   console.log('document ready');
 
   //starts the document with the assumption that the New Boomark creation box is closed
-  var newbookmarkgrouphidden = false;
-  var onlink = true;
+  var newbookmarkgrouphidden = true;
 
 
   //toggles the New Bookmark creation box
   $("#addbookmark").click(function () {
-    if (newbookmarkgrouphidden === false) {
+    if (newbookmarkgrouphidden === true) {
       $("#newbookmarkgroup").show();
       console.log("hit addbookmark")
-      newbookmarkgrouphidden = true;
+      newbookmarkgrouphidden = false;
+      $('#addbookmark').addClass('disabled');
     } else {
       $("#newbookmarkgroup").hide();
-      newbookmarkgrouphidden = false;
+      newbookmarkgrouphidden = true;
     }
   });
 
@@ -24,6 +24,7 @@ $(document).ready(function () {
   $("#closebutton").click(function () {
     $("#newbookmarkgroup").hide();
     newbookmarkgrouphidden = false;
+    $('#addbookmark').removeClass('disabled');
   })
 
   $(document).on('click', '.closeaddlink', (function () {
