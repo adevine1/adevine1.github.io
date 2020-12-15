@@ -115,7 +115,7 @@ $(document).ready(function () {
     let randid = getRandomNumber();
     var groupname = $('#bookmarkgroupname').val();
     var groupdescription = $('#bookmarkgroupdescription').val();
-    $("#cardcontainer").prepend (`<div class="card col-lg-12 col-md-12 col-sm-12" id="${randid}">
+    $("#cardcontainer").prepend (`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${randid}">
     <div class="card-body">
       <h5 class="card-title">${groupname}</h5>
       <h6 class="card-subtitle mb-2 text-muted">This is an example of a bookmark group.</h6>
