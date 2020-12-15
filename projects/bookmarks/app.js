@@ -14,6 +14,8 @@ $(document).ready(function () {
       console.log("hit addbookmark")
       newbookmarkgrouphidden = false;
       $('#addbookmarkgroup').addClass('disabled');
+      $('.addbookmark').addClass('disabled');
+      $('.removegroup').addClass('disabled');
       $('#bookmarkgroupname').focus();
     } else {
       $("#newbookmarkgroup").hide();
@@ -24,9 +26,11 @@ $(document).ready(function () {
   //closes the New Bookmark creation box
   $("#closebutton").click(function () {
     $("#newbookmarkgroup").hide();
-    newbookmarkgrouphidden = false;
+    // newbookmarkgrouphidden = false;
     $('#addbookmarkgroup').removeClass('disabled');
     newbookmarkgrouphidden = true;
+    $('.addbookmark').removeClass('disabled');
+    $('.removegroup').removeClass('disabled');
   })
 
   $(document).on('click', '.closeaddlink', (function () {
@@ -92,7 +96,7 @@ $(document).ready(function () {
     let linkname = $(`#nameoflink-${baseid}`).val();
     let actuallink = $(`#actuallink-${baseid}`).val();
     let randid = getRandomNumber()
-    $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+actuallink}>${linkname}</a></p>
+    $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+ actuallink}>${linkname} target="_blank"</a></p>
     `);
   }))
 
@@ -123,8 +127,8 @@ $(document).ready(function () {
         <!-- links go here -->
       </div>
 
-      <a href="#" class="btn btn-primary btn-sm addbookmark" id="addbookmark-${randid}">Add Bookmark</a>
-      <a href="#" class="btn btn-primary btn-sm removegroup" id="removebookmark-${randid}">Remove Group</a>
+      <a href="#" class="btn btn-primary btn-sm addbookmark disabled" id="addbookmark-${randid}">Add Bookmark</a>
+      <a href="#" class="btn btn-primary btn-sm removegroup disabled" id="removebookmark-${randid}">Remove Group</a>
 
       <div id="dropdown-${randid}" style="display: none">
 
