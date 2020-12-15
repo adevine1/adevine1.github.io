@@ -41,6 +41,8 @@ $(document).ready(function () {
     $('#addbookmarkgroup').removeClass('disabled');
     $('.addbookmark').removeClass('disabled');
     $('.removegroup').removeClass('disabled');
+    $(`#nameoflink-${baseid}`).val('');
+    $(`#actuallink-${baseid}`).val('');
   }))
 
   //need to frame function this way, as adding elements via jQuery does not add element to the dom.
@@ -89,7 +91,6 @@ $(document).ready(function () {
     console.log('actual link = ' + $(`#actuallink-${baseid}`).val());
     let linkname = $(`#nameoflink-${baseid}`).val();
     let actuallink = $(`#actuallink-${baseid}`).val();
-
     let randid = getRandomNumber()
     $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+actuallink}>${linkname}</a></p>
     `);
@@ -115,18 +116,28 @@ $(document).ready(function () {
     var groupname = $('#bookmarkgroupname').val();
     var groupdescription = $('#bookmarkgroupdescription').val();
     $("#cardcontainer").prepend (`<div class="card col-lg-12 col-md-12 col-sm-12" id="${randid}">
-      <div class="card-body">
-        <h5 class="card-title">${groupname}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${groupdescription} </h6>
-        <p class="card-text"><a href="https://news.google.com/topstories">Google News</a></p>
-        <p class="card-text"><a href="http://www.google.com">Google</a></p>
-        <p class="card-text"><a href="http://www.freecodecamp.org">Free Code Camp</a></p>
-        <a href="#" class="btn btn-primary addbookmark">Add Bookmark</a>
-        <a href="#" class="btn btn-primary removegroup" id="${randid}">Remove Group</a>
+    <div class="card-body">
+      <h5 class="card-title">${groupname}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">This is an example of a bookmark group.</h6>
+      <div id="links-${randid}">
+        <!-- links go here -->
       </div>
-    </div>`);
+
+      <a href="#" class="btn btn-primary btn-sm addbookmark" id="addbookmark-${randid}">Add Bookmark</a>
+      <a href="#" class="btn btn-primary btn-sm removegroup" id="removebookmark-${randid}">Remove Group</a>
+
+      <div id="dropdown-${randid}" style="display: none">
+
+        <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${randid}"
+          placeholder="Bookmark Name">
+        <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${randid}" placeholder="www.">
+        <a href="#" class="btn btn-primary btn-sm addlink" id="addlink-${randid}">Add Link</a>
+        <a href="#" class="btn btn-primary btn-sm closeaddlink" id="closeaddlink-${randid}">Close</a>
+      </div>
+    </div>
+  </div>`);
     $('#bookmarkgroupname').val('');
     $('#bookmarkgroupdescription').val('');
   })
-
 });
+
