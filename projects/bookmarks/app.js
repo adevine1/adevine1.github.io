@@ -84,27 +84,32 @@ $(document).ready(function () {
   }))
 
   $(document).on('click', '.addlink', (function () {
-    console.log('addlink button clicked');
-    let self = this.id;
-    console.log(self);
-    let dashlocation = self.indexOf('-');
-    console.log ('the dash is at location ' + dashlocation + '.');
-    let baseid=self.substring(dashlocation+1, self.length);
-    console.log('baseid = ' + baseid + '.');
-    console.log('link = ' + $(`#nameoflink-${baseid}`).val());
-    console.log('actual link = ' + $(`#actuallink-${baseid}`).val());
-    let linkname = $(`#nameoflink-${baseid}`).val();
-    let actuallink = $(`#actuallink-${baseid}`).val();
-    let randid = getRandomNumber()
-    $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+ actuallink}>${linkname} target="_blank"</a></p>
-    `);
+
+    if ($('#bookmarkgroupname').val() === '1') {
+      console.log('addlink button clicked');
+      let self = this.id;
+      console.log(self);
+      let dashlocation = self.indexOf('-');
+      console.log ('the dash is at location ' + dashlocation + '.');
+      let baseid=self.substring(dashlocation+1, self.length);
+      console.log('baseid = ' + baseid + '.');
+      console.log('link = ' + $(`#nameoflink-${baseid}`).val());
+      console.log('actual link = ' + $(`#actuallink-${baseid}`).val());
+      let linkname = $(`#nameoflink-${baseid}`).val();
+      let actuallink = $(`#actuallink-${baseid}`).val();
+      let randid = getRandomNumber();
+      $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+ actuallink}>${linkname} target="_blank"</a></p>
+      `);
+    } else {
+      alert ("Need a name for a bookmark group");
+    }
   }))
 
- $(document).on('keypress', function () {
-   if (onlink) {
-     $(`#${globalid}`).remove();
-   }
- })
+//  $(document).on('keypress', function () {
+//    if (onlink) {
+//      $(`#${globalid}`).remove();
+//    }
+//  })
 
 
   //this is the ID random number generator. Big enough that repeats not likely.
