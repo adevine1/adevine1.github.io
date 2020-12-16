@@ -38,8 +38,8 @@ $(document).ready(function () {
     let self = this.id;
     console.log(self);
     let dashlocation = self.indexOf('-');
-    console.log ('the dash is at location ' + dashlocation + '.');
-    let baseid=self.substring(dashlocation+1, self.length);
+    console.log('the dash is at location ' + dashlocation + '.');
+    let baseid = self.substring(dashlocation + 1, self.length);
     console.log('baseid = ' + baseid + '.');
     $(`#dropdown-${baseid}`).toggle();
     $('#addbookmarkgroup').removeClass('disabled');
@@ -56,8 +56,8 @@ $(document).ready(function () {
     let self = this.id;
     console.log(self);
     let dashlocation = self.indexOf('-');
-    console.log ('the dash is at location ' + dashlocation + '.');
-    let baseid=self.substring(dashlocation+1, self.length);
+    console.log('the dash is at location ' + dashlocation + '.');
+    let baseid = self.substring(dashlocation + 1, self.length);
     console.log('baseid = ' + baseid + '.');
     // let parentid = self.
     let check = confirm(
@@ -73,8 +73,8 @@ $(document).ready(function () {
     let self = this.id;
     console.log(self);
     let dashlocation = self.indexOf('-');
-    console.log ('the dash is at location ' + dashlocation + '.');
-    let baseid=self.substring(dashlocation+1, self.length);
+    console.log('the dash is at location ' + dashlocation + '.');
+    let baseid = self.substring(dashlocation + 1, self.length);
     console.log('baseid = ' + baseid + '.');
     $(`#dropdown-${baseid}`).toggle();
     $('#addbookmarkgroup').addClass('disabled');
@@ -90,8 +90,8 @@ $(document).ready(function () {
       let self = this.id;
       console.log(self);
       let dashlocation = self.indexOf('-');
-      console.log ('the dash is at location ' + dashlocation + '.');
-      let baseid=self.substring(dashlocation+1, self.length);
+      console.log('the dash is at location ' + dashlocation + '.');
+      let baseid = self.substring(dashlocation + 1, self.length);
       console.log('baseid = ' + baseid + '.');
       console.log('link = ' + $(`#nameoflink-${baseid}`).val());
       console.log('actual link = ' + $(`#actuallink-${baseid}`).val());
@@ -101,15 +101,15 @@ $(document).ready(function () {
       $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+ actuallink}>${linkname} target="_blank"</a></p>
       `);
     } else {
-      alert ("Need a name for a bookmark group");
+      alert("Need a name for a bookmark group");
     }
   }))
 
-//  $(document).on('keypress', function () {
-//    if (onlink) {
-//      $(`#${globalid}`).remove();
-//    }
-//  })
+  //  $(document).on('keypress', function () {
+  //    if (onlink) {
+  //      $(`#${globalid}`).remove();
+  //    }
+  //  })
 
 
   //this is the ID random number generator. Big enough that repeats not likely.
@@ -124,29 +124,32 @@ $(document).ready(function () {
     let randid = getRandomNumber();
     var groupname = $('#bookmarkgroupname').val();
     var groupdescription = $('#bookmarkgroupdescription').val();
-    $("#cardcontainer").prepend (`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${randid}">
-    <div class="card-body">
-      <h5 class="card-title">${groupname}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">This is an example of a bookmark group.</h6>
-      <div id="links-${randid}">
-        <!-- links go here -->
-      </div>
+    if ((groupdescription).trim () !== '') {
+          $("#cardcontainer").prepend(`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${randid}">
+          <div class="card-body">
+            <h5 class="card-title">${groupname}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">This is an example of a bookmark group.</h6>
+            <div id="links-${randid}">
+              <!-- links go here -->
+            </div>
 
-      <a href="#" class="btn btn-primary btn-sm addbookmark disabled" id="addbookmark-${randid}">Add Bookmark</a>
-      <a href="#" class="btn btn-primary btn-sm removegroup disabled" id="removebookmark-${randid}">Remove Group</a>
+            <a href="#" class="btn btn-primary btn-sm addbookmark disabled" id="addbookmark-${randid}">Add Bookmark</a>
+            <a href="#" class="btn btn-primary btn-sm removegroup disabled" id="removebookmark-${randid}">Remove Group</a>
 
-      <div id="dropdown-${randid}" style="display: none">
+            <div id="dropdown-${randid}" style="display: none">
 
-        <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${randid}"
-          placeholder="Bookmark Name">
-        <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${randid}" placeholder="www.">
-        <a href="#" class="btn btn-primary btn-sm addlink" id="addlink-${randid}">Add Link</a>
-        <a href="#" class="btn btn-primary btn-sm closeaddlink" id="closeaddlink-${randid}">Close</a>
-      </div>
-    </div>
-  </div>`);
+              <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${randid}"
+                placeholder="Bookmark Name">
+              <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${randid}" placeholder="www.">
+              <a href="#" class="btn btn-primary btn-sm addlink" id="addlink-${randid}">Add Link</a>
+              <a href="#" class="btn btn-primary btn-sm closeaddlink" id="closeaddlink-${randid}">Close</a>
+            </div>
+          </div>
+        </div>`);
+    } else {
+      alert ("Please enter a name for your bookmark group.");
+    }
     $('#bookmarkgroupname').val('');
     $('#bookmarkgroupdescription').val('');
   })
 });
-
