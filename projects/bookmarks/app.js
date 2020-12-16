@@ -105,7 +105,7 @@ $(document).ready(function () {
 
   //this is the ID random number generator. Big enough that repeats not likely.
   function getRandomNumber(x) {
-    let rand = Math.floor(Math.random() * 100000000) + 100000;
+    let rand = Math.floor(Math.random() * 100000000) + 1000000;
     return rand;
   }
 
