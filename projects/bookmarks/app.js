@@ -6,7 +6,6 @@ $(document).ready(function () {
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = true;
 
-
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
     if (newbookmarkgrouphidden === true) {
@@ -84,8 +83,7 @@ $(document).ready(function () {
   }))
 
   $(document).on('click', '.addlink', (function () {
-
-    if ($('#bookmarkgroupname').val() === '1') {
+    if ($('#bookmarkgroupname').val().trim() !== '') {
       console.log('addlink button clicked');
       let self = this.id;
       console.log(self);
@@ -105,13 +103,6 @@ $(document).ready(function () {
     }
   }))
 
-  //  $(document).on('keypress', function () {
-  //    if (onlink) {
-  //      $(`#${globalid}`).remove();
-  //    }
-  //  })
-
-
   //this is the ID random number generator. Big enough that repeats not likely.
   function getRandomNumber(x) {
     let rand = Math.floor(Math.random() * 100000000) + 100000;
@@ -124,11 +115,12 @@ $(document).ready(function () {
     let randid = getRandomNumber();
     var groupname = $('#bookmarkgroupname').val();
     var groupdescription = $('#bookmarkgroupdescription').val();
-    if ((groupdescription).trim () !== '') {
-          $("#cardcontainer").prepend(`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${randid}">
+    if ((groupname).trim() !== '') {
+
+      $("#cardcontainer").prepend(`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${randid}">
           <div class="card-body">
             <h5 class="card-title">${groupname}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">This is an example of a bookmark group.</h6>
+            <h6 class="card-subtitle mb-2 text-muted">${groupdescription} </h6>
             <div id="links-${randid}">
               <!-- links go here -->
             </div>
@@ -146,10 +138,13 @@ $(document).ready(function () {
             </div>
           </div>
         </div>`);
+
+      $('#bookmarkgroupname').val('');
+      $('#bookmarkgroupdescription').val('');
+
     } else {
-      alert ("Please enter a name for your bookmark group.");
+      alert("Please enter a name for your bookmark group.");
+      $('#bookmarkgroupname').focus();
     }
-    $('#bookmarkgroupname').val('');
-    $('#bookmarkgroupdescription').val('');
   })
 });
