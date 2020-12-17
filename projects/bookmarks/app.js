@@ -2,23 +2,51 @@ $(document).ready(function () {
 
   console.log('document ready');
 
-  // const bookmarks =
-  //
-  //       {
+  let bookmarks = [
+    ["1212121212", "Beautiful Places", "the best places I've ever been", [["0203023", "Linky link", "www.google.com"]]],
 
-  //             'id': "14567",
-  //             'name': "Programming",
-  //             'description': "programming stuff",
-  //             'links': [[123121234], ['name'], ['link']]
-  //
-  //     };
-  // localStorage.setItem('bookmarks0192837465', JSON.stringify (bookmarks));
+    ["asdasdfasd2", "Travel", "rolling roling...", [["2221212", "Linky link link", "www.travel.com"]]]
+  ]
 
-  console.log(localStorage.getItem('bookmarks0192837475'));
+  renderBookmarks ();
 
-  let boomkarks = JSON.parse(window.localStorage.getItem('bookmarks0192837475'));
+  function renderBookmarks () {
+    for (var x=0; x<bookmarks.length; x++) {
+      $("#cardcontainer").prepend(`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${bookmarks[x][0]}">
+          <div class="card-body">
+            <h5 class="card-title">${bookmarks[x][1]}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${bookmarks[x][2]} </h6>
+            <div id="links-${bookmarks[x][0]}">
+              <!-- links go here -->
+            </div>
 
-  console.log (bookmarks[1]);
+            <a href="#" class="btn btn-primary btn-sm addbookmark" id="addbookmark-${bookmarks[x][0]}">Add Bookmark</a>
+            <a href="#" class="btn btn-primary btn-sm removegroup" id="removebookmark-${bookmarks[x][0]}">Remove Group</a>
+
+            <div id="dropdown-${bookmarks[x][0]}" style="display: none">
+
+              <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${bookmarks[x][0]}"
+                placeholder="Bookmark Name">
+              <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${bookmarks[x][0]}" placeholder="www.">
+              <a href="#" class="btn btn-primary btn-sm addlink" id="addlink-${bookmarks[x][0]}">Add Link</a>
+              <a href="#" class="btn btn-primary btn-sm closeaddlink" id="closeaddlink-${bookmarks[x][0]}">Close</a>
+            </div>
+          </div>
+        </div>`);
+    }
+
+    for (var x=0; x<(bookmarks.length); x++) {
+      for (var y=0; y<(bookmarks[x][3]).length; y++) {
+      $(`#links-${bookmarks[x][0]}`).prepend(`<p class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][1]} target="_blank">${bookmarks[x][3][y][2]} </a></p>`);
+      }
+    }
+  }
+
+  // console.log(localStorage.getItem('bookmarks0192837475'));
+
+  // let boomkarks = JSON.parse(window.localStorage.getItem('bookmarks0192837475'));
+
+  // console.log (bookmarks[1]);
 
 
   //starts the document with the assumption that the New Boomark creation box is closed
@@ -105,23 +133,23 @@ $(document).ready(function () {
   }))
 
   $(document).on('click', '.addlink', (function () {
-    if ($('#bookmarkgroupname').val().trim() !== '') {
       console.log('addlink button clicked');
       let self = this.id;
       console.log(self);
       let dashlocation = self.indexOf('-');
       console.log('the dash is at location ' + dashlocation + '.');
       let baseid = self.substring(dashlocation + 1, self.length);
+     if ($(`#nameoflink-${baseid}`).val().trim() !== '') {
       console.log('baseid = ' + baseid + '.');
       console.log('link = ' + $(`#nameoflink-${baseid}`).val());
       console.log('actual link = ' + $(`#actuallink-${baseid}`).val());
       let linkname = $(`#nameoflink-${baseid}`).val();
       let actuallink = $(`#actuallink-${baseid}`).val();
       let randid = getRandomNumber();
-      $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+ actuallink}>${linkname} target="_blank"</a></p>
+      $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+ actuallink}target="_blank">${linkname}</a></p>
       `);
     } else {
-      alert("Need a name for a bookmark group");
+      alert("Bookmark name required.");
     }
   }))
 
@@ -165,7 +193,7 @@ $(document).ready(function () {
       $('#bookmarkgroupdescription').val('');
 
       //this function will save the newly created bookmark to local storage
-      savebookmarks ();
+      // savebookmarks ();
     } else {
       alert("Please enter a name for your bookmark group.");
       $('#bookmarkgroupname').focus();
