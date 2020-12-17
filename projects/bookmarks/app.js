@@ -1,10 +1,32 @@
 $(document).ready(function () {
 
-  // alert("ready!");
   console.log('document ready');
+
+  // const bookmarks =
+  //
+  //       {
+
+  //             'id': "14567",
+  //             'name': "Programming",
+  //             'description': "programming stuff",
+  //             'links': [[123121234], ['name'], ['link']]
+  //
+  //     };
+  // localStorage.setItem('bookmarks0192837465', JSON.stringify (bookmarks));
+
+  console.log(localStorage.getItem('bookmarks0192837475'));
+
+  let boomkarks = JSON.parse(window.localStorage.getItem('bookmarks0192837475'));
+
+  console.log (bookmarks[1]);
+
 
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = true;
+
+  //this is a bookmark object that will hold data that is loaded and rendered in html
+  // loadbookmarks ();
+  // renderbookmarks ();
 
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
@@ -142,6 +164,8 @@ $(document).ready(function () {
       $('#bookmarkgroupname').val('');
       $('#bookmarkgroupdescription').val('');
 
+      //this function will save the newly created bookmark to local storage
+      savebookmarks ();
     } else {
       alert("Please enter a name for your bookmark group.");
       $('#bookmarkgroupname').focus();
