@@ -2,31 +2,7 @@ $(document).ready(function () {
 
   console.log('document ready');
 
-  let bookmarks = [
-    ["12345", "Beautiful Places", "the best places I've ever been",
-    [
-      ["000001", "Linky link", "www.google.com"]
-    ]
-    ],
-
-    ["98765", "Travel", "rolling roling...",
-    [
-      ["000002", "Linky link link", "www.travel.com"]
-    ]
-    ],
-
-    ["234567", "Programming*", "this is an example of a bookmark group.",
-    [
-      ["000003", "Google", "www.google.com"],
-      ["000004", "Free Coding Camp", "www.freecodecamp.com"],
-      ["000005", "Udemy", "www.udemy.com"]
-    ]
-    ]
-  ]
-
-  localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-
-  // let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
+  let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
 
   console.log(bookmarks);
 
@@ -65,19 +41,8 @@ $(document).ready(function () {
     }
   }
 
-  // console.log(localStorage.getItem('bookmarks0192837475'));
-
-  // let boomkarks = JSON.parse(window.localStorage.getItem('bookmarks0192837475'));
-
-  // console.log (bookmarks[1]);
-
-
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = true;
-
-  //this is a bookmark object that will hold data that is loaded and rendered in html
-  // loadbookmarks ();
-  // renderbookmarks ();
 
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
@@ -137,6 +102,12 @@ $(document).ready(function () {
     );
     if (check == true) {
       $(`#${baseid}`).remove();
+      for (var x=0; x<bookmarks.length; x++) {
+        if ((`${bookmarks [x][0]}`) === baseid)
+          bookmarks.splice(x, 1);
+          console.log (bookmarks);
+          localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
+      }
     }
   }))
 
@@ -217,6 +188,11 @@ $(document).ready(function () {
 
       //this function will save the newly created bookmark to local storage
       // savebookmarks ();
+      bookmarks.unshift ([`${randid}`, `${groupname}`, `${groupdescription}`, []]);
+
+      console.log (bookmarks);
+
+      localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
     } else {
       alert("Please enter a name for your bookmark group.");
       $('#bookmarkgroupname').focus();
