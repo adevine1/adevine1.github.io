@@ -2,11 +2,13 @@ $(document).ready(function () {
 
   console.log('document ready');
 
-  let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
-
   if (bookmarks === null) {
     localStorage.setItem('bookmarks', '[]')
   }
+
+  let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
+
+
   console.log(bookmarks);
 
   renderBookmarks ();
