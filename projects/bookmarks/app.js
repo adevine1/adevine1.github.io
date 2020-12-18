@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     for (var x=0; x<(bookmarks.length); x++) {
       for (var y=0; y<(bookmarks[x][3]).length; y++) {
-      $(`#links-${bookmarks[x][0]}`).prepend(`<p class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][2]} target="_blank">${bookmarks[x][3][y][1]} </a></p>`);
+      $(`#links-${bookmarks[x][0]}`).append(`<p class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][2]} target="_blank">${bookmarks[x][3][y][1]} </a></p>`);
       }
     }
   }
@@ -142,6 +142,16 @@ $(document).ready(function () {
       let randid = getRandomNumber();
       $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+ actuallink}target="_blank">${linkname}</a></p>
       `);
+
+      let randlinkid = getRandomNumber ();
+      for (var x=0; x<bookmarks.length; x++) {
+        if (bookmarks [x][0]=== `${baseid}`) {
+            (bookmarks [x][3]).unshift([`${randlinkid}`, `${linkname}`, `${actuallink}`]);
+        }
+       console.log(bookmarks);
+       localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
+      }
+
     } else {
       alert("Bookmark name and link are required.");
     }
