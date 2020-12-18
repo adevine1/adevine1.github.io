@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   console.log('document ready');
 
-  if (bookmarks === null) {
+  if (localStorage.getItem('bookmarks' === null)) {
     localStorage.setItem('bookmarks', '["1234", "Test", "Test", []]')
   }
 
