@@ -3,16 +3,39 @@ $(document).ready(function () {
   console.log('document ready');
 
   let bookmarks = [
-    ["1212121212", "Beautiful Places", "the best places I've ever been", [["0203023", "Linky link", "www.google.com"]]],
+    ["12345", "Beautiful Places", "the best places I've ever been",
+    [
+      ["000001", "Linky link", "www.google.com"]
+    ]
+    ],
 
-    ["asdasdfasd2", "Travel", "rolling roling...", [["2221212", "Linky link link", "www.travel.com"]]]
+    ["98765", "Travel", "rolling roling...",
+    [
+      ["000002", "Linky link link", "www.travel.com"]
+    ]
+    ],
+
+    ["234567", "Programming*", "this is an example of a bookmark group.",
+    [
+      ["000003", "Google", "www.google.com"],
+      ["000004", "Free Coding Camp", "www.freecodecamp.com"],
+      ["000005", "Udemy", "www.udemy.com"]
+    ]
+    ]
   ]
 
+  localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+  // let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
+
+  console.log(bookmarks);
+
   renderBookmarks ();
+  //saveBookmarks ();
 
   function renderBookmarks () {
     for (var x=0; x<bookmarks.length; x++) {
-      $("#cardcontainer").prepend(`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${bookmarks[x][0]}">
+      $("#cardcontainer").append(`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${bookmarks[x][0]}">
           <div class="card-body">
             <h5 class="card-title">${bookmarks[x][1]}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${bookmarks[x][2]} </h6>
@@ -37,7 +60,7 @@ $(document).ready(function () {
 
     for (var x=0; x<(bookmarks.length); x++) {
       for (var y=0; y<(bookmarks[x][3]).length; y++) {
-      $(`#links-${bookmarks[x][0]}`).prepend(`<p class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][1]} target="_blank">${bookmarks[x][3][y][2]} </a></p>`);
+      $(`#links-${bookmarks[x][0]}`).prepend(`<p class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][2]} target="_blank">${bookmarks[x][3][y][1]} </a></p>`);
       }
     }
   }
@@ -149,7 +172,7 @@ $(document).ready(function () {
       $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+ actuallink}target="_blank">${linkname}</a></p>
       `);
     } else {
-      alert("Bookmark name required.");
+      alert("Bookmark name and link are required.");
     }
   }))
 
