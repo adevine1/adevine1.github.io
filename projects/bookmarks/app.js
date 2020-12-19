@@ -3,7 +3,7 @@ $(document).ready(function () {
   console.log('document ready');
 
   if (localStorage.getItem('bookmarks') === null) {
-    localStorage.setItem('bookmarks', '[["12345678", "Programming", "This is an example of a bookmark group", [["0203023", "Google", "www.google.com"], ["456987", "github", "www.github.com"], ["98657678", "Udemy", "www.udemy.com"]]]]')
+    localStorage.setItem('bookmarks', '[["12345678", "Programming", "This is an example of a bookmark group. You can add more links in this one, or create other groups.", [["0203023", "Google", "www.google.com"], ["456987", "github", "www.github.com"], ["98657678", "Udemy", "www.udemy.com"]]]]')
   };
 
   let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
