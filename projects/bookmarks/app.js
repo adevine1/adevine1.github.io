@@ -3,7 +3,7 @@ $(document).ready(function () {
   console.log('document ready');
 
   if (localStorage.getItem('bookmarks') === null) {
-    localStorage.setItem('bookmarks', '[["1234", "Test", "Test", []]]')
+    localStorage.setItem('bookmarks', '["Programming", "This is an example of a bookmark group", [["0203023", "Google", "www.google.com"], ["456987", "github", "www.github.com"], ["98657678", "Udemy", "www.udemy.com"]]]')
   };
 
   let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
