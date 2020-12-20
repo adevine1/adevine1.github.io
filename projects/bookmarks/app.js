@@ -15,7 +15,7 @@ $(document).ready(function () {
 
   function renderBookmarks () {
     for (var x=0; x<bookmarks.length; x++) {
-      $("#cardcontainer").append(`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${bookmarks[x][0]}">
+      $("#cardcontainer").append(`<div class="shadow card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${bookmarks[x][0]}">
           <div class="card-body">
             <h5 class="card-title">${bookmarks[x][1]}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${bookmarks[x][2]} </h6>
@@ -175,7 +175,7 @@ $(document).ready(function () {
     var groupdescription = $('#bookmarkgroupdescription').val();
     if ((groupname).trim() !== '') {
 
-      $("#cardcontainer").prepend(`<div class="card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${randid}">
+      $("#cardcontainer").prepend(`<div class="shadow card col-md-12 border-secondary" id="${randid}">
           <div class="card-body">
             <h5 class="card-title">${groupname}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${groupdescription} </h6>
