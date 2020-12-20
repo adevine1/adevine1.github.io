@@ -19,6 +19,7 @@ $(document).ready(function () {
           <div class="card-body">
             <h5 class="card-title">${bookmarks[x][1]}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${bookmarks[x][2]} </h6>
+            <hr>
             <div id="links-${bookmarks[x][0]}">
               <!-- links go here -->
             </div>
@@ -179,6 +180,7 @@ $(document).ready(function () {
           <div class="card-body">
             <h5 class="card-title">${groupname}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${groupdescription} </h6>
+            <hr>
             <div id="links-${randid}">
               <!-- links go here -->
             </div>
