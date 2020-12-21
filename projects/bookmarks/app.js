@@ -116,6 +116,12 @@ $(document).ready(function () {
     }
   }))
 
+  $(document).on('click', '#toggleedits', (function () {
+    $('#addbookmarkgroup').toggle();
+    $('.addbookmark').toggle ();
+    $('.removegroup').toggle ();
+  }))
+
   $(document).on('click', '.addbookmark', (function () {
     console.log('addbookmark button clicked');
     let self = this.id;
@@ -128,6 +134,7 @@ $(document).ready(function () {
     $('#addbookmarkgroup').addClass('disabled');
     $('.addbookmark').addClass('disabled');
     $('.removegroup').addClass('disabled');
+    $('#toggleedits').addClass('disabled');
     $(`#nameoflink-${baseid}`).focus();
   }))
 
