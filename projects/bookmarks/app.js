@@ -117,9 +117,15 @@ $(document).ready(function () {
   }))
 
   $(document).on('click', '#toggleedits', (function () {
+    console.log ($(this).text ());
+    if ($(this).text ()==="Edit Mode On") {
+      $(this).text ("Edit Mode Off")
+    } else {$(this).text ("Edit Mode On");
+    }
     $('#addbookmarkgroup').toggle();
     $('.addbookmark').toggle ();
     $('.removegroup').toggle ();
+
   }))
 
   $(document).on('click', '.addbookmark', (function () {
