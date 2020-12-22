@@ -11,7 +11,6 @@ $(document).ready(function () {
   console.log(bookmarks);
 
   renderBookmarks ();
-  //saveBookmarks ();
 
   function renderBookmarks () {
     for (var x=0; x<bookmarks.length; x++) {
@@ -49,7 +48,9 @@ $(document).ready(function () {
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = true;
 
-  $("#toggleedits").click();
+  $('#addbookmarkgroup').toggle();
+  $('.addbookmark').toggle ();
+  $('.removegroup').toggle ();
 
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
