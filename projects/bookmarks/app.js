@@ -26,7 +26,7 @@ $(document).ready(function () {
             <a href="#" class="btn btn-primary btn-sm addbookmark" id="addbookmark-${bookmarks[x][0]}">Add Bookmark</a>
             <a href="#" class="btn btn-primary btn-sm removegroup" id="removebookmark-${bookmarks[x][0]}">Remove Group</a>
 
-            <div id="dropdown-${bookmarks[x][0]}" style="display: none">
+            <div class="dropdown" id="dropdown-${bookmarks[x][0]}" style="display: none">
 
               <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${bookmarks[x][0]}"
                 placeholder="Bookmark Name">
@@ -123,11 +123,18 @@ $(document).ready(function () {
     console.log ($(this).text ());
     if ($(this).text ()==="Edit Mode On") {
       $(this).text ("Edit Mode Off")
+      $('#addbookmarkgroup').removeClass ('disabled');
+      $('.addbookmark').removeClass ('disabled');
+      $('.removegroup').removeClass ('disabled');
+      $('#newbookmarkgroup').hide ();
+      newbookmarkgrouphidden = true;
+
     } else {$(this).text ("Edit Mode On");
     }
     $('#addbookmarkgroup').toggle();
     $('.addbookmark').toggle ();
     $('.removegroup').toggle ();
+    $('.dropdown').hide();
     $('#title').focus();
 
   }))
@@ -141,10 +148,9 @@ $(document).ready(function () {
     let baseid = self.substring(dashlocation + 1, self.length);
     console.log('baseid = ' + baseid + '.');
     $(`#dropdown-${baseid}`).toggle();
-    $('#addbookmarkgroup').addClass('disabled');
+    $('#addbookmarkgroup').addClass ('disabled');
     $('.addbookmark').addClass('disabled');
     $('.removegroup').addClass('disabled');
-    $('#toggleedits').addClass('disabled');
     $(`#nameoflink-${baseid}`).focus();
   }))
 
@@ -205,7 +211,7 @@ $(document).ready(function () {
             <a href="#" class="btn btn-primary btn-sm addbookmark disabled" id="addbookmark-${randid}">Add Bookmark</a>
             <a href="#" class="btn btn-primary btn-sm removegroup disabled" id="removebookmark-${randid}">Remove Group</a>
 
-            <div id="dropdown-${randid}" style="display: none">
+            <div class="dropdown" id="dropdown-${randid}" style="display: none">
 
               <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${randid}"
                 placeholder="Bookmark Name">
