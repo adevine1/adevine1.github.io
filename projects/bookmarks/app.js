@@ -3,7 +3,7 @@ $(document).ready(function () {
   console.log('document ready');
 
   if (localStorage.getItem('bookmarks') === null) {
-    localStorage.setItem('bookmarks', '[["12345678", "Programming", "This is an example of a bookmark group. You can add more links in this one, or create other groups.", [["0203023", "Google", "www.google.com"], ["456987", "github", "www.github.com"], ["98657678", "Udemy", "www.udemy.com"]]]]')
+    localStorage.setItem('bookmarks', '[["12345678", "Programming", "This is an example of a bookmark group. You can add more links in this one, or create other groups, in edit mode.", [["0203023", "Google", "www.google.com"], ["456987", "github", "www.github.com"], ["98657678", "Udemy", "www.udemy.com"]]]]')
   };
 
   let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
@@ -48,6 +48,8 @@ $(document).ready(function () {
 
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = true;
+
+  $("#toggleedits").click();
 
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
@@ -125,6 +127,7 @@ $(document).ready(function () {
     $('#addbookmarkgroup').toggle();
     $('.addbookmark').toggle ();
     $('.removegroup').toggle ();
+    $('#title').focus();
 
   }))
 
