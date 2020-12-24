@@ -27,9 +27,9 @@ $(document).ready(function () {
 
             <a href="#" class="btn btn-light btn-sm removegroup" id="removebookmark-${bookmarks[x][0]}">🗑 group</a>
 
-            <a href="#" class="btn btn-light btn-sm movegroupup" id="removebookmark-${bookmarks[x][0]}">group ↑</a>
+            <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${bookmarks[x][0]}">group ↑</a>
 
-            <a href="#" class="btn btn-light btn-sm movegroupdown" id="removebookmark-${bookmarks[x][0]}">group ↓</a>
+            <a href="#" class="btn btn-light btn-sm movegroupdown" id="movegroupdown-${bookmarks[x][0]}">group ↓</a>
 
             <div class="dropdown" id="dropdown-${bookmarks[x][0]}" style="display: none">
 
