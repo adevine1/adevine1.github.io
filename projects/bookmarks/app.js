@@ -23,8 +23,13 @@ $(document).ready(function () {
               <!-- links go here -->
             </div>
 
-            <a href="#" class="btn btn-primary btn-sm addbookmark" id="addbookmark-${bookmarks[x][0]}">Add Bookmark</a>
-            <a href="#" class="btn btn-primary btn-sm removegroup" id="removebookmark-${bookmarks[x][0]}">Remove Group</a>
+            <a href="#" class="btn btn-light btn-sm addbookmark" id="addbookmark-${bookmarks[x][0]}">+ bookmark</a>
+
+            <a href="#" class="btn btn-light btn-sm removegroup" id="removebookmark-${bookmarks[x][0]}">🗑 group</a>
+
+            <a href="#" class="btn btn-light btn-sm movegroupup" id="removebookmark-${bookmarks[x][0]}">group ↑</a>
+
+            <a href="#" class="btn btn-light btn-sm movegroupdown" id="removebookmark-${bookmarks[x][0]}">group ↓</a>
 
             <div class="dropdown" id="dropdown-${bookmarks[x][0]}" style="display: none">
 
@@ -33,6 +38,7 @@ $(document).ready(function () {
               <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${bookmarks[x][0]}" placeholder="www.">
               <a href="#" class="btn btn-primary btn-sm addlink" id="addlink-${bookmarks[x][0]}">Add Link</a>
               <a href="#" class="btn btn-primary btn-sm closeaddlink" id="closeaddlink-${bookmarks[x][0]}">Close</a>
+
             </div>
           </div>
         </div>`);
@@ -51,6 +57,8 @@ $(document).ready(function () {
   $('#addbookmarkgroup').toggle();
   $('.addbookmark').toggle ();
   $('.removegroup').toggle ();
+  $('.movegroupup').toggle ();
+  $('.movegroupdown').toggle ();
 
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
@@ -135,6 +143,8 @@ $(document).ready(function () {
     $('.addbookmark').toggle ();
     $('.removegroup').toggle ();
     $('.dropdown').hide();
+    $('.movegroupup').toggle ();
+    $('.movegroupdown').toggle ();
     $('#title').focus();
 
   }))

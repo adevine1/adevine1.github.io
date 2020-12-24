@@ -18,6 +18,14 @@ body {
   margin-top: 12px;
 }
 
+.movegroupup {
+  margin-top: 12px;
+}
+
+.movegroupdown {
+  margin-top: 12px;
+}
+
 .cardcontainer {
   margin-left: -6px;
   margin-right: -6px;
