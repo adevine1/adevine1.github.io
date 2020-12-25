@@ -25,11 +25,11 @@ $(document).ready(function () {
 
             <a href="#" class="btn btn-light btn-sm addbookmark" id="addbookmark-${bookmarks[x][0]}">+ bookmark</a>
 
-            <a href="#" class="btn btn-light btn-sm removegroup" id="removebookmark-${bookmarks[x][0]}">🗑 group</a>
-
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${bookmarks[x][0]}">group ↑</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupdown" id="movegroupdown-${bookmarks[x][0]}">group ↓</a>
+
+            <a href="#" class="btn btn-light btn-sm removegroup" id="removebookmark-${bookmarks[x][0]}">🗑 group</a>
 
             <div class="dropdown" id="dropdown-${bookmarks[x][0]}" style="display: none">
 
@@ -218,8 +218,14 @@ $(document).ready(function () {
               <!-- links go here -->
             </div>
 
-            <a href="#" class="btn btn-primary btn-sm addbookmark disabled" id="addbookmark-${randid}">Add Bookmark</a>
-            <a href="#" class="btn btn-primary btn-sm removegroup disabled" id="removebookmark-${randid}">Remove Group</a>
+            <a href="#" class="btn btn-light btn-sm addbookmark disabled" id="addbookmark-${randid}">Add Bookmark</a>
+
+            <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${randid}">group ↑</a>
+
+            <a href="#" class="btn btn-light btn-sm movegroupdown" id="movegroupdown-${randid}">group ↓</a>
+
+
+            <a href="#" class="btn btn-light btn-sm removegroup disabled" id="removebookmark-${randid}">🗑 Group</a>
 
             <div class="dropdown" id="dropdown-${randid}" style="display: none">
 
