@@ -13,6 +13,7 @@ $(document).ready(function () {
   renderBookmarks ();
 
   function renderBookmarks () {
+    $(".card").remove();
     for (var x=0; x<bookmarks.length; x++) {
       $("#cardcontainer").append(`<div class="shadow card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${bookmarks[x][0]}">
           <div class="card-body">
@@ -164,6 +165,49 @@ $(document).ready(function () {
     $(`#nameoflink-${baseid}`).focus();
   }))
 
+  $(document).on('click', '.movegroupdown', (function () {
+    console.log('move group button down clicked');
+    let self = this.id;
+    console.log(self);
+    let dashlocation = self.indexOf('-');
+    console.log('the dash is at location ' + dashlocation + '.');
+    let baseid = self.substring(dashlocation + 1, self.length);
+    console.log("baseid: " + baseid);
+    for (var x=0; x<bookmarks.length; x++) {
+      if (bookmarks[x][0] === baseid) {
+        console.log ("Found bookmark: " + bookmarks [x]);
+         var b= bookmarks [x];
+         bookmarks.splice (x, 1);
+         bookmarks.splice (x+1, 0, b);
+         break;
+      }
+    }
+    localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
+     renderBookmarks ();
+  }))
+
+  $(document).on('click', '.movegroupup', (function () {
+    console.log('move group button up clicked');
+    let self = this.id;
+    console.log(self);
+    let dashlocation = self.indexOf('-');
+    console.log('the dash is at location ' + dashlocation + '.');
+    let baseid = self.substring(dashlocation + 1, self.length);
+    console.log("baseid: " + baseid);
+    for (var x=0; x<bookmarks.length; x++) {
+      if (bookmarks[x][0] === baseid) {
+        console.log ("Found bookmark: " + bookmarks [x]);
+         var b= bookmarks [x];
+         bookmarks.splice (x, 1);
+         bookmarks.splice (x-1, 0, b);
+         break;
+      }
+    }
+    localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
+     renderBookmarks ();
+  }))
+
+
   $(document).on('click', '.addlink', (function () {
       console.log('addlink button clicked');
       let self = this.id;
@@ -223,7 +267,6 @@ $(document).ready(function () {
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${randid}">group ↑</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupdown" id="movegroupdown-${randid}">group ↓</a>
-
 
             <a href="#" class="btn btn-light btn-sm removegroup disabled" id="removebookmark-${randid}">🗑 Group</a>
 
