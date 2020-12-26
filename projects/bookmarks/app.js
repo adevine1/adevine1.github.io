@@ -10,11 +10,11 @@ $(document).ready(function () {
 
   console.log(bookmarks);
 
-  renderBookmarks ();
+  renderBookmarks();
 
-  function renderBookmarks () {
+  function renderBookmarks() {
     $(".card").remove();
-    for (var x=0; x<bookmarks.length; x++) {
+    for (var x = 0; x < bookmarks.length; x++) {
       $("#cardcontainer").append(`<div class="shadow card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${bookmarks[x][0]}">
           <div class="card-body">
             <h5 class="card-title">${bookmarks[x][1]}</h5>
@@ -45,9 +45,9 @@ $(document).ready(function () {
         </div>`);
     }
 
-    for (var x=0; x<(bookmarks.length); x++) {
-      for (var y=0; y<(bookmarks[x][3]).length; y++) {
-      $(`#links-${bookmarks[x][0]}`).append(`<p class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][2]} target="_blank">${bookmarks[x][3][y][1]} </a></p>`);
+    for (var x = 0; x < (bookmarks.length); x++) {
+      for (var y = 0; y < (bookmarks[x][3]).length; y++) {
+        $(`#links-${bookmarks[x][0]}`).append(`<p class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][2]} target="_blank">${bookmarks[x][3][y][1]} </a></p>`);
       }
     }
   }
@@ -56,10 +56,10 @@ $(document).ready(function () {
   var newbookmarkgrouphidden = true;
 
   $('#addbookmarkgroup').toggle();
-  $('.addbookmark').toggle ();
-  $('.removegroup').toggle ();
-  $('.movegroupup').toggle ();
-  $('.movegroupdown').toggle ();
+  $('.addbookmark').toggle();
+  $('.removegroup').toggle();
+  $('.movegroupup').toggle();
+  $('.movegroupdown').toggle();
 
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
@@ -119,35 +119,35 @@ $(document).ready(function () {
     );
     if (check == true) {
       $(`#${baseid}`).remove();
-      for (var x=0; x<bookmarks.length; x++) {
+      for (var x = 0; x < bookmarks.length; x++) {
         if ((`${bookmarks [x][0]}`) === baseid)
           bookmarks.splice(x, 1);
-          console.log (bookmarks);
-          localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
+        console.log(bookmarks);
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
       }
     }
   }))
 
   $(document).on('click', '#toggleedits', (function () {
-    console.log ($(this).text ());
-    if ($(this).text ()==="Edit Mode On") {
-      $(this).text ("Edit Mode Off")
-      $('#addbookmarkgroup').removeClass ('disabled');
-      $('.addbookmark').removeClass ('disabled');
-      $('.removegroup').removeClass ('disabled');
-      $('#newbookmarkgroup').hide ();
+    console.log($(this).text());
+    if ($(this).text() === "Edit Mode On") {
+      $(this).text("Edit Mode Off")
+      $('#addbookmarkgroup').removeClass('disabled');
+      $('.addbookmark').removeClass('disabled');
+      $('.removegroup').removeClass('disabled');
+      $('#newbookmarkgroup').hide();
       newbookmarkgrouphidden = true;
 
-    } else {$(this).text ("Edit Mode On");
+    } else {
+      $(this).text("Edit Mode On");
     }
     $('#addbookmarkgroup').toggle();
-    $('.addbookmark').toggle ();
-    $('.removegroup').toggle ();
+    $('.addbookmark').toggle();
+    $('.removegroup').toggle();
     $('.dropdown').hide();
-    $('.movegroupup').toggle ();
-    $('.movegroupdown').toggle ();
+    $('.movegroupup').toggle();
+    $('.movegroupdown').toggle();
     $('#title').focus();
-
   }))
 
   $(document).on('click', '.addbookmark', (function () {
@@ -159,7 +159,7 @@ $(document).ready(function () {
     let baseid = self.substring(dashlocation + 1, self.length);
     console.log('baseid = ' + baseid + '.');
     $(`#dropdown-${baseid}`).toggle();
-    $('#addbookmarkgroup').addClass ('disabled');
+    $('#addbookmarkgroup').addClass('disabled');
     $('.addbookmark').addClass('disabled');
     $('.removegroup').addClass('disabled');
     $(`#nameoflink-${baseid}`).focus();
@@ -173,17 +173,17 @@ $(document).ready(function () {
     console.log('the dash is at location ' + dashlocation + '.');
     let baseid = self.substring(dashlocation + 1, self.length);
     console.log("baseid: " + baseid);
-    for (var x=0; x<bookmarks.length; x++) {
+    for (var x = 0; x < bookmarks.length; x++) {
       if (bookmarks[x][0] === baseid) {
-        console.log ("Found bookmark: " + bookmarks [x]);
-         var b= bookmarks [x];
-         bookmarks.splice (x, 1);
-         bookmarks.splice (x+1, 0, b);
-         break;
+        console.log("Found bookmark: " + bookmarks[x]);
+        var b = bookmarks[x];
+        bookmarks.splice(x, 1);
+        bookmarks.splice(x + 1, 0, b);
+        break;
       }
     }
-    localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
-     renderBookmarks ();
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    renderBookmarks();
   }))
 
   $(document).on('click', '.movegroupup', (function () {
@@ -194,28 +194,30 @@ $(document).ready(function () {
     console.log('the dash is at location ' + dashlocation + '.');
     let baseid = self.substring(dashlocation + 1, self.length);
     console.log("baseid: " + baseid);
-    for (var x=0; x<bookmarks.length; x++) {
+    for (var x = 0; x < bookmarks.length; x++) {
       if (bookmarks[x][0] === baseid) {
-        console.log ("Found bookmark: " + bookmarks [x]);
-         var b= bookmarks [x];
-         bookmarks.splice (x, 1);
-         bookmarks.splice (x-1, 0, b);
-         break;
+        if (x!=0) {
+        console.log("Found bookmark: " + bookmarks[x]);
+        var b = bookmarks[x];
+        bookmarks.splice(x, 1);
+        bookmarks.splice(x - 1, 0, b);
+        break;
+        }
       }
     }
-    localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
-     renderBookmarks ();
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    renderBookmarks();
   }))
 
 
   $(document).on('click', '.addlink', (function () {
-      console.log('addlink button clicked');
-      let self = this.id;
-      console.log(self);
-      let dashlocation = self.indexOf('-');
-      console.log('the dash is at location ' + dashlocation + '.');
-      let baseid = self.substring(dashlocation + 1, self.length);
-     if ($(`#nameoflink-${baseid}`).val().trim() !== '') {
+    console.log('addlink button clicked');
+    let self = this.id;
+    console.log(self);
+    let dashlocation = self.indexOf('-');
+    console.log('the dash is at location ' + dashlocation + '.');
+    let baseid = self.substring(dashlocation + 1, self.length);
+    if ($(`#nameoflink-${baseid}`).val().trim() !== '') {
       console.log('baseid = ' + baseid + '.');
       console.log('link = ' + $(`#nameoflink-${baseid}`).val());
       console.log('actual link = ' + $(`#actuallink-${baseid}`).val());
@@ -225,13 +227,13 @@ $(document).ready(function () {
       $(`#links-${baseid}`).prepend(`<p class="card-text" id="${randid}"><a href=${'http://'+ actuallink}target="_blank">${linkname}</a></p>
       `);
 
-      let randlinkid = getRandomNumber ();
-      for (var x=0; x<bookmarks.length; x++) {
-        if (bookmarks [x][0]=== `${baseid}`) {
-            (bookmarks [x][3]).unshift([`${randlinkid}`, `${linkname}`, `${actuallink}`]);
+      let randlinkid = getRandomNumber();
+      for (var x = 0; x < bookmarks.length; x++) {
+        if (bookmarks[x][0] === `${baseid}`) {
+          (bookmarks[x][3]).unshift([`${randlinkid}`, `${linkname}`, `${actuallink}`]);
         }
-       console.log(bookmarks);
-       localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
+        console.log(bookmarks);
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
       }
 
     } else {
@@ -262,7 +264,7 @@ $(document).ready(function () {
               <!-- links go here -->
             </div>
 
-            <a href="#" class="btn btn-light btn-sm addbookmark disabled" id="addbookmark-${randid}">Add Bookmark</a>
+            <a href="#" class="btn btn-light btn-sm addbookmark disabled" id="addbookmark-${randid}">+ Bookmark</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${randid}">group ↑</a>
 
@@ -286,11 +288,11 @@ $(document).ready(function () {
 
       //this function will save the newly created bookmark to local storage
       // savebookmarks ();
-      bookmarks.unshift ([`${randid}`, `${groupname}`, `${groupdescription}`, []]);
+      bookmarks.unshift([`${randid}`, `${groupname}`, `${groupdescription}`, []]);
 
-      console.log (bookmarks);
+      console.log(bookmarks);
 
-      localStorage.setItem('bookmarks', JSON.stringify (bookmarks));
+      localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     } else {
       alert("Please enter a name for your bookmark group.");
       $('#bookmarkgroupname').focus();
