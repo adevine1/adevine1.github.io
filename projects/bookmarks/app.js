@@ -264,7 +264,7 @@ $(document).ready(function () {
               <!-- links go here -->
             </div>
 
-            <a href="#" class="btn btn-light btn-sm addbookmark disabled" id="addbookmark-${randid}">+ Bookmark</a>
+            <a href="#" class="btn btn-light btn-sm addbookmark disabled" id="addbookmark-${randid}">+ bookmark</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${randid}">group ↑</a>
 
