@@ -35,7 +35,7 @@ $(document).ready(function () {
             <div class="dropdown" id="dropdown-${bookmarks[x][0]}" style="display: none">
 
               <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${bookmarks[x][0]}"
-                placeholder="Bookmark Name">
+                placeholder="ookmark Name">
               <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${bookmarks[x][0]}" placeholder="www.">
               <a href="#" class="btn btn-primary btn-sm addlink" id="addlink-${bookmarks[x][0]}">Add Link</a>
               <a href="#" class="btn btn-primary btn-sm closeaddlink" id="closeaddlink-${bookmarks[x][0]}">Close</a>
@@ -264,7 +264,7 @@ $(document).ready(function () {
               <!-- links go here -->
             </div>
 
-            <a href="#" class="btn btn-light btn-sm addbookmark disabled" id="addbookmark-${randid}">+ bookmark</a>
+            <a href="#" class="btn btn-light btn-sm addbookmark disabled" id="addbookmark-${randid}">+ Bookmark</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${randid}">group ↑</a>
 
