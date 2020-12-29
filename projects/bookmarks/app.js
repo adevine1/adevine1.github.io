@@ -103,7 +103,7 @@ $(document).ready(function () {
     $('.removegroup').removeClass('disabled');
     $(`#nameoflink-${baseid}`).val('');
     $(`#actuallink-${baseid}`).val('');
-    return false;
+    return false; //keeps scrollbar from moving
   }))
 
   //need to frame function this way, as adding elements via jQuery does not add element to the dom.
@@ -129,6 +129,7 @@ $(document).ready(function () {
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
       }
     }
+    return false; //keeps screen from scrolling
   }))
 
   $(document).on('click', '#toggleedits', (function () {
@@ -166,7 +167,7 @@ $(document).ready(function () {
     $('.addbookmark').addClass('disabled');
     $('.removegroup').addClass('disabled');
     $(`#nameoflink-${baseid}`).focus();
-    return false;
+    return false; //keeps scrollbar from moving
   }))
 
   $(document).on('click', '.movegroupdown', (function () {
@@ -188,6 +189,7 @@ $(document).ready(function () {
     }
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     renderBookmarks();
+    return false;
   }))
 
   $(document).on('click', '.movegroupup', (function () {
@@ -211,6 +213,7 @@ $(document).ready(function () {
     }
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     renderBookmarks();
+    return false;
   }))
 
 
@@ -243,7 +246,7 @@ $(document).ready(function () {
     } else {
       alert("Bookmark name and link are required.");
     }
-    return false;
+    return false; //keeps scrollbar from moving
   }))
 
   //this is the ID random number generator. Big enough that repeats not likely.
