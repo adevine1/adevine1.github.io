@@ -23,9 +23,9 @@ $(document).ready(function () {
 
             <div class="dropdown" id="dropdown-${bookmarks[x][0]}" style="display: none">
               <h6 style="color: dodgerblue">add bookmark:</h4>
-              <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${bookmarks[x][0]}"
+              <input type="text" autocomplete="off" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${bookmarks[x][0]}"
                 placeholder="bookmark name">
-              <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${bookmarks[x][0]}" placeholder="www.">
+              <input type="text" autocomplete="off" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${bookmarks[x][0]}" placeholder="link">
               <a href="#" class="btn btn-light btn-sm addlink" id="addlink-${bookmarks[x][0]}">+ link</a>
               <a href="#" class="btn btn-light btn-sm closeaddlink" id="closeaddlink-${bookmarks[x][0]}">close</a>
               <hr>
@@ -282,9 +282,9 @@ $(document).ready(function () {
 
             <div class="dropdown" id="dropdown-${randid}" style="display: none">
 
-              <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${randid}"
+              <input type="text" autocomplete="false" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${randid}"
                 placeholder="bookmark name">
-              <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${randid}" placeholder="www.">
+              <input type="text" autocomplete="false" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${randid}" placeholder="link">
               <a href="#" class="btn btn-primary btn-sm addlink" id="addlink-${randid}">Add Link</a>
               <a href="#" class="btn btn-primary btn-sm closeaddlink" id="closeaddlink-${randid}">Close</a>
             </div>
