@@ -103,6 +103,7 @@ $(document).ready(function () {
     $('.removegroup').removeClass('disabled');
     $(`#nameoflink-${baseid}`).val('');
     $(`#actuallink-${baseid}`).val('');
+    return false;
   }))
 
   //need to frame function this way, as adding elements via jQuery does not add element to the dom.
@@ -165,6 +166,7 @@ $(document).ready(function () {
     $('.addbookmark').addClass('disabled');
     $('.removegroup').addClass('disabled');
     $(`#nameoflink-${baseid}`).focus();
+    return false;
   }))
 
   $(document).on('click', '.movegroupdown', (function () {
@@ -241,6 +243,7 @@ $(document).ready(function () {
     } else {
       alert("Bookmark name and link are required.");
     }
+    return false;
   }))
 
   //this is the ID random number generator. Big enough that repeats not likely.
