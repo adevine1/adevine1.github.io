@@ -20,6 +20,17 @@ $(document).ready(function () {
             <h5 class="card-title">${bookmarks[x][1]}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${bookmarks[x][2]} </h6>
             <hr>
+
+            <div class="dropdown" id="dropdown-${bookmarks[x][0]}" style="display: none">
+              <h6 style="color: dodgerblue">add bookmark:</h4>
+              <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${bookmarks[x][0]}"
+                placeholder="bookmark name">
+              <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${bookmarks[x][0]}" placeholder="www.">
+              <a href="#" class="btn btn-light btn-sm addlink" id="addlink-${bookmarks[x][0]}">+ link</a>
+              <a href="#" class="btn btn-light btn-sm closeaddlink" id="closeaddlink-${bookmarks[x][0]}">close</a>
+              <hr>
+            </div>
+
             <div id="links-${bookmarks[x][0]}">
               <!-- links go here -->
             </div>
@@ -31,16 +42,6 @@ $(document).ready(function () {
             <a href="#" class="btn btn-light btn-sm movegroupdown" id="movegroupdown-${bookmarks[x][0]}">group ↓</a>
 
             <a href="#" class="btn btn-light btn-sm removegroup" id="removebookmark-${bookmarks[x][0]}">🗑 group</a>
-
-            <div class="dropdown" id="dropdown-${bookmarks[x][0]}" style="display: none">
-
-              <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${bookmarks[x][0]}"
-                placeholder="ookmark Name">
-              <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${bookmarks[x][0]}" placeholder="www.">
-              <a href="#" class="btn btn-primary btn-sm addlink" id="addlink-${bookmarks[x][0]}">Add Link</a>
-              <a href="#" class="btn btn-primary btn-sm closeaddlink" id="closeaddlink-${bookmarks[x][0]}">Close</a>
-
-            </div>
           </div>
         </div>`);
     }
@@ -50,6 +51,7 @@ $(document).ready(function () {
         $(`#links-${bookmarks[x][0]}`).append(`<p class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][2]} target="_blank">${bookmarks[x][3][y][1]} </a></p>`);
       }
     }
+
   }
 
   //starts the document with the assumption that the New Boomark creation box is closed
@@ -130,8 +132,8 @@ $(document).ready(function () {
 
   $(document).on('click', '#toggleedits', (function () {
     console.log($(this).text());
-    if ($(this).text() === "Edit Mode On") {
-      $(this).text("Edit Mode Off")
+    if ($(this).text() === "edit mode on") {
+      $(this).text("edit mode off")
       $('#addbookmarkgroup').removeClass('disabled');
       $('.addbookmark').removeClass('disabled');
       $('.removegroup').removeClass('disabled');
@@ -139,7 +141,7 @@ $(document).ready(function () {
       newbookmarkgrouphidden = true;
 
     } else {
-      $(this).text("Edit Mode On");
+      $(this).text("edit mode on");
     }
     $('#addbookmarkgroup').toggle();
     $('.addbookmark').toggle();
@@ -275,7 +277,7 @@ $(document).ready(function () {
             <div class="dropdown" id="dropdown-${randid}" style="display: none">
 
               <input type="text" class="form-control mb-2 mr-sm-2 bookmarkname" id="nameoflink-${randid}"
-                placeholder="Bookmark Name">
+                placeholder="bookmark name">
               <input type="text" class="form-control mb-2 mr-sm-2 bookmarklink" id="actuallink-${randid}" placeholder="www.">
               <a href="#" class="btn btn-primary btn-sm addlink" id="addlink-${randid}">Add Link</a>
               <a href="#" class="btn btn-primary btn-sm closeaddlink" id="closeaddlink-${randid}">Close</a>
