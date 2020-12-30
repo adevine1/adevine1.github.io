@@ -26,6 +26,10 @@ body {
   margin-top: 12px;
 }
 
+.editlinks {
+  margin-top: 12px;
+}
+
 .cardcontainer {
   margin-left: -6px;
   margin-right: -6px;
@@ -42,3 +46,4 @@ body {
 .card {
   margin-bottom: 9px;
 }
+

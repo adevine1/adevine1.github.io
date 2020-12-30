@@ -32,10 +32,13 @@ $(document).ready(function () {
             </div>
 
             <div id="links-${bookmarks[x][0]}">
+
               <!-- links go here -->
             </div>
 
             <a href="#" class="btn btn-light btn-sm addbookmark" id="addbookmark-${bookmarks[x][0]}">+ bookmark</a>
+
+            <a href="#" class="btn btn-light btn-sm editlinks" id="editlinks-${bookmarks[x][0]}">✏ bookmarks</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${bookmarks[x][0]}">group ↑</a>
 
@@ -62,6 +65,7 @@ $(document).ready(function () {
   $('.removegroup').toggle();
   $('.movegroupup').toggle();
   $('.movegroupdown').toggle();
+  $('.editlinks').toggle();
 
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
@@ -132,6 +136,26 @@ $(document).ready(function () {
     return false; //keeps screen from scrolling
   }))
 
+  $(document).on('click', '.editlinks', (function () {
+    console.log ('edit links pressed');
+    let self = this.id;
+    console.log(self);
+    let dashlocation = self.indexOf('-');
+    console.log('the dash is at location ' + dashlocation + '.');
+    let baseid = self.substring(dashlocation + 1, self.length);
+    console.log('base id: ' + baseid);
+    for (var x=0; x<bookmarks.length; x++) {
+      if (bookmarks [x][0] === baseid) {
+        console.log ('found it!');
+        for (var y=0; y<bookmarks[x][3].length; y++) {
+          for (var z=0; z<bookmarks[x][3][y].length; z++) {
+            console.log (bookmarks [x][3][y][z]);
+          }
+        }
+      }
+    }
+  }))
+
   $(document).on('click', '#toggleedits', (function () {
     console.log($(this).text());
     if ($(this).text() === "edit mode on") {
@@ -151,6 +175,7 @@ $(document).ready(function () {
     $('.dropdown').hide();
     $('.movegroupup').toggle();
     $('.movegroupdown').toggle();
+    $('.editlinks').toggle ();
     $('#title').focus();
   }))
 
@@ -273,6 +298,8 @@ $(document).ready(function () {
             </div>
 
             <a href="#" class="btn btn-light btn-sm addbookmark disabled" id="addbookmark-${randid}">+ Bookmark</a>
+
+            <a href="#" class="btn btn-light btn-sm editlinks" id="editlinks-${randid}">✏ bookmarks</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${randid}">group ↑</a>
 
