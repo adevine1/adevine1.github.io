@@ -38,7 +38,7 @@ $(document).ready(function () {
 
             <a href="#" class="btn btn-light btn-sm addbookmark" id="addbookmark-${bookmarks[x][0]}">+ bookmark</a>
 
-            <a href="#" class="btn btn-light btn-sm editlinks" id="editlinks-${bookmarks[x][0]}">✏ bookmarks</a>
+            <a href="#" class="btn btn-light btn-sm editlinks" data-toggle="modal" data-target="#myModal" id="editlinks-${bookmarks[x][0]}">✏ bookmarks</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${bookmarks[x][0]}">group ↑</a>
 
