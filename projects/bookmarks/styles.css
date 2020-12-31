@@ -26,15 +26,6 @@ body {
   margin-top: 12px;
 }
 
-.movelinkup {
-  margin-bottom: 5px;
-}
-
-.movelinkdown {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 .editlinks {
   margin-top: 12px;
 }
@@ -55,4 +46,27 @@ body {
 .card {
   margin-bottom: 9px;
 }
+
+.editlinkname {
+  margin-top: 5px;
+  margin-bottom: -20px;
+}
+
+.editlinklocation {
+  margin-top: -15px;
+  margin-bottom: -5px;
+}
+
+.editmovelinkdown {
+  margin-top: -32px;
+  margin-right: 5px;
+  margin-bottom: -16px;
+}
+
+.editdeletelinkbutton {
+  margin-top: -32px;
+  margin-bottom: -16px;
+}
+
+
 

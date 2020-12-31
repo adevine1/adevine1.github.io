@@ -154,13 +154,13 @@ $(document).ready(function () {
             console.log (bookmarks [x][3][y][z]);
             if (z===1){
               $('#editlocation').append(`<hr>
-              <a href="#" class="btn btn-light btn-sm movelinkup" id="movegroupup-${bookmarks[x][0]}">↑</a><br>
-              <input type="text" id="editlinkname" name="lname" autocomplete="off" class="text-truncate" value="${bookmarks [x][3][y][z]}"><br>`)
+              <a href="#" class="btn btn-light btn-sm editmovelinkup" id="moveglinkup-${bookmarks[x][0]}">↑</a><br>
+              <input type="text" name="lname" autocomplete="off" class="form-control text-truncate editlinkname" value="${bookmarks [x][3][y][z]}"><br class="editbreak">`)
             }
 
             if (z===2){
               $('#editlocation').append(`
-              <input type="text" id="editlinklocation" autocomplete="off" class="text-truncate" name="lname" value="${bookmarks [x][3][y][z]}"><br><a href="#" class="btn btn-light btn-sm movelinkdown" id="movegroupdown-${bookmarks[x][0]}">↓</a><button type="button" class="btn btn-warning btn-sm">delete link </button><br>`)
+              <input type="text" autocomplete="off" class="form-control text-truncate" name="lname" value="${bookmarks [x][3][y][z]}"><br class="editbreak"><a href="#" class="btn btn-light btn-sm editmovelinkdown" id="movelinkdown-${bookmarks[x][0]}">↓</a><button type="button" class="btn btn-warning btn-sm editdeletelinkbutton"> delete link </button><br>`)
             }
           }
         }
