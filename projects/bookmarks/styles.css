@@ -26,6 +26,15 @@ body {
   margin-top: 12px;
 }
 
+.movelinkup {
+  margin-bottom: 5px;
+}
+
+.movelinkdown {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .editlinks {
   margin-top: 12px;
 }

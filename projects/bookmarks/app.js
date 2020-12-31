@@ -148,15 +148,19 @@ $(document).ready(function () {
     for (var x=0; x<bookmarks.length; x++) {
       if (bookmarks [x][0] === baseid) {
         console.log ('found it!');
-        $("#edittitle").text(`Edit bookmarks for group named ${bookmarks [x][1]}, id ${baseid}:`)
+        $("#edittitle").text(`Edit bookmarks for group named ${bookmarks [x][1]}, ID ${baseid}`)
         for (var y=0; y<bookmarks[x][3].length; y++) {
           for (var z=0; z<bookmarks[x][3][y].length; z++) {
             console.log (bookmarks [x][3][y][z]);
-            if (z!=0){
+            if (z===1){
+              $('#editlocation').append(`<hr>
+              <a href="#" class="btn btn-light btn-sm movelinkup" id="movegroupup-${bookmarks[x][0]}">↑</a><br>
+              <input type="text" id="editlinkname" name="lname" autocomplete="off" value="${bookmarks [x][3][y][z]}"><br>`)
+            }
+
+            if (z===2){
               $('#editlocation').append(`
-              <input type="text" id="lname" name="lname" placeholder="${bookmarks [x][3][y][z]}"><br>`)
-            } else {
-              $('#editlocation').append(`<hr>`)
+              <input type="text" id="editlinklocation" autocomplete = "off" name="lname" value="${bookmarks [x][3][y][z]}"><br><a href="#" class="btn btn-light btn-sm movelinkdown" id="movegroupdown-${bookmarks[x][0]}">↓</a><br>`)
             }
           }
         }
