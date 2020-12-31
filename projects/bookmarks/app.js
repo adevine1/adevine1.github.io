@@ -155,12 +155,12 @@ $(document).ready(function () {
             if (z===1){
               $('#editlocation').append(`<hr>
               <a href="#" class="btn btn-light btn-sm movelinkup" id="movegroupup-${bookmarks[x][0]}">↑</a><br>
-              <input type="text" id="editlinkname" name="lname" autocomplete="off" value="${bookmarks [x][3][y][z]}"><br>`)
+              <input type="text" id="editlinkname" name="lname" autocomplete="off" class="text-truncate" value="${bookmarks [x][3][y][z]}"><br>`)
             }
 
             if (z===2){
               $('#editlocation').append(`
-              <input type="text" id="editlinklocation" autocomplete = "off" name="lname" value="${bookmarks [x][3][y][z]}"><br><a href="#" class="btn btn-light btn-sm movelinkdown" id="movegroupdown-${bookmarks[x][0]}">↓</a><br>`)
+              <input type="text" id="editlinklocation" autocomplete="off" class="text-truncate" name="lname" value="${bookmarks [x][3][y][z]}"><br><a href="#" class="btn btn-light btn-sm movelinkdown" id="movegroupdown-${bookmarks[x][0]}">↓</a><br>`)
             }
           }
         }
