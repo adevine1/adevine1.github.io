@@ -38,7 +38,7 @@ $(document).ready(function () {
 
             <a href="#" class="btn btn-light btn-sm addbookmark" id="addbookmark-${bookmarks[x][0]}">+ bookmark</a>
 
-            <a href="#" class="btn btn-light btn-sm editlinks" data-toggle="modal" data-target="#myModal" id="editlinks-${bookmarks[x][0]}">✏ bookmarks</a>
+            <a href="#" class="btn btn-light btn-sm editlinks updatebookmarks" data-toggle="modal" data-target="#myModal" id="editlinks-${bookmarks[x][0]}">✏ bookmarks</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${bookmarks[x][0]}">group ↑</a>
 
@@ -150,6 +150,8 @@ $(document).ready(function () {
         for (var y=0; y<bookmarks[x][3].length; y++) {
           for (var z=0; z<bookmarks[x][3][y].length; z++) {
             console.log (bookmarks [x][3][y][z]);
+            $('#editlocation').append(`
+             ${bookmarks [x][3][y][z]}<br>`)
           }
         }
       }
@@ -299,7 +301,7 @@ $(document).ready(function () {
 
             <a href="#" class="btn btn-light btn-sm addbookmark disabled" id="addbookmark-${randid}">+ Bookmark</a>
 
-            <a href="#" class="btn btn-light btn-sm editlinks" id="editlinks-${randid}">✏ bookmarks</a>
+            <a href="#" class="btn btn-light btn-sm editlinks updatebookmarks" data-toggle="modal" data-target="#myModal" id="editlinks-${randid}">✏ bookmarks</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${randid}">group ↑</a>
 
