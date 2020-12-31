@@ -148,7 +148,7 @@ $(document).ready(function () {
     for (var x=0; x<bookmarks.length; x++) {
       if (bookmarks [x][0] === baseid) {
         console.log ('found it!');
-        $("#edittitle").text(`Bookmarks for group id ${baseid}:`)
+        $("#edittitle").text(`Edit bookmarks for group named ${bookmarks [x][1]}, id ${baseid}:`)
         for (var y=0; y<bookmarks[x][3].length; y++) {
           for (var z=0; z<bookmarks[x][3][y].length; z++) {
             console.log (bookmarks [x][3][y][z]);
