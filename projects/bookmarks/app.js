@@ -38,7 +38,7 @@ $(document).ready(function () {
 
             <a href="#" class="btn btn-light btn-sm addbookmark" id="addbookmark-${bookmarks[x][0]}">+ bookmark</a>
 
-            <a href="#" class="btn btn-light btn-sm editlinks updatebookmarks" data-toggle="modal" data-target="#myModal" id="editlinks-${bookmarks[x][0]}">✏ bookmarks</a>
+            <a href="#" class="btn btn-light btn-sm editlinks" data-toggle="modal" data-target="#myModal" id="editlinks-${bookmarks[x][0]}">✏ bookmarks</a>
 
             <a href="#" class="btn btn-light btn-sm movegroupup" id="movegroupup-${bookmarks[x][0]}">group ↑</a>
 
@@ -147,6 +147,7 @@ $(document).ready(function () {
     for (var x=0; x<bookmarks.length; x++) {
       if (bookmarks [x][0] === baseid) {
         console.log ('found it!');
+        $("#edittitle").text(`Bookmarks for group id ${baseid}:`)
         for (var y=0; y<bookmarks[x][3].length; y++) {
           for (var z=0; z<bookmarks[x][3][y].length; z++) {
             console.log (bookmarks [x][3][y][z]);
