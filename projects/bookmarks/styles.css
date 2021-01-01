@@ -57,15 +57,19 @@ body {
   margin-bottom: -5px;
 }
 
+.editmovelinkup {
+  margin-top: 10px;
+}
+
 .editmovelinkdown {
-  margin-top: -32px;
+  margin-top: -35px;
   margin-right: 5px;
-  margin-bottom: -16px;
+  margin-bottom: -0x;
 }
 
 .editdeletelinkbutton {
-  margin-top: -32px;
-  margin-bottom: -16px;
+  margin-top: -35px;
+  margin-bottom: -0px;
 }
 
 

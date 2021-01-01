@@ -8,6 +8,9 @@ $(document).ready(function () {
 
   let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
 
+  //this is a temporary array for editing bookmark groups on edit
+  let tempbookgroup = [];
+
   console.log(bookmarks);
 
   renderBookmarks();
@@ -51,11 +54,23 @@ $(document).ready(function () {
 
     for (var x = 0; x < (bookmarks.length); x++) {
       for (var y = 0; y < (bookmarks[x][3]).length; y++) {
-        $(`#links-${bookmarks[x][0]}`).append(`<p class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][2]} target="_blank">${bookmarks[x][3][y][1]} </a></p>`);
+        $(`#links-${bookmarks[x][0]}`).append(`
+        <a class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][2]} target="_blank">${bookmarks[x][3][y][1]}</a><br>
+        `);
       }
     }
 
   }
+
+  // <a href="#" class="btn btn-light btn-sm" id="movelinkdown-${bookmarks[x][0]}">↑</a>
+
+  // <a href="#" class="btn btn-light btn-sm" id="movelinkdown-${bookmarks[x][0]}">↓</a>
+
+  // <button type="button" class="btn btn-warning btn-sm"> delete link</button>
+
+  // <button type="button" class="btn btn-warning btn-sm"> edit link </button>
+
+  // <hr>
 
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = true;
@@ -136,6 +151,11 @@ $(document).ready(function () {
     return false; //keeps screen from scrolling
   }))
 
+  $(document).on('click', '#savegroupchanges', (function () {
+    alert ("Save changes?");
+  }))
+
+
   $(document).on('click', '.editlinks', (function () {
     console.log ('edit links pressed');
     let self = this.id;
@@ -148,14 +168,16 @@ $(document).ready(function () {
     for (var x=0; x<bookmarks.length; x++) {
       if (bookmarks [x][0] === baseid) {
         console.log ('found it!');
-        $("#edittitle").text(`Edit bookmarks for group named ${bookmarks [x][1]}, ID ${baseid}`)
+        // $("#edittitle").text(`Edit bookmarks for group named ${bookmarks [x][1]}, ID ${baseid}`)
+        $("#edittitle").empty ();
+        $("#edittitle").append (`<input type="text" autocomplete="off" style="font-weight: bold" class="form-control text-truncate" value="${bookmarks [x][1]}">`);
         for (var y=0; y<bookmarks[x][3].length; y++) {
           for (var z=0; z<bookmarks[x][3][y].length; z++) {
             console.log (bookmarks [x][3][y][z]);
             if (z===1){
               $('#editlocation').append(`<hr>
-              <a href="#" class="btn btn-light btn-sm editmovelinkup" id="moveglinkup-${bookmarks[x][0]}">↑</a><br>
-              <input type="text" name="lname" autocomplete="off" class="form-control text-truncate editlinkname" value="${bookmarks [x][3][y][z]}"><br class="editbreak">`)
+              <a href="#" class="btn btn-light btn-sm editmovelinkup" id="moveglinkup-${bookmarks[x][0]}">↑</a>
+              <input type="text" name="lname" autocomplete="off" class="form-control text-truncate editlinkname" value="${bookmarks [x][3][y][z]}"><br>`)
             }
 
             if (z===2){
