@@ -56,21 +56,23 @@ $(document).ready(function () {
       for (var y = 0; y < (bookmarks[x][3]).length; y++) {
         $(`#links-${bookmarks[x][0]}`).append(`
         <a class="card-text" id="${bookmarks[x][3][y][0]}"><a href=${"http://" + bookmarks[x][3][y][2]} target="_blank">${bookmarks[x][3][y][1]}</a><br>
+
+
+        <a href="#" class="btn btn-light btn-sm py-0 editmovelinkup" id="editmovelinkup-${bookmarks[x][3][y][0]}">↑</a>
+
+        <a href="#" class="btn btn-light btn-sm py-0 editmovelinkdown" id="editmovelinkdown-${bookmarks[x][3][y][0]}">↓</a>
+
+        <button type="button" class="btn btn-light btn-sm py-0 editchangelinknameandlocation" id="editchangelinknameandlocation-${bookmarks[x][3][y][0]}" >✏ link</button>
+
+        <button type="button" class="btn btn-light btn-sm py-0 editdeletelink" id="editdeletelink-${bookmarks[x][3][y][0]}">🗑 link</button>
+
+        <hr class="editdivider">
+
         `);
       }
     }
 
   }
-
-  // <a href="#" class="btn btn-light btn-sm" id="movelinkdown-${bookmarks[x][0]}">↑</a>
-
-  // <a href="#" class="btn btn-light btn-sm" id="movelinkdown-${bookmarks[x][0]}">↓</a>
-
-  // <button type="button" class="btn btn-warning btn-sm"> delete link</button>
-
-  // <button type="button" class="btn btn-warning btn-sm"> edit link </button>
-
-  // <hr>
 
   //starts the document with the assumption that the New Boomark creation box is closed
   var newbookmarkgrouphidden = true;
@@ -81,6 +83,11 @@ $(document).ready(function () {
   $('.movegroupup').toggle();
   $('.movegroupdown').toggle();
   $('.editlinks').toggle();
+  $('.editmovelinkup').toggle();
+  $('.editmovelinkdown').toggle();
+  $('.editchangelinknameandlocation').toggle();
+  $('.editdeletelink').toggle();
+  $('.editdivider').toggle();
 
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
