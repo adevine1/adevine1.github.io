@@ -21,6 +21,7 @@ $(document).ready(function () {
       $("#cardcontainer").append(`<div class="shadow card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${bookmarks[x][0]}">
           <div class="card-body">
             <h5 class="card-title">${bookmarks[x][1]}</h5>
+
             <button type="button" class="btn btn-light btn-sm py-0 editgrouptitle" id="editgrouptitle-${bookmarks[x][1]}" >✏ name</button>
 
             <h6 class="card-subtitle mb-2 text-muted">${bookmarks[x][2]} </h6>
@@ -351,6 +352,9 @@ $(document).ready(function () {
       $("#cardcontainer").prepend(`<div class="shadow card col-md-12 border-secondary" id="${randid}">
           <div class="card-body">
             <h5 class="card-title">${groupname}</h5>
+
+            <button type="button" class="btn btn-light btn-sm py-0 editgrouptitle" style="display: none" id="editgrouptitle-${randid}" >✏ name</button>
+
             <h6 class="card-subtitle mb-2 text-muted">${groupdescription} </h6>
             <hr>
             <div id="links-${randid}">
