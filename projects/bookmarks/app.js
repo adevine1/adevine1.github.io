@@ -3,7 +3,7 @@ $(document).ready(function () {
   console.log('document ready');
 
   if (localStorage.getItem('bookmarks') === null) {
-    localStorage.setItem('bookmarks', '[["12345678", "Programming", "This is an example of a bookmark group. You can add more links in this one, or create other groups, in edit mode.", [["0203023", "Google", "www.google.com"], ["456987", "github", "www.github.com"], ["98657678", "Udemy", "www.udemy.com"]]]]')
+    localStorage.setItem('bookmarks', '[["12345678", "Programming", "", [["0203023", "Google", "www.google.com"], ["456987", "github", "www.github.com"], ["98657678", "Udemy", "www.udemy.com"]]]]')
   };
 
   let bookmarks = JSON.parse((localStorage.getItem('bookmarks')));
@@ -21,6 +21,8 @@ $(document).ready(function () {
       $("#cardcontainer").append(`<div class="shadow card col-lg-12 col-md-12 col-sm-12 border-secondary" id="${bookmarks[x][0]}">
           <div class="card-body">
             <h5 class="card-title">${bookmarks[x][1]}</h5>
+            <button type="button" class="btn btn-light btn-sm py-0 editgrouptitle" id="editgrouptitle-${bookmarks[x][1]}" >✏ name</button>
+
             <h6 class="card-subtitle mb-2 text-muted">${bookmarks[x][2]} </h6>
             <hr>
 
@@ -88,6 +90,7 @@ $(document).ready(function () {
   $('.editchangelinknameandlocation').toggle();
   $('.editdeletelink').toggle();
   $('.editdivider').toggle();
+  $('.editgrouptitle').toggle();
 
   //toggles the New Bookmark creation box
   $("#addbookmarkgroup").click(function () {
@@ -178,6 +181,8 @@ $(document).ready(function () {
     $('.editchangelinknameandlocation').toggle();
     $('.editdeletelink').toggle();
     $('.editdivider').toggle();
+    $('.editgrouptitle').toggle();
+
 
   //   for (var x=0; x<bookmarks.length; x++) {
   //     if (bookmarks [x][0] === baseid) {
