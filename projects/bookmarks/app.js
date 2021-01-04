@@ -185,29 +185,29 @@ $(document).ready(function () {
     $('.editgrouptitle').toggle();
 
 
-  //   for (var x=0; x<bookmarks.length; x++) {
-  //     if (bookmarks [x][0] === baseid) {
-  //       console.log ('found it!');
-  //       // $("#edittitle").text(`Edit bookmarks for group named ${bookmarks [x][1]}, ID ${baseid}`)
-  //       $("#edittitle").empty ();
-  //       $("#edittitle").append (`<input type="text" autocomplete="off" style="font-weight: bold" class="form-control text-truncate" value="${bookmarks [x][1]}">`);
-  //       for (var y=0; y<bookmarks[x][3].length; y++) {
-  //         for (var z=0; z<bookmarks[x][3][y].length; z++) {
-  //           console.log (bookmarks [x][3][y][z]);
-  //           if (z===1){
-  //             $('#editlocation').append(`<hr>
-  //             <a href="#" class="btn btn-light btn-sm editmovelinkup" id="moveglinkup-${bookmarks[x][0]}">↑</a>
-  //             <input type="text" name="lname" autocomplete="off" class="form-control text-truncate editlinkname" value="${bookmarks [x][3][y][z]}"><br>`)
-  //           }
+    for (var x=0; x<bookmarks.length; x++) {
+      if (bookmarks [x][0] === baseid) {
+        console.log ('found it!');
+        // $("#edittitle").text(`Edit bookmarks for group named ${bookmarks [x][1]}, ID ${baseid}`)
+        $("#edittitle").empty ();
+        $("#edittitle").append (`<input type="text" autocomplete="off" style="font-weight: bold" class="form-control text-truncate" value="${bookmarks [x][1]}">`);
+        for (var y=0; y<bookmarks[x][3].length; y++) {
+          for (var z=0; z<bookmarks[x][3][y].length; z++) {
+            console.log (bookmarks [x][3][y][z]);
+            if (z===1){
+              $('#editlocation').append(`<hr>
+              <a href="#" class="btn btn-light btn-sm editmovelinkup" id="moveglinkup-${bookmarks[x][0]}">↑</a>
+              <input type="text" name="lname" autocomplete="off" class="form-control text-truncate editlinkname" value="${bookmarks [x][3][y][z]}"><br>`)
+            }
 
-  //           if (z===2){
-  //             $('#editlocation').append(`
-  //             <input type="text" autocomplete="off" class="form-control text-truncate" name="lname" value="${bookmarks [x][3][y][z]}"><br class="editbreak"><a href="#" class="btn btn-light btn-sm editmovelinkdown" id="movelinkdown-${bookmarks[x][0]}">↓</a><button type="button" class="btn btn-warning btn-sm editdeletelinkbutton"> delete link </button><br>`)
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
+            if (z===2){
+              $('#editlocation').append(`
+              <input type="text" autocomplete="off" class="form-control text-truncate" name="lname" value="${bookmarks [x][3][y][z]}"><br class="editbreak"><a href="#" class="btn btn-light btn-sm editmovelinkdown" id="movelinkdown-${bookmarks[x][0]}">↓</a><button type="button" class="btn btn-warning btn-sm editdeletelinkbutton"> delete link </button><br>`)
+            }
+          }
+        }
+      }
+    }
   }))
 
   $(document).on('click', '#toggleedits', (function () {
