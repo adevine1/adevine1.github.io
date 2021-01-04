@@ -177,7 +177,7 @@ $(document).ready(function () {
     console.log('base id: ' + baseid);
     $('#editlocation').empty();
 
-    $('.editmovelinkup').toggle();
+    $(`#editmovelinkup`).toggle();
     $('.editmovelinkdown').toggle();
     $('.editchangelinknameandlocation').toggle();
     $('.editdeletelink').toggle();
