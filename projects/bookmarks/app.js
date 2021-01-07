@@ -219,7 +219,7 @@ $(document).ready(function () {
         }
         temparray.push(insidetemparray);
         //console.log (temparray);
-        insidetemparray.length=0;
+        //insidetemparray.length=0;
       }
     }
     console.log(temparray);
