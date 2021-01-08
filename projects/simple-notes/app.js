@@ -25,6 +25,6 @@ Enjoy!`);
 
 function about () {
   let myTextArea = document.getElementById("input");
-  alert ('Simple Notes\nAaron Devine, 2020');
+  alert ('Simple Notes\nAaron Devine, 2020-21');
   myTextArea.focus();
 }
