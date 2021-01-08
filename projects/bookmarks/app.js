@@ -166,6 +166,8 @@ $(document).ready(function () {
     alert ("Save changes?");
   }))
 
+  let temparray = [];
+  let insidetemparray = [];
 
   $(document).on('click', '.editlinks', (function () {
     console.log ('edit links pressed');
@@ -184,9 +186,6 @@ $(document).ready(function () {
     // $('.editdivider').toggle();
     // $('.editgrouptitle').toggle();
 
-    let temparray = [];
-    let insidetemparray = [];
-
     for (var x=0; x<bookmarks.length; x++) {
       if (bookmarks [x][0] === baseid) {
         console.log ('found it!');
@@ -196,8 +195,6 @@ $(document).ready(function () {
         <p>group name:<p>
         <input type="text" autocomplete="off" style="font-weight: bold" class="form-control text-truncate" value="${bookmarks[x][1]}">`);
 
-        temparray.push(bookmarks[x][1]);
-
         for (var y=0; y<bookmarks[x][3].length; y++) {
           for (var z=0; z<bookmarks[x][3][y].length; z++) {
             console.log (bookmarks [x][3][y][z]);
@@ -205,25 +202,23 @@ $(document).ready(function () {
               $('#editlocation').append(`<hr>
               <a href="#" class="btn btn-light btn-sm editmovelinkup" id="moveglinkup-${bookmarks[x][0]}">↑</a>
               <input type="text" name="lname" autocomplete="off" class="form-control text-truncate editlinkname" value="${bookmarks [x][3][y][z]}"><br>`)
-              insidetemparray.push(bookmarks[x][0]);
-              insidetemparray.push(bookmarks [x][3][y][z]);
             }
 
             if (z===2){
               $('#editlocation').append(`
               <input type="text" autocomplete="off" class="form-control text-truncate" name="lname" value="${bookmarks [x][3][y][z]}"><br class="editbreak"><a href="#" class="btn btn-light btn-sm editmovelinkdown" id="movelinkdown-${bookmarks[x][0]}">↓</a><button type="button" class="btn btn-warning btn-sm editdeletelinkbutton" id="editdeletelinkbutton-${bookmarks[x][0]}"> delete link </button><br>`)
-
               insidetemparray.push(bookmarks [x][3][y][z]);
             }
+            //
           }
+             temparray.push(insidetemparray);
+             console.log(temparray);
+             insidetempary = [];
         }
-        temparray.push(insidetemparray);
-        //console.log (temparray);
-        //insidetemparray.length=0;
+
       }
     }
-    console.log(temparray);
-    // temparray.length=0;
+
   }))
 
   $(document).on('click', '#toggleedits', (function () {
