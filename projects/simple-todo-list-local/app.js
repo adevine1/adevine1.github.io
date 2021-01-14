@@ -14,14 +14,21 @@ $(document).ready(function () {
     console.log(itemid);
     console.log(texty);
 
+    if (texty.trim() != '') {
     $('#item-list').append(`
-    <li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between" id="${itemid}">
-    <span class="item-list">${texty}</span>
-    <div>
-      <button id="edit-${itemid}" class="edit-me btn btn-outline-secondary btn-sm mr-1">edit</button>
-      <button id="delete-${itemid}" class="delete-me btn btn-outline-danger btn-sm">remove</button>
-    </div>
-  </li>`);
+      <li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between" id="${itemid}">
+      <span class="item-list">${texty}</span>
+      <div>
+        <button id="edit-${itemid}" class="edit-me btn btn-outline-secondary btn-sm mr-1">edit</button>
+        <button id="delete-${itemid}" class="delete-me btn btn-outline-danger btn-sm">remove</button>
+      </div>
+      </li>`);
+
+      $('#create-entry').val('').focus();
+    } else {
+      alert("please enter a value");
+      $('#create-entry').val('').focus();
+    }
   }));
 
   $(document).on('click', '#print-todo', (function () {
@@ -29,15 +36,41 @@ $(document).ready(function () {
   }));
 
   $(document).on('click', '.delete-me', (function () {
-      console.log('addlink button clicked');
+      console.log('delete-me button clicked');
+      if (confirm("Delete?")==true) {
+        let self = this.id;
+        console.log(self);
+        let dashlocation = self.indexOf('-');
+        console.log('the dash is at location ' + dashlocation + '.');
+        let baseid = self.substring(dashlocation + 1, self.length);
+        console.log (baseid);
+        $(`#${baseid}`).remove();
+        console.log('id removed');
+      }
+  }));
+
+  $(document).on('click', '.edit-me', (function () {
+    console.log('edit-me button clicked');
+    let revisedValue = prompt ("What be thy new entry?");
+    if (revisedValue) {
       let self = this.id;
       console.log(self);
       let dashlocation = self.indexOf('-');
       console.log('the dash is at location ' + dashlocation + '.');
       let baseid = self.substring(dashlocation + 1, self.length);
       console.log (baseid);
-      $(`#${baseid}`).remove();
-      console.log('id removed');
+      $(`#edit-${baseid}`).innerHTML = revisedValue;
+    }
+
+
+
+
+
+
+
+
+
+
   }));
 
 });
