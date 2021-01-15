@@ -17,7 +17,8 @@ $(document).ready(function () {
     if (texty.trim() != '') {
     $('#item-list').append(`
       <li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between" id="${itemid}">
-      <span class="item-list">${texty}</span>
+
+      <span class="item-list" id="text-${itemid}">${texty}</span>
       <div>
         <button id="edit-${itemid}" class="edit-me btn btn-outline-secondary btn-sm mr-1">edit</button>
         <button id="delete-${itemid}" class="delete-me btn btn-outline-danger btn-sm">remove</button>
@@ -51,25 +52,17 @@ $(document).ready(function () {
 
   $(document).on('click', '.edit-me', (function () {
     console.log('edit-me button clicked');
+    let self = this.id;
+    console.log(self);
+    let dashlocation = self.indexOf('-');
+    console.log('the dash is at location ' + dashlocation + '.');
+    let baseid = self.substring(dashlocation + 1, self.length);
+    console.log (baseid);
+
     let revisedValue = prompt ("What be thy new entry?");
     if (revisedValue) {
-      let self = this.id;
-      console.log(self);
-      let dashlocation = self.indexOf('-');
-      console.log('the dash is at location ' + dashlocation + '.');
-      let baseid = self.substring(dashlocation + 1, self.length);
-      console.log (baseid);
-      $(`#edit-${baseid}`).innerHTML = revisedValue;
+      $(`#text-${baseid}`).text(revisedValue);
     }
-
-
-
-
-
-
-
-
-
 
   }));
 
