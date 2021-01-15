@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+  let todoarray;
+
   console.log ("ready!");
 
   function getRandomNumber(x) {
