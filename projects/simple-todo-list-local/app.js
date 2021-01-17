@@ -1,6 +1,12 @@
 $(document).ready(function () {
 
-  let todoarray;
+  let todoarray = [];
+
+  loadtodo ();
+
+  function loadtodo () {
+    return;
+  }
 
   console.log ("ready!");
 
