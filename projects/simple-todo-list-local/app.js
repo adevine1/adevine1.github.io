@@ -11,7 +11,7 @@ $(document).ready(function () {
   console.log ("ready!");
 
   function getRandomNumber(x) {
-    let rand = Math.floor(Math.random() * 100000000) + 1000000;
+    let rand = Math.floor(Math.random() * 100000000) + 10000000;
     return rand;
   }
 
