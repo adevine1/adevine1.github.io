@@ -1,10 +1,15 @@
 $(document).ready(function () {
 
-  let todoarray = [];
+  console.log('document read');
 
-  loadtodo ();
+  let toDoArray=[];
 
-  function loadtodo () {
+  if (localStorage,GetItems('bookmarks') != null) {
+    let toDoArray = JSON.parse((localStorage.getItem('todoitems')));
+  }
+
+  function renderToDo () {
+    console.log (toDoArray)
     return;
   }
 
