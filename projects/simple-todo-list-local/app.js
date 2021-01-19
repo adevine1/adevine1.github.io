@@ -8,6 +8,8 @@ $(document).ready(function () {
     let toDoArray = JSON.parse((localStorage.getItem('todoitems')));
   }
 
+  renderToDo ();
+
   function renderToDo () {
     console.log (toDoArray)
     return;
