@@ -4,7 +4,7 @@ $(document).ready(function () {
 
   let toDoArray=[];
 
-  if (localStorage,GetItems('bookmarks') != null) {
+  if (localStorage.getItem('bookmarks') != null) {
     let toDoArray = JSON.parse((localStorage.getItem('todoitems')));
   }
 
@@ -37,6 +37,9 @@ $(document).ready(function () {
         <button id="delete-${itemid}" class="delete-me btn btn-outline-danger btn-sm">remove</button>
       </div>
       </li>`);
+
+    toDoArray.push([`${itemid}`, `${texty}`]);
+    console.log (toDoArray);
 
       $('#create-entry').val('').focus();
     } else {
