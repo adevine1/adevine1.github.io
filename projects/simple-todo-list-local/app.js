@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  console.log('document read');
+  console.log ("ready!");
 
   let toDoArray=[];
 
@@ -15,7 +15,7 @@ $(document).ready(function () {
     return;
   }
 
-  console.log ("ready!");
+
 
   function getRandomNumber(x) {
     let rand = Math.floor(Math.random() * 100000000) + 10000000;
