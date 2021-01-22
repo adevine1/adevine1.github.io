@@ -8,11 +8,7 @@ $(document).ready(function () {
     let toDoArray = JSON.parse((localStorage.getItem('todoitems')));
   }
 
-  renderToDo (
-    for (var x=0; x<toDoArray.count; x++) {
-      //add code here that includes id and content of each to-do item
-    }
-  );
+  renderToDo ();
 
   function renderToDo () {
     console.log (toDoArray)
