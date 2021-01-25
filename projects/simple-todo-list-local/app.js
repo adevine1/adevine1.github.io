@@ -4,10 +4,11 @@ $(document).ready(function () {
 
   let toDoArray=[];
 
-  if (localStorage.getItem('bookmarks') != null) {
+  if (localStorage.getItem('todoitems') != null) {
     let toDoArray = JSON.parse((localStorage.getItem('todoitems')));
   } else {
-    localStorage.setItem('bookmarks', '[test]')
+    localStorage.setItem('todoitems', '[test]');
+    toDoArray = JSON.parse((localStorage.getItem('todoitems')))
   }
 
   renderToDo ();
