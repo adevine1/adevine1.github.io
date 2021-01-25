@@ -7,6 +7,7 @@ $(document).ready(function () {
   if (localStorage.getItem('todoitems') != null) {
     let toDoArray = JSON.parse((localStorage.getItem('todoitems')));
   } else {
+    //need to rethink this
     localStorage.setItem('todoitems', '[test]');
     toDoArray = JSON.parse((localStorage.getItem('todoitems')))
   }
