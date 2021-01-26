@@ -19,8 +19,6 @@ $(document).ready(function () {
     return;
   }
 
-
-
   function getRandomNumber(x) {
     let rand = Math.floor(Math.random() * 100000000) + 10000000;
     return rand;
@@ -64,7 +62,7 @@ $(document).ready(function () {
         let self = this.id;
         console.log(self);
         let dashlocation = self.indexOf('-');
-        console.log('the dash is at location ' + dashlocation + '.');
+        console.log('the dash is at location: ' + dashlocation + '.');
         let baseid = self.substring(dashlocation + 1, self.length);
         console.log (baseid);
         $(`#${baseid}`).remove();
@@ -77,7 +75,7 @@ $(document).ready(function () {
     let self = this.id;
     console.log(self);
     let dashlocation = self.indexOf('-');
-    console.log('the dash is at location ' + dashlocation + '.');
+    console.log('the dash is at location: ' + dashlocation + '.');
     let baseid = self.substring(dashlocation + 1, self.length);
     console.log (baseid);
 
